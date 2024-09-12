@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
     return (
         <>
-            <Navbar position='sticky' className=' bg-gradient-to-r from-green-600 to-green-800 border border-black py-6 px-4'>
+            <Navbar position='sticky' className='z-50  bg-gradient-to-r from-green-600 to-green-800 border border-black py-6 px-4'>
                 <NavbarBrand className=''>
                     <Link href={"/"} className='flex gap-4 w-1/2'> 
                         <Image src={Logo} alt={title} className='h-12 w-auto' />
