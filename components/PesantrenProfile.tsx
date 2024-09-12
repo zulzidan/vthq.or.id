@@ -6,7 +6,7 @@ import SimaanRayyan from "@/public/images/simaan-rayyan.jpg";
 
 const PesantrenProfile = () => {
   return (
-    <div className="flex flex-col justify-between md:items-center md:flex-row bg-gray-50 py-6 px-14">
+    <div className="flex flex-col md:justify-evenly md:items-center md:flex-row bg-gray-50 py-6 px-14">
       <div className="mb-4 md:mb-0">
         <Image
           src={PimpinanImage}
@@ -22,7 +22,7 @@ const PesantrenProfile = () => {
         </p>
         <p className="font-bold text-green-700 ">Ir. H Muhammad Taufan Djafry, Lc., M.H.I</p>
       </div>
-      <div className="flex flex-col space-y-2 pt-5 md:pt-0">
+      <div className="flex flex-col space-y-8 pt-5 md:pt-0">
         <Image
           src={SimaanFarid}
           alt="Simaan Hafalan"
