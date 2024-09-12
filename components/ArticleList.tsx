@@ -10,20 +10,20 @@ interface Article {
 
 interface ArticleListProps {
   articles: Article[];
-  title: string;
+  titleSubArticle: string;
 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles, title }) => {
+const ArticleList: React.FC<ArticleListProps> = ({ articles, titleSubArticle }) => {
   return (
     <div className="w-full lg:max-w-2xl">
      <div className="grid lg:grid-flow-col items-center align-middle pb-4">
-      <h2 className="text-2xl font-bold text-green-700 mt-1">{title}</h2>
+      <h2 className="text-2xl font-bold text-green-700 mt-1">{titleSubArticle}</h2>
       <hr  className="bg-green-600 py-1" />
      </div>
-      <div className="space-y-4">
+      <div className="space-y-4 md:space-y-0 lg:space-y-6 md:gap-4 md:grid md:grid-cols-2 lg:block">
         {articles.map((article) => (
-          <div key={article.id} className="grid md:flex items-start space-y-4 md:space-y-0 md:space-x-4">
-            <div className="md:w-24 md:h-24 flex-shrink-0">
+          <div key={article.id} className="grid lg:flex items-start space-y-4 lg:space-y-0 lg:space-x-4">
+            <div className="lg:w-24 lg:h-24 flex-shrink-0">
               <Image
                 src={article.imageUrl}
                 alt={article.title}
