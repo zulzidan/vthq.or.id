@@ -31,7 +31,7 @@ const Carousel: React.FC = () => {
         />
       ))}
       <div className="absolute inset-0 flex items-center justify-center text-center">
-        <h1 className="text-white font-bold text-2xl lg:text-3xl">
+        <h1 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">
           SLIDE SELAMAT DATANG DI <br />
           PONDOK PESANTREN VILLA TAHFIZH <br />
           HIMMATUL QURAN MALINO

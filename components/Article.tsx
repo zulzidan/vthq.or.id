@@ -5,7 +5,7 @@ import ArticleList from './ArticleList';
 const Article: React.FC = () => {
 
   return (
-    <div className="flex px-14 py-6 flex-col lg:flex-row md:justify-evenly lg:gap-6">
+    <div className="flex px-6 md:px-14 py-6 flex-col lg:flex-row md:justify-around lg:gap-6">
      <ArticleList articles={dummyArticles} title={"ARTIKEL"}/>
      <ArticleList articles={dummyArticles} title={"KEGIATAN"}/>
     </div>

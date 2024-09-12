@@ -3,9 +3,9 @@ import React from 'react';
 const Cta: React.FC = () => {
   return (
     <section className="bg-gradient-to-r from-green-500 to-green-800 text-white py-16">
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:items-start">
+      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-start">
         {/* Bagian Text */}
-        <div className="lg:w-1/2 text-center lg:text-left">
+        <div className="lg:w-1/2 text-left">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
             MARI BERGABUNG BERSAMA KAMI DEMI MEWUJUDKAN GENERASI QUR'ANI PENERUS AGAMA DAN BANGSA
           </h1>

@@ -21,22 +21,22 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
     return (
         <>
-            <Navbar position='sticky' className='z-50 bg-gradient-to-r from-green-600 flex to-green-800 border border-black py-6 px-4'>
+            <Navbar position='sticky' className='z-50 bg-gradient-to-r from-green-600 flex to-green-800 border border-black py-6 md:px-4'>
                 <NavbarBrand>
                     <Link href="/" className='flex gap-4 items-center'>
-                        <Image src={Logo} alt={title} className='h-12 lg:h-24 w-auto' priority />
-                        <h1 className='text-xs lg:text-lg text-stone-50 leading-5 font-bold'>
+                        <Image src={Logo} alt={title} className='h-10 lg:h-18 xl:h-20 w-auto' priority />
+                        <p className='text-xs lg:text-lg text-stone-50 leading-5 font-bold'>
                         معهد همة القرآن لتحفيظ القرآن بمالينو
                             <br />
                             Pondok Pesantren Villa Tahfizh 
                             <br />
                             Himmatul Quran Malino
-                        </h1>
+                        </p>
                     </Link>
                 </NavbarBrand>
                 
                 {/* Content for larger screens */}
-                <NavbarContent className="hidden text-lg lg:flex uppercase text-stone-50 gap-4">
+                <NavbarContent className="hidden text-base xl:text-lg lg:flex uppercase text-stone-50 gap-4">
                     <NavbarItem>
                         <Link href="/program">Home</Link>
                     </NavbarItem>
