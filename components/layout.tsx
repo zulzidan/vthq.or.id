@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { Montserrat } from 'next/font/google'
+import CallToAction from './Cta';
 const montserrat = Montserrat({
     variable: "--font-montserrat",
     weight: "variable",
@@ -19,6 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <main className="flex-grow p-4">
                 {children}
             </main>
+            <CallToAction/>
             <Footer />
         </div>
     );
