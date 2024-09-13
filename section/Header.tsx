@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "../components/ui/button";
 import Image from 'next/image';
 import Logo from '@/public/logo.png';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"; // Import Icon

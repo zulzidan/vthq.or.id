@@ -1,5 +1,5 @@
 import React from "react";
-import IconWithTitle from "./IconWithTitle";
+import IconWithTitle from "../components/IconWithTitle";
 import { bestPrograms } from "@/data/bestPrograms";
 
 const BestPrograms: React.FC = () => {

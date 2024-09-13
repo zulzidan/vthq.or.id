@@ -1,10 +1,11 @@
-import Article from "@/components/Article";
-import BestPrograms from "@/components/BestPrograms";
-import Carousel from "@/components/Carousel";
-import Cta from "@/components/Cta";
-import Galery from "@/components/Galery";
+import Article from "@/section/Article";
+import BestPrograms from "@/section/BestPrograms";
+import Carousel from "@/section/Carousel";
+import Cta from "@/section/Cta"
+import Galery from "@/section/Galery";
 import Layout from "@/components/layout";
-import PesantrenProfile from "@/components/PesantrenProfile";
+import PesantrenProfile from "@/section/PesantrenProfile";
+import StudentInfo from "@/section/StudentInfo";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Article/>
       <BestPrograms/>
       <Galery/>
+      <StudentInfo/>
       <Cta />
     </Layout>
   );

@@ -12,7 +12,7 @@ const Galery: React.FC = () => {
         </h2>
         <hr className="bg-green-600 py-1" />
       </div>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {dummyImages.map((image) => {
           return (
             <div key={image.id} className="w-auto h-auto">

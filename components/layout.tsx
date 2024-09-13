@@ -1,10 +1,7 @@
 import React, { ReactNode } from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../section/Header';
+import Footer from '../section/Footer';
 import { Montserrat } from 'next/font/google'
-import CallToAction from './Cta';
-import Carousel from './Carousel';
-import PesantrenProfile from './PesantrenProfile';
 const montserrat = Montserrat({
     variable: "--font-montserrat",
     weight: "variable",
