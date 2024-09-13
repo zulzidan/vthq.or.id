@@ -10,7 +10,7 @@ const Cta: React.FC = () => {
             MARI BERGABUNG BERSAMA KAMI DEMI MEWUJUDKAN GENERASI QUR&apos;ANI PENERUS AGAMA DAN BANGSA
           </h1>
           <p className="text-lg mb-4">
-            Assalamu&apos;alaikum sahabat Qur&apo;san... <br />
+            Assalamu&apos;alaikum sahabat Qur&apos;san... <br />
             Villa Tahfizh Himmatul Quran Malino kembali membuka <span className="font-bold">Penerimaan Peserta Didik Baru Tahun Ajaran 2025/2026</span> untuk jenjang Wustha (SMP) dan SMA.
           </p>
           <a href="#" className="inline-block mt-4 px-6 py-3 border border-white rounded-full text-white hover:bg-white hover:text-green-800 transition-colors duration-300">
