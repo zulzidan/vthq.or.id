@@ -6,11 +6,11 @@ const StudentInfo: React.FC = () => {
     <section className="py-6 px-6 md:px-14">
       <div className="grid lg:grid-flow-col items-center align-middle pb-4">
         <h2 className="text-2xl font-bold text-green-700 mt-1">
-          GALERY KEGIATAN
+          INFORMASI PESERTA DIDIK
         </h2>
         <hr className="bg-green-600 py-1" />
       </div>
-      <div className="flex justify-between">
+      <div className="grid gap-4 md:flex md:justify-evenly">
         <StudentsCard title="SMP: 118 Orang" />
         <StudentsCard title="SMP: 118 Orang" />
         <StudentsCard title="SMP: 118 Orang" />
