@@ -1,4 +1,5 @@
 import Article from "@/components/Article";
+import BestPrograms from "@/components/BestPrograms";
 import Carousel from "@/components/Carousel";
 import Cta from "@/components/Cta";
 import Layout from "@/components/layout";
@@ -10,6 +11,7 @@ export default function Home() {
       <Carousel />
       <PesantrenProfile />
       <Article/>
+      <BestPrograms/>
       <Cta />
     </Layout>
   );

@@ -71,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
                 {/* Full-screen menu for mobile */}
                 {isOpen && (
-                    <div className="fixed inset-0 bg-green-800 z-50 flex flex-col items-center justify-center gap-8 text-stone-50 text-xl">
+                    <div className="fixed inset-0 bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center justify-center gap-8 text-stone-50 text-xl">
                         <button 
                             onClick={toggleMenu}
                             className="absolute top-10 right-10 text-stone-50"
