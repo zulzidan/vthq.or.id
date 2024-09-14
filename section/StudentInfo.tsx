@@ -4,7 +4,7 @@ import React from "react";
 const StudentInfo: React.FC = () => {
   return (
     <section className="py-6 px-6 md:px-14">
-      <div className="sm:flex sm:space-x-10 block items-center align-middle pb-4">
+      <div className="sm:flex sm:space-x-10 block items-center align-middle pb-8">
         <h2 className="text-2xl font-bold text-green-700 mt-1">
           INFORMASI PESERTA DIDIK
         </h2>

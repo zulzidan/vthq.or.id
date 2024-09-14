@@ -1,49 +1,54 @@
-import { Galery } from "@/types/galery"; // Asumsikan kita memiliki file types.ts yang mendefinisikan interface Article
+import { Galery } from "@/types/galery";
 
 export const dummyImages: Galery[] = [
   {
     id: 1,
-    title: "KHUTBAH JUM'AT : RAMADHAN BULAN TARBIYAH",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Upcara Bendera Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/1.jpg"
   },
   {
     id: 2,
-    title: "ARTIKEL ISLAMI : KEUTAMAAN MEMBACA AL-QUR'AN",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Kunjungan Bank Bsi Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/2.jpg"
   },
   {
     id: 3,
-    title: "TIPS MENINGKATKAN KEKHUSYUKAN DALAM SHALAT",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Upcara Bendera Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/3.jpg"
   },
   {
     id: 4,
-    title: "TIPS MENINGKATKAN KEKHUSYUKAN DALAM SHALAT",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Halaqah Al-Qur'an Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/4.jpg"
   },
   {
     id: 5,
-    title: "TIPS MENINGKATKAN KEKHUSYUKAN DALAM SHALAT",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Ekstrakulikuler Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/5.jpg"
   },
   {
     id: 6,
-    title: "TIPS MENINGKATKAN KEKHUSYUKAN DALAM SHALAT",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Day-1 Pelaksanaan Daurah Orientasi Santri Tahun Ajaran 2024/2025 Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/6.jpg"
   },
   {
     id: 7,
-    title: "TIPS MENINGKATKAN KEKHUSYUKAN DALAM SHALAT",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Panen perdana pasca liburan di Green House VTHQ  Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/7.jpg"
   },
   {
     id: 8,
-    title: "TIPS MENINGKATKAN KEKHUSYUKAN DALAM SHALAT",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Buka Puasa Bersama Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/8.jpg"
   },
   {
     id: 9,
-    title: "TIPS MENINGKATKAN KEKHUSYUKAN DALAM SHALAT",
-    imageUrl: "/images/1607-buka18.jpg"
+    title: "Panen cabai bersama santri Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/9.jpg"
+  },
+  {
+    id: 10,
+    title: "Upacara Peringatan Hari Kemerdekaan Republik Indonesia Di Pondok Pesantren Villa Tahfizh Himmatul Quran",
+    imageUrl: "/images/10.jpg"
   }
 ];
