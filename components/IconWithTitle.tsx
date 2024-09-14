@@ -17,13 +17,13 @@ const IconWithTitle: React.FC<IconWithTitleProps> = ({ args }) => {
       {args.map((arg) => {
         return (
           <div key={arg.id} className="flex items-center space-x-4 lg:space-x-10">
-            <div className="h-10 md:h-10 w-auto ">
+            <div className="h-auto w-10 ">
               <Image
                 src={arg.iconUrl}
                 alt={arg.title}
                 width={113}
                 height={111}
-                className="rounded-full w-full h-full"
+                className="rounded-full w-auto h-auto"
               />
             </div>
             <div>
