@@ -1,6 +1,7 @@
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import { welcomeImage } from "@/data/dummyWelcomeImage";
 import {
   Carousel,
   CarouselContent,
@@ -20,10 +21,12 @@ export const CarouselShadcn: React.FC = () => {
       className="w-full"
     >
       <CarouselContent className="w-full h-[267px] m-0">
-        <CarouselItem className="relative w-full">
+          {welcomeImage.map((welcome) => {
+               return (
+        <CarouselItem className="relative w-full" key={welcome.id}>
           <Image
-            src={"/images/welcome1.jpg"}
-            alt="carousel Image"
+            src={welcome.imageUrl}
+            alt={welcome.title}
             layout="fill"
             objectFit="cover"
             quality={100}
@@ -37,20 +40,11 @@ export const CarouselShadcn: React.FC = () => {
           </h1>
         </div>
         </CarouselItem>
-        <CarouselItem className="relative w-full">
-          <Image
-            src={"/images/welcome2.jpg"}
-            alt="carousel Image"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            priority
-            className="w-auto"
-          />
-        </CarouselItem>
+               )
+          })}
       </CarouselContent>
-      <CarouselPrevious className="absolute left-20" />
-      <CarouselNext className="absolute right-20" />
+      <CarouselPrevious className="absolute left-5 md:left-20" />
+      <CarouselNext className="absolute right-5 md:right-20" />
     </Carousel>
   );
 };
