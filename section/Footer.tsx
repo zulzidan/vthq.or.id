@@ -40,36 +40,33 @@ const Footer: React.FC = () => {
               </a>
             </ul>
           </div>
-
-          {/* Contact Us */}
           <div className="text-center md:text-left">
             <h3 className="text-lg lg:text-3xl font-bold mb-4">CONTACT US:</h3>
-            <a href="#" className="hover:underline">
+            <a href="himmatulquranmalino@gmail.com" target="_blank" className="hover:underline">
               <p>himmtatulquran.malino@gmail.com</p>
             </a>
-            <a href="#" className="hover:underline">
+            <a href="https://maps.app.goo.gl/J7FLeaZF6NKd2c2t7" target="_blank" className="hover:underline">
               <p>Jln. Batulapisi Luar Kel. Malino Kec. Tinggimoncong</p>
               <p>Kab. Gowa - Sulawesi Selatan</p>
             </a>
-            <a href="#" className="hover:underline">
+            <a href="https://wa.me/+6281244679866" target="_blank" className="hover:underline">
               <p>+82812-4467-9866</p>
             </a>
           </div>
 
-          {/* Social Media */}
           <div className="text-center md:text-left">
             <h3 className="text-lg lg:text-3xl font-bold mb-4">
               SOCIAL MEDIA:
             </h3>
             <ul className="space-y-2">
-              <a href="#" className="hover:underline">
-                <li>tahfizhimmatulquran</li>
+              <a href="https://www.instagram.com/tahfizhhimmatulquran/" target="_blank" className="hover:underline">
+                <li>IG: tahfizhimmatulquran</li>
               </a>
               <a href="#" className="hover:underline">
                 <li>Villa Tahfizh</li>
               </a>
-              <a href="#" className="hover:underline">
-                <li>Himmah TV</li>
+              <a href="https://www.youtube.com/@himmahtv134" target="_blank" className="hover:underline">
+                <li>YT: Himmah TV</li>
               </a>
             </ul>
           </div>
