@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
             <Navbar position='sticky' className='z-50 bg-gradient-to-r from-green-600 flex to-green-800 border border-black py-6 md:px-4'>
                 <NavbarBrand>
                     <Link href="/" className='flex gap-4 items-center'>
-                        <Image src={Logo} alt={title} className='h-10 lg:h-18 xl:h-20 w-auto' priority />
+                        <Image src={Logo} alt={title} className='h-8 sm:h-10 lg:h-18 xl:h-20 w-auto' priority />
                         <p className='text-xs lg:text-lg text-stone-50 leading-5 font-bold'>
                         معهد همة القرآن لتحفيظ القرآن بمالينو
                             <br />
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                     <div className="fixed inset-0 bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center justify-center gap-8 text-stone-50 text-xl">
                         <button 
                             onClick={toggleMenu}
-                            className="absolute top-10 right-10 text-stone-50"
+                            className="absolute top-10 right-6 md:top-10 md:right-10 text-stone-50"
                         >
                             <AiOutlineClose size={30} />
                         </button>
