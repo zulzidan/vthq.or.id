@@ -24,7 +24,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, titleSubArticle }) 
         <hr className="bg-green-600 py-1" />
         </div>
       </div>
-      <div className="space-y-4 md:space-y-0 lg:space-y-6 md:gap-4 md:grid md:grid-cols-2 lg:block">
+      <div className="md:space-y-0 lg:space-y-6 gap-4 grid grid-cols-2 md:grid-cols-3 lg:block">
         {articles.map((article) => (
           <div key={article.id} className="grid lg:flex items-start space-y-4 lg:space-y-0 lg:space-x-4">
             <div className="lg:w-36 lg:h-36 flex-shrink-0">
@@ -38,8 +38,8 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, titleSubArticle }) 
             </div>
             <div className="flex-grow">
               <h3 className="text-sm font-semibold mb-1">{article.title}</h3>
-              <p className="text-xs text-gray-600">{article.excerpt}</p>
-              <a href="#" className="text-blue-500 text-sm hover:underline">See more...</a>
+              <p className="text-xs text-gray-600 line-clamp-3 ">{article.excerpt}</p>
+              <a href="#" className="text-blue-500 text-xs hover:underline">See more...</a>
             </div>
           </div>
         ))}

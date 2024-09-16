@@ -22,7 +22,7 @@ const PesantrenProfile = () => {
         </p>
         <p className="font-bold text-sm text-green-700 ">Ir. H Muhammad Taufan Djafry, Lc., M.H.I</p>
       </div>
-      <div className="flex flex-col space-y-8 pt-5 md:pt-0">
+      <div className="grid grid-cols-2 md:flex md:flex-col md:space-y-8 pt-5 space-x-2 md:space-x-0">
         <Image
           src={SimaanFarid}
           alt="Simaan Hafalan"
