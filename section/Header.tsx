@@ -71,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
                 {/* Full-screen menu for mobile */}
                 {isOpen && (
-                    <div className="fixed inset-0 bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center justify-center gap-8 text-stone-50 text-xs">
+                    <div className="fixed inset-0 bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center justify-center gap-8 text-stone-50 text-sm">
                         <button 
                             onClick={toggleMenu}
                             className="absolute top-10 right-6 md:top-10 md:right-10 text-stone-50"
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                         <Link href="/program" onClick={toggleMenu}>Program</Link>
                         <Link href="/artikel" onClick={toggleMenu}>Artikel</Link>
                         <Link href="/kegiatan" onClick={toggleMenu}>Kegiatan</Link>
-                        <Button className="text-xs" color="primary" onClick={toggleMenu}>
+                        <Button className="text-sm" color="primary" onClick={toggleMenu}>
                             Pendaftaran
                         </Button>
                     </div>

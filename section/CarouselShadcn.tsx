@@ -31,9 +31,10 @@ export const CarouselShadcn: React.FC = () => {
             objectFit="cover"
             quality={100}
             priority
+            className="brightness-50"
           />
           <div className="absolute z-30 inset-0 flex items-center justify-center text-center">
-          <h1 className="text-white font-bold text-lg md:text-2xl lg:text-2xl">
+          <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl">
             SLIDE SELAMAT DATANG DI <br />
             PONDOK PESANTREN VILLA TAHFIZH <br />
             HIMMATUL QURAN MALINO
