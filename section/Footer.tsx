@@ -26,30 +26,30 @@ const Footer: React.FC = () => {
           <div className="text-center md:text-left">
             <h3 className="text-base lg:text-xl font-bold mb-4">ABOUT US:</h3>
             <ul className="space-y-16">
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline text-xs md:text-base">
                 <li>Visi dan Misi</li>
               </a>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline text-xs md:text-base">
                 <li>Layanan Keummatan</li>
               </a>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline text-xs md:text-base">
                 <li>Job Vacancy</li>
               </a>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline text-xs md:text-base">
                 <li>Informasi Donasi</li>
               </a>
             </ul>
           </div>
           <div className="text-center md:text-left">
             <h3 className="text-base lg:text-xl font-bold mb-4">CONTACT US:</h3>
-            <a href="himmatulquranmalino@gmail.com" target="_blank" className="hover:underline">
+            <a href="himmatulquranmalino@gmail.com" target="_blank" className="hover:underline text-xs md:text-base">
               <p>himmtatulquran.malino@gmail.com</p>
             </a>
-            <a href="https://maps.app.goo.gl/J7FLeaZF6NKd2c2t7" target="_blank" className="hover:underline">
+            <a href="https://maps.app.goo.gl/J7FLeaZF6NKd2c2t7" target="_blank" className="hover:underline text-xs md:text-base">
               <p>Jln. Batulapisi Luar Kel. Malino Kec. Tinggimoncong</p>
               <p>Kab. Gowa - Sulawesi Selatan</p>
             </a>
-            <a href="https://wa.me/+6281244679866" target="_blank" className="hover:underline">
+            <a href="https://wa.me/+6281244679866" target="_blank" className="hover:underline text-xs md:text-base">
               <p>+82812-4467-9866</p>
             </a>
           </div>
@@ -59,20 +59,20 @@ const Footer: React.FC = () => {
               SOCIAL MEDIA:
             </h3>
             <ul className="space-y-2">
-              <a href="https://www.instagram.com/tahfizhhimmatulquran/" target="_blank" className="hover:underline">
+              <a href="https://www.instagram.com/tahfizhhimmatulquran/" target="_blank" className="hover:underline text-xs md:text-base">
                 <li>IG: tahfizhimmatulquran</li>
               </a>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline text-xs md:text-base">
                 <li>Villa Tahfizh</li>
               </a>
-              <a href="https://www.youtube.com/@himmahtv134" target="_blank" className="hover:underline">
+              <a href="https://www.youtube.com/@himmahtv134" target="_blank" className="hover:underline text-xs md:text-base">
                 <li>YT: Himmah TV</li>
               </a>
             </ul>
           </div>
         </div>
       </div>
-      <div className="bg-gray-200 font-semibold p-6 text-center">
+      <div className="bg-gray-200 font-semibold p-6 text-center text-xs md:text-sm">
         &copy; 2022 - Infokom Villa Tahfizh Himmatul Quran Malino
       </div>
     </footer>
