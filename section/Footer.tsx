@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             <h2 className="text-xs font-bold">HIMMATUL QURAN MALINO</h2>
           </div>
           <div className="text-center md:text-left">
-            <h3 className="text-lg lg:text-3xl font-bold mb-4">ABOUT US:</h3>
+            <h3 className="text-base lg:text-xl font-bold mb-4">ABOUT US:</h3>
             <ul className="space-y-16">
               <a href="#" className="hover:underline">
                 <li>Visi dan Misi</li>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div className="text-center md:text-left">
-            <h3 className="text-lg lg:text-3xl font-bold mb-4">CONTACT US:</h3>
+            <h3 className="text-base lg:text-xl font-bold mb-4">CONTACT US:</h3>
             <a href="himmatulquranmalino@gmail.com" target="_blank" className="hover:underline">
               <p>himmtatulquran.malino@gmail.com</p>
             </a>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="text-center md:text-left">
-            <h3 className="text-lg lg:text-3xl font-bold mb-4">
+            <h3 className="text-base lg:text-xl font-bold mb-4">
               SOCIAL MEDIA:
             </h3>
             <ul className="space-y-2">

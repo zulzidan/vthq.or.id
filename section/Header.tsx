@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 <NavbarBrand>
                     <Link href="/" className='flex gap-4 items-center'>
                         <Image src={Logo} alt={title} className='h-8 sm:h-10 lg:h-18 xl:h-20 w-auto' priority />
-                        <p className='text-xs lg:text-lg text-stone-50 leading-5 font-bold'>
+                        <p className='text-xs lg:text-base text-stone-50 leading-5 font-bold'>
                         معهد همة القرآن لتحفيظ القرآن بمالينو
                             <br />
                             Pondok Pesantren Villa Tahfizh 
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 </NavbarBrand>
                 
                 {/* Content for larger screens */}
-                <NavbarContent className="hidden text-base xl:text-lg lg:flex uppercase text-stone-50 gap-4">
+                <NavbarContent className="hidden text-xs xl:text-base lg:flex uppercase text-stone-50 gap-4">
                     <NavbarItem>
                         <Link href="/program">Home</Link>
                     </NavbarItem>
@@ -71,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
                 {/* Full-screen menu for mobile */}
                 {isOpen && (
-                    <div className="fixed inset-0 bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center justify-center gap-8 text-stone-50 text-xl">
+                    <div className="fixed inset-0 bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center justify-center gap-8 text-stone-50 text-xs">
                         <button 
                             onClick={toggleMenu}
                             className="absolute top-10 right-6 md:top-10 md:right-10 text-stone-50"
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                         <Link href="/program" onClick={toggleMenu}>Program</Link>
                         <Link href="/artikel" onClick={toggleMenu}>Artikel</Link>
                         <Link href="/kegiatan" onClick={toggleMenu}>Kegiatan</Link>
-                        <Button color="primary" onClick={toggleMenu}>
+                        <Button className="text-xs" color="primary" onClick={toggleMenu}>
                             Pendaftaran
                         </Button>
                     </div>

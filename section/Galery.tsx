@@ -7,7 +7,7 @@ const Galery: React.FC = () => {
   <section>
     <div className="w-full px-6 md:px-16 py-6">
     <div className="sm:flex sm:space-x-10 block items-center align-middle pb-8">
-        <h2 className="text-2xl font-bold text-green-700 mt-1">
+        <h2 className="text-base font-bold text-green-700 mt-1">
           GALERY KEGIATAN
         </h2>
         <div className="flex-grow" >

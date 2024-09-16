@@ -27,7 +27,7 @@ const IconWithTitle: React.FC<IconWithTitleProps> = ({ args }) => {
               />
             </div>
             <div>
-              <h1 className="text-md sm:text-xl md:text-2xl lg:text-3xl font-bold">{arg.title}</h1>
+              <h1 className="text-xs md:text-base font-bold">{arg.title}</h1>
             </div>
           </div>
         );

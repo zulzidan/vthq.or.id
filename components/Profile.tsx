@@ -24,13 +24,13 @@ const Profile: React.FC<ProfileProps> = ({imageAlt, imageUrl, description, name,
       </div>
       <div className="md:w-3/4 md:pl-6">
       <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
-        <h2 className="text-xl font-bold mb-2 py-1 px-1 rounded-sm">{title}</h2>
+        <h2 className="text-base font-bold mb-2 py-1 px-1 rounded-sm">{title}</h2>
       </div>
-        <p className="mb-4 text-gray-700">
+        <p className="mb-4 text-xs text-gray-700">
           {description}
         </p>
-        <p className="font-bold text-gray-900">{name}</p>
-        <p className="text-sm">({who})</p>
+        <p className="font-bold text-sm text-gray-900">{name}</p>
+        <p className="text-xs">({who})</p>
       </div>
     </div>
   );

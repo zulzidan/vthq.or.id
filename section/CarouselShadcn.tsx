@@ -33,7 +33,7 @@ export const CarouselShadcn: React.FC = () => {
             priority
           />
           <div className="absolute z-30 inset-0 flex items-center justify-center text-center">
-          <h1 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">
+          <h1 className="text-white font-bold text-lg md:text-2xl lg:text-2xl">
             SLIDE SELAMAT DATANG DI <br />
             PONDOK PESANTREN VILLA TAHFIZH <br />
             HIMMATUL QURAN MALINO
