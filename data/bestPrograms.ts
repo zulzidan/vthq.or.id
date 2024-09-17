@@ -8,57 +8,57 @@ export const bestPrograms: IconTitle[] = [
   },
   {
     id: 2,
-    title: "Simaan Akbar",
+    title: "Simaan Pekanan",
     iconUrl: "/images/9.jpg",
   },
   {
     id: 3,
-    title: "Simaan Akbar",
+    title: "Ekstrakulikuler",
     iconUrl: "/images/9.jpg",
   },
   {
     id: 4,
-    title: "Simaan Akbar",
+    title: "Study Club",
     iconUrl: "/images/9.jpg",
   },
   {
     id: 5,
-    title: "Simaan Akbar",
+    title: "Tarbiyah",
     iconUrl: "/images/9.jpg",
   },
   {
     id: 6,
-    title: "Simaan Akbar",
+    title: "Rihlah Akbar",
     iconUrl: "/images/9.jpg",
   },
    {
      id: 7,
-     title: "Simaan Akbar",
+     title: "Daurah Takhassus",
      iconUrl: "/images/9.jpg",
    },
    {
      id: 8,
-     title: "Simaan Akbar",
+     title: "Safari Ramadhan",
      iconUrl: "/images/9.jpg",
    },
    {
      id: 9,
-     title: "Simaan Akbar",
+     title: "Musabaqah Hifzhil Quran",
      iconUrl: "/images/9.jpg",
    },
    {
      id: 10,
-     title: "Simaan Akbar",
+     title: "Bakti Sosial",
      iconUrl: "/images/9.jpg",
    },
    {
      id: 11,
-     title: "Simaan Akbar",
+     title: "Porsani",
      iconUrl: "/images/9.jpg",
    },
    {
      id: 12,
-     title: "Simaan Akbar",
+     title: "Konsultasi Syariah",
      iconUrl: "/images/9.jpg",
    },
 ];
