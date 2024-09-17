@@ -5,12 +5,12 @@ import Profile from "@/components/Profile";
 const Reviews: React.FC = () => {
   return (
     <section className="py-6 px-6 md:px-14">
-      <div className="sm:flex sm:space-x-10 block items-center align-middle pb-8">
+      <div className="flex sm:space-x-10 space-x-5 items-center align-middle pb-8">
         <h2 className="text-base font-bold text-green-700 mt-1">
           APA KATA MEREKA ?
         </h2>
         <div className="flex-grow">
-          <hr className="bg-green-600 py-1" />
+          <hr className="bg-green-600 h-2" />
         </div>
       </div>
       <div className="space-y-10">
