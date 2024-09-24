@@ -56,9 +56,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                         <Link href="/kegiatan">Kegiatan</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Button color="primary">
-                            Pendaftaran
-                        </Button>
+                    <Link href="/ppdb"><Button color="primary">Pendaftaran</Button></Link>
                     </NavbarItem>
                 </NavbarContent>
 
@@ -84,9 +82,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                         <Link href="/program" onClick={toggleMenu}>Program</Link>
                         <Link href="/artikel" onClick={toggleMenu}>Artikel</Link>
                         <Link href="/kegiatan" onClick={toggleMenu}>Kegiatan</Link>
-                        <Button className="text-sm" color="primary" onClick={toggleMenu}>
-                            Pendaftaran
-                        </Button>
+                        <Link href="/ppdb"><Button color="primary">Pendaftaran</Button></Link>
                     </div>
                 )}
             </Navbar>
