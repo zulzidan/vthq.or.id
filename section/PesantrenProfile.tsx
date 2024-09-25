@@ -1,5 +1,4 @@
-import React from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 import PimpinanImage from "@/public/images/PIMPINAN PONDOK.jpg";
 import SimaanFarid from "@/public/images/simaan-farid.jpg";
 import SimaanRayyan from "@/public/images/simaan-rayyan.jpg";

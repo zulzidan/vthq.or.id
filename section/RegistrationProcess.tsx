@@ -1,5 +1,4 @@
-import React from 'react';
-import { FaRegClipboard, FaHandHoldingUsd, FaSearch, FaBullhorn } from 'react-icons/fa';
+import { FaRegClipboard, FaHandHoldingUsd, FaSearch, FaBullhorn } from "react-icons/fa";
 
 const steps = [
   {

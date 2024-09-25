@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PpdbImage from "@/public/images/welcome2.jpg";
 import Link from "next/link";
+import React from "react";
 
 const PpdbHeader: React.FC = () => {
   return (

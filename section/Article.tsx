@@ -1,6 +1,6 @@
-import React from 'react';
-import { dummyArticles } from '@/data/dummyArticle';
-import ArticleList from '../components/ArticleList';
+import React from "react";
+import { dummyArticles } from "@/data/dummyArticle";
+import ArticleList from "@/components/ArticleList";
 
 const Article: React.FC = () => {
 

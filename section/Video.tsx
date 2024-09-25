@@ -1,5 +1,3 @@
-import React from "react";
-
 const Video = () => {
   return (
     <div className="flex flex-col md:flex-row items-start justify-center p-4">

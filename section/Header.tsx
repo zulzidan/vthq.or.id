@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 import Image from 'next/image';
 import Logo from '@/public/logo.png';
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"; // Import Icon
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 interface HeaderProps {
     title: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
-    const [isOpen, setIsOpen] = useState(false); // State untuk mengontrol menu burger
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
