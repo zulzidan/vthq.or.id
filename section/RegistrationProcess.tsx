@@ -26,21 +26,23 @@ const steps = [
 
 const RegistrationProcess = () => {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-6 px-6 md:px-16 bg-white">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold">ALUR PENDAFTARAN</h2>
+        <h2 className="text-lg md:text-2xl font-bold">ALUR PENDAFTARAN</h2>
         <div className="flex justify-center mt-4">
-          <div className="h-1 w-16 bg-gray-400 relative">
+          <div className="h-1 w-28 bg-gray-400 relative">
             <div className="h-1 w-6 bg-green-500 absolute left-1/2 transform -translate-x-1/2"></div>
           </div>
         </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {steps.map((step, index) => (
-          <div key={index} className="bg-green-700 text-white p-6 rounded-lg text-center shadow-md">
+          <div key={index} className="bg-gradient-to-l from-green-500 to-green-800 text-white p-6 rounded-lg text-center shadow-md">
+            <div className="flex justify-center">
             {step.icon}
-            <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-            <p>{step.description}</p>
+            </div>
+            <h3 className="text-base md:text-lg font-semibold mb-2">{step.title}</h3>
+            <p className="text-xs md:text-base">{step.description}</p>
           </div>
         ))}
       </div>

@@ -1,12 +1,12 @@
 import Layout from "@/components/layout";
 import About from "@/section/About";
-import CarouselShadcn from "@/section/CarouselShadcn";
+import PpdbHeader from "@/section/PpdbHeader";
 import RegistrationProcess from "@/section/RegistrationProcess";
 
 export default function Ppdb() {
   return (
     <Layout>
-     <CarouselShadcn/>
+     <PpdbHeader/>
      <About/>
      <RegistrationProcess/>
     </Layout>

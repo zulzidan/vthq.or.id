@@ -38,13 +38,13 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 {/* Content for larger screens */}
                 <NavbarContent className="hidden text-xs xl:text-base lg:flex uppercase text-stone-50 gap-4">
                     <NavbarItem>
-                        <Link href="/program">Home</Link>
+                        <Link href="/">Home</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/about-us">Profil</Link>
+                        <Link href="/profile">Profil</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/berita">Akademik</Link>
+                        <Link href="/academic">Akademik</Link>
                     </NavbarItem>
                     <NavbarItem>
                         <Link href="/program">Program</Link>
@@ -76,9 +76,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                         >
                             <AiOutlineClose size={30} />
                         </button>
-                        <Link href="/program" onClick={toggleMenu}>Home</Link>
-                        <Link href="/about-us" onClick={toggleMenu}>Profil</Link>
-                        <Link href="/berita" onClick={toggleMenu}>Akademik</Link>
+                        <Link href="/" onClick={toggleMenu}>Home</Link>
+                        <Link href="/profil" onClick={toggleMenu}>Profil</Link>
+                        <Link href="/academic" onClick={toggleMenu}>Akademik</Link>
                         <Link href="/program" onClick={toggleMenu}>Program</Link>
                         <Link href="/artikel" onClick={toggleMenu}>Artikel</Link>
                         <Link href="/kegiatan" onClick={toggleMenu}>Kegiatan</Link>
