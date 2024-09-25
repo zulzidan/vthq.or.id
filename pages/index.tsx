@@ -1,6 +1,5 @@
 import Article from "@/section/Article";
 import BestPrograms from "@/section/BestPrograms";
-// import Carousel from "@/section/Carousel";
 import Cta from "@/section/Cta"
 import Galery from "@/section/Galery";
 import Layout from "@/components/layout";
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <Layout>
       <CarouselShadcn/>
-      {/* <Carousel /> */}
       <PesantrenProfile />
       <Article/>
       <BestPrograms/>
