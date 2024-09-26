@@ -41,7 +41,7 @@ const RegistrationProcess = () => {
             {step.icon}
             </div>
             <h3 className="text-base md:text-lg font-semibold mb-2">{step.title}</h3>
-            <p className="text-xs md:text-base">{step.description}</p>
+            <p className="text-xs md:text-sm">{step.description}</p>
           </div>
         ))}
       </div>
