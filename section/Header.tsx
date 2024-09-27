@@ -38,25 +38,25 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 {/* Content for larger screens */}
                 <NavbarContent className="hidden text-xs xl:text-base lg:flex uppercase text-stone-50 gap-4">
                     <NavbarItem>
-                        <Link href="/">Home</Link>
+                        <Link href="/"  className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Home</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/profile">Profil</Link>
+                        <Link href="/profile" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Profil</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/academic">Akademik</Link>
+                        <Link href="/academic" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Akademik</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/program">Program</Link>
+                        <Link href="/program" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Program</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/artikel">Artikel</Link>
+                        <Link href="/artikel" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Artikel</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/kegiatan">Kegiatan</Link>
+                        <Link href="/kegiatan" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Kegiatan</Link>
                     </NavbarItem>
                     <NavbarItem>
-                    <Link href="/ppdb"><Button color="primary">Pendaftaran</Button></Link>
+                    <Link href="/ppdb"><Button className="bg-white hover:bg-yellow-500 hover:text-white text-xs xl:text-base text-black uppercase transition-colors duration-300 ease-in-out">Pendaftaran</Button></Link>
                     </NavbarItem>
                 </NavbarContent>
 
@@ -76,13 +76,13 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                         >
                             <AiOutlineClose size={30} />
                         </button>
-                        <Link href="/" onClick={toggleMenu}>Home</Link>
-                        <Link href="/profil" onClick={toggleMenu}>Profil</Link>
-                        <Link href="/academic" onClick={toggleMenu}>Akademik</Link>
-                        <Link href="/program" onClick={toggleMenu}>Program</Link>
-                        <Link href="/artikel" onClick={toggleMenu}>Artikel</Link>
-                        <Link href="/kegiatan" onClick={toggleMenu}>Kegiatan</Link>
-                        <Link href="/ppdb"><Button color="primary">Pendaftaran</Button></Link>
+                        <Link href="/" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Home</Link>
+                        <Link href="/profil" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Profil</Link>
+                        <Link href="/academic" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Akademik</Link>
+                        <Link href="/program" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Program</Link>
+                        <Link href="/artikel" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Artikel</Link>
+                        <Link href="/kegiatan" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Kegiatan</Link>
+                        <Link href="/ppdb"><Button className="bg-white hover:bg-yellow-500 text-black uppercase text-xs transition-colors duration-300 ease-in-out">Pendaftaran</Button></Link>
                     </div>
                 )}
             </Navbar>
