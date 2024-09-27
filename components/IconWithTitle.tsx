@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 interface Arg {
@@ -16,15 +15,8 @@ const IconWithTitle: React.FC<IconWithTitleProps> = ({ args }) => {
     <div className="mx-auto grid grid-cols-2 md:grid-cols-2 items-center lg:grid-cols-3 gap-6">
       {args.map((arg) => {
         return (
-          <div key={arg.id} className="flex items-center space-x-4 lg:space-x-10">
-            <div className="h-auto w-10 ">
-              <Image
-                src={arg.iconUrl}
-                alt={arg.title}
-                width={113}
-                height={111}
-                className="rounded-full w-auto h-auto"
-              />
+          <div key={arg.id} className="flex items-center space-x-1 lg:space-x-10">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-green-800 to-yellow-300">
             </div>
             <div>
               <h1 className="text-xs md:text-base font-bold">{arg.title}</h1>
