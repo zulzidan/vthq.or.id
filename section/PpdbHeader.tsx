@@ -7,13 +7,11 @@ const PpdbHeader: React.FC = () => {
   return (
     <div className="relative w-full">
         <Image
-
           src={PpdbImage}
           alt={"PPDB IMAGE HAIMMATUL QURAN"}
-          layout="fill"
-          objectFit="cover"
+          fill
           priority
-          className="brightness-50"
+          className="object-cover brightness-50"
         />
       <div className="flex relative items-start justify-start text-start">
       <section className="text-white py-16">
