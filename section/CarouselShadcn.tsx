@@ -43,8 +43,8 @@ export const CarouselShadcn: React.FC = () => {
                )
           })}
       </CarouselContent>
-      <CarouselPrevious className="absolute left-5 md:left-20" />
-      <CarouselNext className="absolute right-5 md:right-20" />
+      <CarouselPrevious className="absolute left-5 md:left-20 text-white" />
+      <CarouselNext className="absolute right-5 md:right-20 text-white" />
     </Carousel>
   );
 };
