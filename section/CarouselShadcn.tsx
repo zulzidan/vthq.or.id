@@ -9,7 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { HiddenSelect } from "@nextui-org/react";
 
 export const CarouselShadcn: React.FC = () => {
   return (
