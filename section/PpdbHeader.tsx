@@ -11,7 +11,7 @@ const PpdbHeader: React.FC = () => {
           alt={"PPDB IMAGE HAIMMATUL QURAN"}
           fill
           priority
-          className="object-cover brightness-50"
+          className="object-cover object-right-bottom brightness-50"
         />
       <div className="flex relative items-start justify-start text-start">
       <section className="text-white py-16">

@@ -30,7 +30,7 @@ export const CarouselShadcn: React.FC = () => {
             fill
             quality={100}
             priority
-            className="object-cover brightness-50"
+            className="object-cover object-right brightness-50"
           />
           <div className="absolute z-30 inset-0 flex items-center justify-center text-center">
           <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl">
