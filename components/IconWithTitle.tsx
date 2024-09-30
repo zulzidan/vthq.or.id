@@ -15,18 +15,18 @@ import {
 } from "react-bootstrap-icons";
 
 const iconMap: { [key: string]: JSX.Element } = {
-  "Simaan Akbar": <BookHalf />,
-  "Simaan Pekanan": <CalendarCheck />,
-  "Ekstrakulikuler": <People />,
-  "Study Club": <Journal />,
-  Tarbiyah: <Mortarboard />,
-  "Rihlah Akbar": <Globe />,
-  "Daurah Takhassus": <Bookmarks />,
-  "Safari Ramadhan": <MoonStars />,
-  "Musabaqah Hifzhil Quran": <Trophy />,
-  "Bakti Sosial": <Heart />,
-  "Porsani": <Bicycle />,
-  "Konsultasi Syariah": <ChatSquareText />,
+  "Simaan Akbar": <BookHalf className="w-6 h-6" />,
+  "Simaan Pekanan": <CalendarCheck className="w-6 h-6"/>,
+  "Ekstrakulikuler": <People className="w-6 h-6"/>,
+  "Study Club": <Journal className="w-6 h-6"/>,
+  Tarbiyah: <Mortarboard className="w-6 h-6"/>,
+  "Rihlah Akbar": <Globe className="w-6 h-6"/>,
+  "Daurah Takhassus": <Bookmarks className="w-6 h-6"/>,
+  "Safari Ramadhan": <MoonStars className="w-6 h-6"/>,
+  "Musabaqah Hifzhil Quran": <Trophy className="w-6 h-6"/>,
+  "Bakti Sosial": <Heart className="w-6 h-6"/>,
+  "Porsani": <Bicycle className="w-6 h-6"/>,
+  "Konsultasi Syariah": <ChatSquareText className="w-6 h-6"/>,
 };
 
 interface Arg {
