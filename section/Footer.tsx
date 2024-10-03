@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           <div className="text-center md:text-left">
             <h3 className="text-base lg:text-xl font-bold mb-4">CONTACT US:</h3>
             <a href="himmatulquranmalino@gmail.com" target="_blank" className="hover:underline text-xs md:text-base">
-              <p>himmtatulquran.malino@gmail.com</p>
+              <p>himmtatulquranmalino@gmail.com</p>
             </a>
             <a href="https://maps.app.goo.gl/J7FLeaZF6NKd2c2t7" target="_blank" className="hover:underline text-xs md:text-base">
               <p>Jln. Batulapisi Luar Kel. Malino Kec. Tinggimoncong</p>
