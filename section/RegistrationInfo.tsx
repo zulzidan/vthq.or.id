@@ -23,11 +23,11 @@ const RegistrationInfo: React.FC = () => {
           </div>
           </div>
           </a>
-          <a href="https://wa.me/+6285756052150">
+          <a href="https://wa.me/+6281244679866">
           <div className="flex space-x-4 items-center">
           <TelephoneFill/>
           <div>
-          <p className="font-bold text-green-600 text-left text-xl hover:text-yellow-600">0857 5605 2150</p>
+          <p className="font-bold text-green-600 text-left text-xl hover:text-yellow-600">0812 4467 9866</p>
           <p className="text-xs text-left">(Humas Himmatul Quran)</p>
           </div>
           </div>
