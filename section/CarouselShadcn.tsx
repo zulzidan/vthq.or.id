@@ -35,7 +35,7 @@ export const CarouselShadcn: React.FC = () => {
           />
           <div className="absolute z-30 inset-0 flex items-center justify-center text-center">
           <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl">
-            SLIDE SELAMAT DATANG DI <br />
+            SELAMAT DATANG DI <br />
             PONDOK PESANTREN VILLA TAHFIZH <br />
             HIMMATUL QURAN MALINO
           </h1>
