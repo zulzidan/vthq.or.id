@@ -13,18 +13,18 @@ const RegistrationMethod: React.FC = () => {
           </div>
         </div>
       </div>
-       <p className="text-md md:text-xl font-bold mb-4">
+       <p className="text-md md:text-lg lg:text-xl font-bold mb-4">
          Pendaftaran dapat dilakukan dengan:
        </p>
  
-       <p className="text-md md:text-xl font-bold mb-4">
+       <p className="text-md md:text-lg lg:text-xl font-bold mb-4">
          Datang langsung ke kantor kami yang beralamat di
        </p>
        <p className="text-green-700 text-lg md:text-xl font-bold">
          Jl. Batulapisi Luar, Kel. Malino Kec. Tinggimoncong <br />
          Kab. Gowa, Sulawesi Selatan
        </p>
-       <p className="text-md font-bold md:text-xl mt-4">Atau melalui link berikut:</p>
+       <p className="text-md font-bold md:text-lg lg:text-xl mt-4">Atau melalui link berikut:</p>
 
        <div className="flex flex-col md:flex-row justify-evenly space-y-4 md:space-y-0 mt-4">
           <a href="https://forms.gle/FXKFhrT3k8i5MrK46">
