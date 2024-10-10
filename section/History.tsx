@@ -1,27 +1,29 @@
 import React from "react";
+import Image from "next/image";
+import PimpinanImage from "@/public/images/PIMPINAN PONDOK.jpg";
 
 const History: React.FC = () => {
-  return (
-    <section className="bg-gray-100">
-      <div className="w-full px-6 md:px-16 py-6">
-       <div className="flex sm:space-x-10 space-x-5 items-center align-middle pb-8">
-        <h2 className="text-lg font-bold text-green-700 mt-1">
-         SEJARAH
-        </h2>
-        <div className="flex-grow" >
-        <hr className="bg-green-600 h-2" />
+    return (
+      <div className="flex flex-col md:justify-around md:items-center md:flex-row bg-gray-50 py-6 px-6 md:px-14">
+        <div className="mb-4 md:mb-0">
+          <Image
+            src={PimpinanImage}
+            alt="Pimpinan Pondok"
+            className="w-44 h-auto"
+          />
+        </div>
+        <div className="md:w-3/4 md:pl-6">
+        <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
+          <h2 className="text-base font-bold mb-2 py-1 px-6 rounded-sm">Sejarah :</h2>
+        </div>
+          <p className="mb-4 text-sm md:text-base text-green-900">
+            Villa Tahfizh Himmatul Quran adalah lembaga pendidikan pesantren Al-Qur&apos;an yang berikhtiar melahirkan generasi Al-Qur&apos;an yang berakhlak mulia dan beraqidah shohihah. Generasi Al-Qur&apos;an yang berpadu pada dirinya kepribadian dengan 3 kompetensi utama yaitu: <span className="text-green-900  font-semibold">Afektif (ruhiyah), Kognitif ( kecerdasan) dan Psikomotorik (ketrampilan dan skill).</span>  Ikhtiar itu adalah upaya maksimal yang dilakukan oleh Villa Tahfizh Himmatul Quran dalam meramu dan menerapkan proses pembelajaran dan pembinaan agar melahirkan pribadi santri yang berakhlak, cerdas dan terampil sebagai peserta didik.
+          </p>
+          <p className="font-bold text-base text-green-700 ">Ir. H Muhammad Taufan Djafry, Lc., M.H.I</p>
         </div>
       </div>
-      <div className="lg:ml-32 text-justify text-sm md:text-base">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem impedit qui porro quis adipisci dolores quasi veniam tenetur vero commodi! Corrupti veritatis possimus voluptates repudiandae neque, eaque quas harum accusamus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem impedit qui porro quis adipisci dolores quasi veniam tenetur vero commodi! Corrupti veritatis possimus voluptates repudiandae neque, eaque quas harum accusamus.</p>
-        <br/>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem impedit qui porro quis adipisci dolores quasi veniam tenetur vero commodi! Corrupti veritatis possimus voluptates repudiandae neque, eaque quas harum accusamus.</p>
-        <br/>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem impedit qui porro quis adipisci dolores quasi veniam tenetur vero commodi! Corrupti veritatis possimus voluptates repudiandae neque, eaque quas harum accusamus.</p>
-      </div>
-    </div>
-    </section>
-  );
-};
+    );
+  };
+
 
 export default History;

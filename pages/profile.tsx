@@ -1,7 +1,6 @@
 import Layout from "@/components/layout";
-import CarouselShadcn from "@/section/CarouselShadcn";
 import History from "@/section/History";
-import PesantrenProfile from "@/section/PesantrenProfile";
+import ProfilePondokPesantren from "@/section/ProfilePondokPesantren";
 import TeacherProfile from "@/section/TeacherProfile";
 import VisionMission from "@/section/VisionMission";
 
@@ -9,8 +8,7 @@ import VisionMission from "@/section/VisionMission";
 export default function Profile() {
   return (
     <Layout>
-      <CarouselShadcn/>
-      <PesantrenProfile/>
+      <ProfilePondokPesantren/>
       <History/>
       <VisionMission/>
       <TeacherProfile/>
