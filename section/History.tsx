@@ -4,7 +4,8 @@ import PimpinanImage from "@/public/images/PIMPINAN PONDOK.jpg";
 
 const History: React.FC = () => {
     return (
-      <div className="flex flex-col md:justify-around md:items-center md:flex-row bg-gray-50 py-6 px-6 md:px-14">
+      <section className="py-6 px-6 md:px-14">
+      <div className="flex flex-col md:justify-evenly md:items-center md:flex-row bg-gray-50 mx-auto max-w-screen-2xl">
         <div className="mb-4 md:mb-0">
           <Image
             src={PimpinanImage}
@@ -22,6 +23,7 @@ const History: React.FC = () => {
           <p className="font-bold text-base text-green-700 ">Ir. H Muhammad Taufan Djafry, Lc., M.H.I</p>
         </div>
       </div>
+      </section>
     );
   };
 

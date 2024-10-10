@@ -5,7 +5,7 @@ export const ProfilePondokPesantren: React.FC = () => {
   return (
       <div className="w-full h-[267px] m-0 relative">
           <Image
-            src="/images/welcome1.jpg"
+            src="/images/welcome2.jpg"
             alt="backroundImage"
             fill
             quality={100}
