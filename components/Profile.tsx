@@ -22,7 +22,7 @@ const Profile: React.FC<ProfileProps> = ({imageAlt, imageUrl, description, name,
           height={111}
         />
       </div>
-      <div className="md:w-3/4 md:pl-6">
+      <div className="md:w-3/4 md:px-6">
       <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
         <h2 className="text-base font-bold mb-2 py-1 px-1 rounded-sm">{title}</h2>
       </div>

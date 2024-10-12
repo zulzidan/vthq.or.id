@@ -13,7 +13,7 @@ const History: React.FC = () => {
             className="w-44 h-auto"
           />
         </div>
-        <div className="md:w-3/4 md:pl-6">
+        <div className="md:w-3/4 md:px-6">
         <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
           <h2 className="text-base font-bold mb-2 py-1 px-6 rounded-sm">Sejarah :</h2>
         </div>

@@ -21,7 +21,7 @@ export const CarouselShadcn: React.FC = () => {
       ]}
       className="w-full"
     >
-      <CarouselContent className="w-full h-[267px] m-0">
+      <CarouselContent className="w-full min-h-[40vh] m-0">
           {welcomeImage.map((welcome) => {
                return (
         <CarouselItem className="relative w-full" key={welcome.id}>
