@@ -5,8 +5,8 @@ const RegistrationInfo: React.FC = () => {
   return (
      <section className="lg:max-w-screen-lg md:max-w-screen-md max-w-screen-sm mx-auto py-6 px-6 md:px-16 mb-4">
      <div className="text-center">
-       <div className="text-center mb-6">
-        <h2 className="text-lg md:text-2xl font-bold">INFORMASI PENDAFTARAN</h2>
+       <div className="text-center mx-auto mb-6">
+        <h2 className="text-lg md:text-2xl text-center font-bold">INFORMASI PENDAFTARAN</h2>
         <div className="flex justify-center mt-4">
           <div className="h-1 w-28 bg-gray-400 relative">
             <div className="h-1 w-6 bg-green-500 absolute left-1/2 transform -translate-x-1/2"></div>
@@ -18,7 +18,7 @@ const RegistrationInfo: React.FC = () => {
           <div className="flex space-x-4 items-center">
           <TelephoneFill/>
           <div>
-          <p className="font-bold text-green-600 text-xl hover:text-yellow-600">0857 5605 2150</p>
+          <p className="font-bold text-green-600 text-xl md:text-2xl hover:text-yellow-600">0857 5605 2150</p>
           <p className="text-xs text-left">(Ketua Panitia)</p>
           </div>
           </div>
@@ -27,7 +27,7 @@ const RegistrationInfo: React.FC = () => {
           <div className="flex space-x-4 items-center">
           <TelephoneFill/>
           <div>
-          <p className="font-bold text-green-600 text-left text-xl hover:text-yellow-600">0812 4467 9866</p>
+          <p className="font-bold text-green-600 text-left text-xl md:text-2xl hover:text-yellow-600">0812 4467 9866</p>
           <p className="text-xs text-left">(Humas Himmatul Quran)</p>
           </div>
           </div>
