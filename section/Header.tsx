@@ -41,10 +41,10 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                         <Link href="/"  className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Home</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/profile" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Profil</Link>
+                        <Link href="/profil" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Profil</Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link href="/academic" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Akademik</Link>
+                        <Link href="/akademik" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Akademik</Link>
                     </NavbarItem>
                     <NavbarItem>
                         <Link href="/program" className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Program</Link>
@@ -77,8 +77,8 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                             <AiOutlineClose size={30} />
                         </button>
                         <Link href="/" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Home</Link>
-                        <Link href="/profile" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Profil</Link>
-                        <Link href="/academic" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Akademik</Link>
+                        <Link href="/profil" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Profil</Link>
+                        <Link href="/akademik" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Akademik</Link>
                         <Link href="/program" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Program</Link>
                         <Link href="/artikel" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Artikel</Link>
                         <Link href="/kegiatan" onClick={toggleMenu} className="hover:underline hover:text-yellow-500 transition-colors duration-300 ease-in-out">Kegiatan</Link>
