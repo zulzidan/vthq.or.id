@@ -9,7 +9,7 @@ interface CardProps {
 
 const CardProfile: React.FC<CardProps> = ({ profile }) => {
   return (
-    <Link href={`/profile/${profile.id}`}>
+    <Link href={`/profil/${profile.id}`}>
     <div className="w-32 sm:w-36 flex flex-col">
       <Image 
         className="w-full h-full rounded-xl hover:rounded-tl-sm hover:rounded-br-sm transition-all object-cover"
