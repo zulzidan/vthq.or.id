@@ -1,0 +1,50 @@
+import React from "react";
+import Image from "next/image";
+import { Article as ArticleType } from "@/types/article"; 
+import Article from "@/section/Article"; 
+
+
+
+interface SingleBlogProps {
+  article: ArticleType;
+}
+const SingleBlog: React.FC<SingleBlogProps> = ({ article }) => {
+  return (
+     <>
+    <section className="py-6 px-6 md:px-16">
+      <div className="py-4 max-w-screen-md mx-auto">
+        <p className="font-bold text-xl md:text-2xl lg:text-3xl">
+          {article.title}
+        </p>
+      </div>
+      <div className="max-w-screen-md mx-auto flex justify-end py-4">
+          <div>
+               <p className="text-gray-600">Oct 6, 2024</p>
+          </div>
+      </div>
+      <div className="max-w-screen-md mx-auto">
+        <Image
+          src={article.imageUrl}
+          alt={article.title}
+          width={2363}
+          height={2363}
+          className="w-full"
+        />
+      </div>
+      <div className="py-4 max-w-screen-md mx-auto">
+        <p className="leading-loose">{article.excerpt}</p>
+      </div>
+    </section>
+      <div className="px-6 md:px-14 py-6">  
+      <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
+          <h2 className="text-base font-bold mb-4 py-1 px-6 ">
+          Rekomendasi :
+          </h2>
+        </div>
+      </div>
+    <Article/>
+     </>
+  );
+};
+
+export default SingleBlog;

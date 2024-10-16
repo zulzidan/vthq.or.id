@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface Article {
   id: number;
@@ -9,11 +9,12 @@ interface Article {
 }
 
 interface ArticleListProps {
-  articles: Article[];
+  data: Article[];
   titleSubArticle: string;
+  nameOfContext: string;
 }
 
-const ArticleList: React.FC<ArticleListProps> = ({ articles, titleSubArticle }) => {
+const ArticleList: React.FC<ArticleListProps> = ({ data, titleSubArticle, nameOfContext }) => {
   return (
     <div className="w-full lg:max-w-2xl">
       <div className="flex space-x-5 md:space-x-10 items-center align-middle pb-4">
@@ -25,7 +26,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, titleSubArticle }) 
         </div>
       </div>
       <div className="md:space-y-0 lg:space-y-6 gap-4 flex flex-col lg:block">
-        {articles.map((article) => (
+        {data.map((article) => (
           <div key={article.id} className="flex items-start space-x-4">
             <div className="lg:w-36 lg:h-36 h-auto w-20 flex-shrink-0">
               <Image
@@ -39,7 +40,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ articles, titleSubArticle }) 
             <div className="flex-grow">
               <h3 className="text-sm font-semibold mb-1">{article.title}</h3>
               <p className="text-xs text-gray-600 line-clamp-3 ">{article.excerpt}</p>
-              <a href="#" className="text-blue-500 text-xs hover:underline">See more...</a>
+              <a href={`/${nameOfContext}/${article.id}`} className="text-blue-500 text-xs hover:underline">See more...</a>
             </div>
           </div>
         ))}
