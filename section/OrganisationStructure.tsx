@@ -29,14 +29,14 @@ const OrganisationStructure: React.FC = () => {
     >
       <CarouselContent className="w-full min-h-[40vh] m-0">
           {Array.from({ length: 8 }).map((_, index) => (
-        <CarouselItem className="relative w-full" key={index}>
+        <CarouselItem className="relative w-full basis-1/2 md:basis-1/4" key={index}>
           <Image
             src={"https://placehold.co/1960x1080/jpg"}
             alt={"Struktur Organisasi"}
             fill
             quality={100}
             priority
-            className="object-cover object-right brightness-50"
+            className="object-cover brightness-50"
           />
           <div className="absolute z-30 inset-0 flex items-center justify-center text-center">
           <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl">
