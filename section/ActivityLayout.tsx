@@ -1,6 +1,6 @@
 import React from "react";
 import { dummyActivity } from "@/data/dummyActivity";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleCardRound from "@/components/ArticleCardRound";
 
 const ActivityLayout: React.FC = () => {
      return (
@@ -8,7 +8,7 @@ const ActivityLayout: React.FC = () => {
                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {dummyActivity.map((activity) => {
                          return (
-                              <ArticleCard article={activity} nameOfContext="kegiatan" key={activity.id}/>
+                              <ArticleCardRound article={activity} nameOfContext="kegiatan" key={activity.id}/>
                          )
                     })}
                </div>

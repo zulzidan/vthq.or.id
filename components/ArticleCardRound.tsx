@@ -3,13 +3,14 @@ import { Article } from '@/types/article';
 import Link from 'next/link';
 import { AspectRatio } from './ui/aspect-ratio';
 
-interface ArticleCardProps {
+interface ArticleCardRoundProps {
   article: Article;
   nameOfContext: string
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article, nameOfContext }) => {
+const ArticleCardRound: React.FC<ArticleCardRoundProps> = ({ article, nameOfContext }) => {
   return (
+    <section>
     <Link href={`/${nameOfContext}/${article.id}`}>
     <div className="w-full rounded-md overflow-hidden flex flex-col space-y-1.5 border-1 p-6">
       <AspectRatio ratio={16 / 9}>
@@ -25,7 +26,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, nameOfContext }) => 
       </div>
     </div>
     </Link>
+    </section>
   );
 };
 
-export default ArticleCard;
+export default ArticleCardRound;

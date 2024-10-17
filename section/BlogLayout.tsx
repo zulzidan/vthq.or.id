@@ -1,6 +1,6 @@
 import React from "react";
 import { dummyArticles } from "@/data/dummyArticle";
-import ArticleCard from "@/components/ArticleCard";
+import ArticleCardRound from "@/components/ArticleCardRound";
 
 const BlogLayout: React.FC = () => {
      return (
@@ -8,7 +8,7 @@ const BlogLayout: React.FC = () => {
                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {dummyArticles.map((article) => {
                          return (
-                              <ArticleCard article={article} nameOfContext="artikel" key={article.id}/>
+                              <ArticleCardRound article={article} nameOfContext="artikel" key={article.id}/>
                          )
                     })}
                </div>

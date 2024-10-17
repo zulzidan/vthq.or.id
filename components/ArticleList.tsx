@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import ArticleCardFlex from "./ArticleCardFlex";
 
 interface Article {
   id: number;
@@ -25,25 +25,12 @@ const ArticleList: React.FC<ArticleListProps> = ({ data, titleSubArticle, nameOf
         <hr className="bg-green-600 h-2" />
         </div>
       </div>
-      <div className="md:space-y-0 lg:space-y-6 gap-4 flex flex-col lg:block">
-        {data.map((article) => (
-          <div key={article.id} className="flex items-start space-x-4">
-            <div className="lg:w-36 lg:h-36 h-auto w-20 flex-shrink-0">
-              <Image
-                src={article.imageUrl}
-                alt={article.title}
-                width={2363}
-                height={2363}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="flex-grow">
-              <h3 className="text-sm font-semibold mb-1">{article.title}</h3>
-              <p className="text-xs text-gray-600 line-clamp-3 ">{article.excerpt}</p>
-              <a href={`/${nameOfContext}/${article.id}`} className="text-blue-500 text-xs hover:underline">See more...</a>
-            </div>
-          </div>
-        ))}
+      <div className="flex flex-col lg:block md:space-y-0 lg:space-y-6 gap-8">
+        {data.map((article) => {
+          return (
+            <ArticleCardFlex article={article} nameOfContext={nameOfContext} key={article.id}/>
+          )
+        })}
       </div>
     </div>
   );
