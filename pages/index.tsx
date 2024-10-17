@@ -8,10 +8,12 @@ import Video from "@/section/Video";
 import CarouselShadcn from "@/section/CarouselShadcn";
 import Article from "@/section/Article";
 import PpdbHeader from "@/section/PpdbHeader";
+import TitleOfPage from "@/components/TitleOfPage";
 
 export default function Home() {
   return (
     <Layout>
+      <TitleOfPage title="Home"/>
       <CarouselShadcn/>
       <PesantrenProfile />
       <Article/>

@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/reac
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 import Image from 'next/image';
-import Logo from '@/public/logo.png';
+import Logo from '@/public/images/logo.png';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 interface HeaderProps {

@@ -4,6 +4,7 @@ import Layout from "@/components/layout";
 import TeacherProfile from "@/section/TeacherProfile";
 import { profileData } from "@/data/profileData";
 import { TeacherProfileType } from "@/types/teacherProfile";
+import TitleOfPage from "@/components/TitleOfPage";
 
 interface ContentProps {
      profile: TeacherProfileType;
@@ -13,6 +14,7 @@ const ContentDetail = ({ profile }: ContentProps) => {
   useRouter();
   return (
      <Layout>
+       <TitleOfPage title="Profil"/>
           <TeacherProfile profile={profile} />
      </Layout>
   );

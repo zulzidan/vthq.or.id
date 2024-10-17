@@ -1,4 +1,5 @@
 import Layout from "@/components/layout";
+import TitleOfPage from "@/components/TitleOfPage";
 import About from "@/section/About";
 import PpdbHeader from "@/section/PpdbHeader";
 import RegistrationInfo from "@/section/RegistrationInfo";
@@ -9,6 +10,7 @@ import TimelineRegistration from "@/section/TimelineRegistration";
 export default function Ppdb() {
   return (
     <Layout>
+       <TitleOfPage title="Pendaftaran"/>
      <PpdbHeader/>
      <About/>
      <RegistrationProcess/>

@@ -4,6 +4,7 @@ import Layout from "@/components/layout";
 import { dummyArticles } from "@/data/dummyArticle";
 import { Article } from "@/types/article";
 import SingleBlog from "@/components/SingleBlog";
+import TitleOfPage from "@/components/TitleOfPage";
 
 interface ContentProps {
      article: Article;
@@ -13,6 +14,7 @@ const ContentDetail = ({ article }: ContentProps) => {
   useRouter();
   return (
      <Layout>
+      <TitleOfPage title="Artikel"/>
          <SingleBlog article={article}/>
      </Layout>
   );

@@ -4,6 +4,7 @@ import Layout from "@/components/layout";
 import { dummyActivity } from "@/data/dummyActivity";
 import { Activity } from "@/types/activity";
 import SingleBlog from "@/components/SingleBlog";
+import TitleOfPage from "@/components/TitleOfPage";
 
 interface ContentProps {
      article: Activity;
@@ -13,6 +14,7 @@ const ContentDetail = ({ article }: ContentProps) => {
   useRouter();
   return (
      <Layout>
+       <TitleOfPage title="Kegiatan"/>
          <SingleBlog article={article}/>
      </Layout>
   );
