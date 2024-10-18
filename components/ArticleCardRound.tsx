@@ -10,7 +10,7 @@ interface ArticleCardRoundProps {
 
 const ArticleCardRound: React.FC<ArticleCardRoundProps> = ({ article, nameOfContext }) => {
   return (
-    <section>
+    <div>
     <Link href={`/${nameOfContext}/${article.id}`}>
     <div className="w-full rounded-md overflow-hidden flex flex-col space-y-1.5 border-1 p-6">
       <AspectRatio ratio={16 / 9}>
@@ -26,7 +26,7 @@ const ArticleCardRound: React.FC<ArticleCardRoundProps> = ({ article, nameOfCont
       </div>
     </div>
     </Link>
-    </section>
+    </div>
   );
 };
 

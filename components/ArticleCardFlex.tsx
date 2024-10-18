@@ -9,7 +9,7 @@ interface ArticleCardFlexProps {
 }
 const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({article, nameOfContext}) => {
      return (
-          <section>
+          <div>
           <Link href={`/${nameOfContext}/${article.id}`}>
           <div className="flex items-start space-x-4">
             <div className="lg:w-36 lg:h-36 h-auto w-20 flex-shrink-0">
@@ -28,7 +28,7 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({article, nameOfContext
             </div>
           </div>
           </Link>
-          </section>
+          </div>
      )
 }
 

@@ -9,7 +9,7 @@ interface CardProps {
 
 const CardProfile: React.FC<CardProps> = ({ profile }) => {
   return (
-    <section>
+    <div>
     <Link href={`/profil/${profile.id}`}>
     <div className="w-32 sm:w-36 flex flex-col">
       <Image 
@@ -25,7 +25,7 @@ const CardProfile: React.FC<CardProps> = ({ profile }) => {
       </div>
     </div>
     </Link>
-    </section>
+    </div>
   );
 };
 
