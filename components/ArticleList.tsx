@@ -25,7 +25,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ data, titleSubArticle, nameOf
         <hr className="bg-green-600 h-2" />
         </div>
       </div>
-      <div className="flex flex-col lg:block md:space-y-0 lg:space-y-6 gap-8">
+      <div className="flex flex-col gap-2">
         {data.map((article) => {
           return (
             <ArticleCardFlex article={article} nameOfContext={nameOfContext} key={article.id}/>

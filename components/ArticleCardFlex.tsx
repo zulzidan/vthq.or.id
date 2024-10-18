@@ -12,8 +12,8 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
   nameOfContext,
 }) => {
   return (
-    <div>
-      <Link href={`/${nameOfContext}/${article.id}`} key={article.id} passHref>
+    <>
+      <Link href={`/${nameOfContext}/${article.id}`} >
         <div className="flex items-start space-x-4">
           <div className="lg:w-36 lg:h-36 h-auto w-20 flex-shrink-0">
             <Image
@@ -29,16 +29,15 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
             <p className="text-xs text-gray-600 line-clamp-3 ">
               {article.excerpt}
             </p>
-            <a
-              href={`/${nameOfContext}/${article.id}`}
+            <p
               className="text-blue-500 text-xs hover:underline"
             >
               Baca Selengkapnya...
-            </a>
+            </p>
           </div>
         </div>
       </Link>
-    </div>
+    </>
   );
 };
 
