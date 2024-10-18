@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
-import Header from '../section/Header';
+// import Header from '../section/Header';
 import Footer from '../section/Footer';
 import { Montserrat } from 'next/font/google'
+import HeaderWithSheet from '@/section/HeaderWithSheet';
 const montserrat = Montserrat({
     variable: "--font-montserrat",
     weight: "variable",
@@ -15,7 +16,8 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className={`${montserrat.variable} font-sans  flex flex-col min-h-screen bg-stone-50 text-stone-950`}>
-            <Header title='Pondok pesantren villa tahfizh Himmatul quran malino'/>
+            {/* <Header title='Pondok pesantren villa tahfizh Himmatul quran malino'/> */}
+            <HeaderWithSheet title='Pondok pesantren villa tahfizh Himmatul quran malino'/>
             <main className="flex-grow">
                 {children}
             </main>
