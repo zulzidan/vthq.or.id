@@ -109,7 +109,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             </div>
           </SheetTrigger>
 
-          <SheetContent className="bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center text-transparent  justify-center gap-8 text-sm">
+          <SheetContent className="bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center text-transparent  justify-center  gap-8 text-sm">
             <SheetTrigger asChild>
               <div className="absolute top-10 right-6 md:top-10 md:right-10 text-stone-50">
                 <AiOutlineClose size={24} />
@@ -118,7 +118,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetTrigger>
               <Link
                 href="/"
-                className="hover:underline hover:text-yellow-500 transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
               >
                 Home
               </Link>
@@ -126,7 +126,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetTrigger>
               <Link
                 href="/profil"
-                className="hover:underline hover:text-yellow-500 transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
               >
                 Profil
               </Link>
@@ -134,7 +134,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetTrigger>
               <Link
                 href="/akademik"
-                className="hover:underline hover:text-yellow-500 transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Akademik
               </Link>
@@ -142,7 +142,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetTrigger>
               <Link
                 href="/program"
-                className="hover:underline hover:text-yellow-500 transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Program
               </Link>
@@ -150,7 +150,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetTrigger>
               <Link
                 href="/artikel"
-                className="hover:underline hover:text-yellow-500 transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Artikel
               </Link>
@@ -158,14 +158,14 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetTrigger>
               <Link
                 href="/kegiatan"
-                className="hover:underline hover:text-yellow-500 transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Kegiatan
               </Link>
             </SheetTrigger>
             <SheetTrigger>
               <Link href="/ppdb">
-                <Button className="bg-white hover:bg-yellow-500 text-black uppercase text-xs transition-colors duration-300 ease-in-out">
+                <Button className="bg-white hover:bg-yellow-500 text-black uppercase font-sans text-xs transition-colors duration-300 ease-in-out">
                   Pendaftaran
                 </Button>
               </Link>
