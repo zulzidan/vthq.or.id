@@ -3,17 +3,16 @@ import { Facebook, Twitter, Whatsapp, Clipboard } from "react-bootstrap-icons";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const ShareButtons: FC = () => {
-  const [showAlert, setShowAlert] = useState(false); // State untuk mengontrol alert
+  const [showAlert, setShowAlert] = useState(false);
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(currentUrl);
-    setShowAlert(true); // Tampilkan alert ketika tautan disalin
+    setShowAlert(true);
 
-    // Sembunyikan alert setelah beberapa detik (contoh: 3 detik)
     setTimeout(() => {
       setShowAlert(false);
-    }, 3000);
+    }, 2000);
   };
 
   return (
@@ -27,7 +26,6 @@ const ShareButtons: FC = () => {
         </AlertDescription>
       </Alert>
     ) : (
-      // Hanya tampilkan tombol jika showAlert adalah false
       <div className="flex space-x-4">
         <a
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
