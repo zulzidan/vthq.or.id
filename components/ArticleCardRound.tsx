@@ -11,7 +11,7 @@ interface ArticleCardRoundProps {
 const ArticleCardRound: React.FC<ArticleCardRoundProps> = ({ article, nameOfContext }) => {
   return (
     <div>
-    <Link href={`/${nameOfContext}/${article.id}`}>
+    <Link href={`/${nameOfContext}/${article.id}`} key={article.id} passHref>
     <div className="w-full rounded-md overflow-hidden flex flex-col space-y-1.5 border-1 p-6">
       <AspectRatio ratio={16 / 9}>
       <Image src={article.imageUrl} alt={article.title} fill className="rounded-lg object-cover" />
