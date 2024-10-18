@@ -4,14 +4,46 @@ import { Article as ArticleType } from "@/types/article";
 import Article from "@/section/Article";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ShareButtons from "./ShareButtons";
+import Link from "next/link";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface SingleBlogProps {
   article: ArticleType;
+  titlePage: string;
 }
-const SingleBlog: React.FC<SingleBlogProps> = ({ article }) => {
+const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
   return (
     <>
       <section className="py-6 px-6 md:px-16">
+        <div className="py-4 max-w-screen-md mx-auto">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink>
+                  <Link href={`/${titlePage}`}><p className="first-letter:uppercase">{titlePage}</p></Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{article.id}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
         <div className="py-4 max-w-screen-md mx-auto">
           <p className="font-bold text-xl md:text-2xl lg:text-3xl">
             {article.title}
@@ -24,12 +56,12 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article }) => {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <div>
-            <p className="text-gray-600">Author: {"Name or Title"}</p>
-            <p className="text-gray-600">09 Januari 2024</p>
+              <p className="text-gray-600">Author: {"Name or Title"}</p>
+              <p className="text-gray-600">09 Januari 2024</p>
             </div>
           </div>
           <div className="mt-2.5 sm:mt-0">
-          <ShareButtons/>
+            <ShareButtons />
           </div>
         </div>
         <div className="max-w-screen-md mx-auto">

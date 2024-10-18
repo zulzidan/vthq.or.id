@@ -15,7 +15,7 @@ const ContentDetail = ({ article }: ContentProps) => {
   return (
      <Layout>
       <TitleOfPage title="Artikel"/>
-         <SingleBlog article={article}/>
+         <SingleBlog article={article} titlePage={"artikel"}/>
      </Layout>
   );
 };
