@@ -15,6 +15,8 @@ interface ArticleListProps {
 }
 
 const ArticleList: React.FC<ArticleListProps> = ({ data, titleSubArticle, nameOfContext }) => {
+
+  const displayedArticle = data.slice(0, 3)
   return (
     <div className="w-full lg:max-w-2xl">
       <div className="flex space-x-5 md:space-x-10 items-center align-middle pb-4">
@@ -26,7 +28,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ data, titleSubArticle, nameOf
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        {data.map((article) => {
+        {displayedArticle.map((article) => {
           return (
             <ArticleCardFlex article={article} nameOfContext={nameOfContext} key={article.id}/>
           )
