@@ -1,9 +1,4 @@
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
+import React from "react";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 import Image from "next/image";
@@ -11,6 +6,13 @@ import Logo from "@/public/images/logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from "@/components/ui/sheet";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from "@nextui-org/react";
+
 
 interface HeaderProps {
   title: string;
@@ -21,7 +23,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
     <>
       <Navbar
         position="sticky"
-        className="z-50 bg-gradient-to-r from-green-600 flex to-green-800 border border-black py-6 md:px-4"
+        className="z-50 bg-gradient-to-r from-green-600 flex font-sans to-green-800 border border-black py-6 md:px-4"
       >
         <NavbarBrand>
           <Link href="/" className="flex gap-4 items-center">
