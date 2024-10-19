@@ -28,11 +28,11 @@ const OrganisationStructure: React.FC = () => {
           ]}
           className="w-full"
         >
-          <CarouselContent className="w-full">
+          <CarouselContent className="max-w-sm">
             {dummyImages.map((image) => {
               return (
                 <CarouselItem
-                  className="basis-1/2 md:basis-1/4 ml-4"
+                  className="relative basis-11/12 ml-4"
                   key={image.id}
                 >
                   <AspectRatio ratio={1 / 1}>
