@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { Article as ArticleType } from "@/types/article";
+import { Activity as ActivityType } from "@/types/activity";
 import Article from "@/section/Article";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ShareButtons from "./ShareButtons";
-import Link from "next/link";
 
 import {
   Breadcrumb,
@@ -16,7 +15,7 @@ import {
 } from "@/components/ui/breadcrumb";
 
 interface SingleBlogProps {
-  article: ArticleType;
+  article: ActivityType;
   titlePage: string;
 }
 const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
@@ -27,19 +26,19 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbLink>
-                  <Link href="/">Home</Link>
+                <BreadcrumbLink href="/">
+                  Home
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink>
-                  <Link href={`/${titlePage}`}><p className="first-letter:uppercase">{titlePage}</p></Link>
+                <BreadcrumbLink href={`/${titlePage}`}>
+                 <p className="first-letter:uppercase">{titlePage}</p>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>{article.id}</BreadcrumbPage>
+                <BreadcrumbPage>{article.slug}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -53,11 +52,11 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 text-sm">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>{article.author.name}</AvatarFallback>
             </Avatar>
             <div>
-              <p className="text-gray-600">Author: {"Name or Title"}</p>
-              <p className="text-gray-600">09 Januari 2024</p>
+              <p className="text-gray-600">Author: {article.author.name}</p>
+              <p className="text-gray-600">{article.date}</p>
             </div>
           </div>
           <div className="mt-2.5 sm:mt-0">
@@ -70,11 +69,12 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
             alt={article.title}
             width={2363}
             height={2363}
+            priority
             className="w-full"
           />
         </div>
         <div className="py-4 max-w-screen-md mx-auto">
-          <p className="leading-loose">{article.excerpt}</p>
+          <p className="leading-loose">{article.description}</p>
         </div>
       </section>
       <div className="px-6 md:px-14 py-6">

@@ -1,15 +1,10 @@
 import React from "react";
 import ArticleCardFlex from "./ArticleCardFlex";
+import { Activity } from "@/types/activity";
 
-interface Article {
-  id: number;
-  title: string;
-  excerpt: string;
-  imageUrl: string;
-}
 
 interface ArticleListProps {
-  data: Article[];
+  data: Activity[];
   titleSubArticle: string;
   nameOfContext: string;
 }

@@ -1,31 +1,27 @@
-import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 import Layout from "@/components/layout";
-import { dummyArticles } from "@/data/dummyArticle";
-import { Article } from "@/types/article";
+import { dummyActivity } from "@/data/dummyActivity";
+import { Activity } from "@/types/activity";
 import SingleBlog from "@/components/SingleBlog";
 import TitleOfPage from "@/components/TitleOfPage";
 
 interface ContentProps {
-     article: Article;
-   }
-   
+  article: Activity;
+}
+
 const ContentDetail = ({ article }: ContentProps) => {
-  useRouter();
   return (
-     <Layout>
-      <TitleOfPage title="Artikel"/>
-         <SingleBlog article={article} titlePage={"artikel"}/>
-     </Layout>
+    <Layout>
+      <TitleOfPage title="Kegiatan" />
+      <SingleBlog article={article} titlePage="kegiatan" />
+    </Layout>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id } = context.params as { id: string };
+  const { slug } = context.params as { slug: string };
 
-  const idNumber = Number(id)
-
-  const article = dummyArticles.find((p) => p.id === idNumber);
+  const article = dummyActivity.find((activity) => activity.slug === slug);
 
   if (!article) {
     return {
@@ -38,7 +34,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       article,
     },
   };
-
-}
+};
 
 export default ContentDetail;

@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Article } from "@/types/article";
+import { Activity } from "@/types/activity";
 
 interface ArticleCardFlexProps {
-  article: Article;
+  article: Activity;
   nameOfContext: string;
 }
 const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
@@ -13,7 +13,7 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
 }) => {
   return (
     <>
-      <Link href={`/${nameOfContext}/${article.id}`} >
+      <Link href={`/${nameOfContext}/${article.slug}`} >
         <div className="flex items-start space-x-4">
           <div className="lg:w-36 lg:h-36 h-auto w-20 flex-shrink-0">
             <Image
@@ -27,7 +27,7 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
           <div className="flex-grow">
             <h3 className="text-sm font-semibold mb-1">{article.title}</h3>
             <p className="text-xs text-gray-600 line-clamp-3 ">
-              {article.excerpt}
+              {article.description}
             </p>
             <p
               className="text-blue-500 text-xs hover:underline"

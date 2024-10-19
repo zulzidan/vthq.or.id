@@ -4,37 +4,137 @@ export const dummyActivity: Activity[] = [
   {
     id: 1,
     title: "Seminar Motivasi Islam",
-    excerpt: `Acara seminar ini bertujuan untuk memberikan motivasi dan pemahaman mendalam tentang pentingnya menguatkan iman dan motivasi diri dalam kehidupan sehari-hari. Dalam era modern yang penuh dengan tantangan, seringkali umat Muslim dihadapkan pada berbagai cobaan yang bisa menggerus keimanan dan semangat hidup. Melalui seminar ini, diharapkan peserta dapat memperoleh inspirasi serta strategi yang praktis dalam memperkuat keimanan mereka, baik di dalam kehidupan pribadi maupun sosial.
-    
-    \nSesi pertama akan dimulai dengan pembahasan mengenai pentingnya memiliki visi hidup yang jelas sebagai seorang Muslim. Para pembicara, yang terdiri dari ulama, motivator, dan tokoh masyarakat, akan berbagi pengalaman tentang bagaimana mereka menghadapi tantangan hidup dengan tetap berpegang teguh pada ajaran Islam. Sesi ini akan diakhiri dengan tanya jawab, di mana peserta dapat berdiskusi langsung dengan para pembicara mengenai permasalahan yang mereka hadapi.
-
-    \nPada sesi kedua, seminar akan berfokus pada aspek spiritualitas dalam Islam. Para peserta akan diajak untuk merenungkan kembali makna dari ibadah sehari-hari, seperti shalat, puasa, dan dzikir, serta bagaimana ibadah-ibadah ini dapat menjadi sumber kekuatan dalam menghadapi kesulitan hidup. Selain itu, akan ada workshop singkat tentang cara menjaga keseimbangan antara kehidupan duniawi dan spiritual agar tidak terjebak dalam rutinitas yang melelahkan tanpa makna.
-
-    \nSeminar ini tidak hanya berbicara tentang teori, tetapi juga dilengkapi dengan contoh-contoh nyata dari kehidupan para tokoh inspiratif yang tetap kuat menghadapi berbagai rintangan. Peserta diharapkan pulang dengan semangat baru dan strategi yang jelas untuk meningkatkan kualitas kehidupan spiritual mereka.`,
+    slug: "seminar-motivasi-islam",
+    href: "/activities/seminar-motivasi-islam",
+    description: `Acara seminar ini bertujuan untuk memberikan motivasi dan pemahaman mendalam tentang pentingnya menguatkan iman dan motivasi diri dalam kehidupan sehari-hari. Dalam era modern yang penuh dengan tantangan, seringkali umat Muslim dihadapkan pada berbagai cobaan yang bisa menggerus keimanan dan semangat hidup. Melalui seminar ini, diharapkan peserta dapat memperoleh inspirasi serta strategi yang praktis dalam memperkuat keimanan mereka.`,
+    date: "Okt 15, 2024",
+    datetime: "2024-10-15",
+    category: { title: "Seminar", href: "/categories/seminar" },
+    author: {
+      name: "Ustadz Rahmat Hidayat",
+      role: "Motivator",
+      href: "/authors/ustadz-rahmat",
+      imageUrl: "/images/ustadz-rahmat.jpg",
+    },
     imageUrl: "/images/1.jpg"
   },
   {
     id: 2,
     title: "Bakti Sosial Ramadhan",
-    excerpt: `Kegiatan bakti sosial Ramadhan ini merupakan salah satu program unggulan yang bertujuan untuk menyebarkan kebahagiaan kepada masyarakat yang kurang mampu. Setiap tahun, panitia bekerjasama dengan berbagai lembaga dan organisasi untuk menyalurkan bantuan dalam bentuk sembako, pakaian layak pakai, serta dana untuk anak yatim dan kaum dhuafa. Acara ini menjadi salah satu kegiatan yang paling dinantikan oleh banyak kalangan karena manfaatnya yang dirasakan secara langsung oleh masyarakat.
-
-    \nSelain pembagian bantuan, bakti sosial ini juga diisi dengan berbagai kegiatan edukatif dan spiritual. Salah satunya adalah ceramah agama yang memberikan pencerahan tentang pentingnya berbagi dalam Islam. Ustadz dan tokoh masyarakat akan menyampaikan pesan-pesan moral tentang bagaimana Ramadhan seharusnya menjadi momen refleksi diri serta meningkatkan kepedulian sosial. Dengan tema "Ramadhan Bulan Berkah dan Peduli Sesama", diharapkan masyarakat dapat lebih peka terhadap lingkungan sekitar dan berkontribusi dalam membantu mereka yang membutuhkan.
-
-    \nAcara ini tidak hanya berfokus pada aspek material, tetapi juga mencakup kegiatan pengembangan spiritual dan mental bagi para penerima manfaat. Misalnya, anak-anak yatim yang datang akan diajak untuk mengikuti berbagai permainan edukatif yang bertujuan untuk membangun rasa percaya diri dan kebersamaan. Selain itu, diadakan pula sesi motivasi yang dipandu oleh relawan untuk memberikan semangat kepada mereka agar tetap optimis dalam menjalani kehidupan, meski dalam keterbatasan.
-
-    \nBakti sosial Ramadhan ini juga diharapkan menjadi ajang silaturahmi bagi masyarakat. Melalui kegiatan ini, jamaah masjid dan masyarakat sekitar dapat saling bertukar cerita, pengalaman, dan tentunya mempererat persaudaraan antar umat Muslim.`,
+    slug: "bakti-sosial-ramadhan",
+    href: "/activities/bakti-sosial-ramadhan",
+    description: `Kegiatan bakti sosial Ramadhan ini merupakan salah satu program unggulan yang bertujuan untuk menyebarkan kebahagiaan kepada masyarakat yang kurang mampu. Panitia bekerjasama dengan berbagai lembaga untuk menyalurkan bantuan dalam bentuk sembako, pakaian layak pakai, serta dana untuk anak yatim.`,
+    date: "Apr 10, 2024",
+    datetime: "2024-04-10",
+    category: { title: "Bakti Sosial", href: "/categories/bakti-sosial" },
+    author: {
+      name: "Ustadz Abdullah",
+      role: "Ketua Panitia",
+      href: "/authors/ustadz-abdullah",
+      imageUrl: "/images/ustadz-abdullah.jpg",
+    },
     imageUrl: "/images/2.jpg"
   },
   {
     id: 3,
     title: "Kajian Tafsir Al-Qur'an",
-    excerpt: `Kajian rutin ini membahas tafsir Al-Qur'an secara mendalam setiap minggunya, dipimpin oleh Ustadz Ahmad Fauzi. Dalam kajian ini, para peserta akan diajak untuk menggali makna ayat-ayat Al-Qur'an, baik dari segi linguistik maupun konteks sejarahnya. Kajian ini terbuka untuk semua kalangan, dari pemula hingga mereka yang sudah mendalami tafsir Al-Qur'an. Setiap pekan, kajian akan difokuskan pada satu surah yang kemudian dikupas tuntas baik dari aspek hukum, aqidah, hingga relevansinya dengan kehidupan modern.
-
-    \nPada pertemuan pertama, Ustadz Fauzi akan memulai dengan membahas surah Al-Fatihah, yang merupakan surah pembuka dan memiliki posisi yang sangat penting dalam ibadah sehari-hari umat Muslim. Melalui kajian ini, peserta akan dibimbing untuk memahami makna setiap ayat dalam Al-Fatihah dan bagaimana ayat-ayat tersebut mengandung pesan yang sangat mendalam untuk menjalani kehidupan di dunia ini. Selain itu, Ustadz Fauzi akan menjelaskan tentang pentingnya tadabbur atau merenungi setiap ayat yang dibaca agar kita dapat lebih dekat dengan Allah.
-
-    \nKajian ini juga menyediakan ruang untuk diskusi aktif, di mana peserta dapat bertanya tentang berbagai isu keislaman terkait dengan topik yang sedang dibahas. Selain kajian tafsir, Ustadz Fauzi juga sering menyisipkan kisah-kisah inspiratif dari sejarah para sahabat dan ulama terdahulu, yang diharapkan dapat menjadi teladan bagi para peserta dalam menjalani kehidupan sehari-hari.
-
-    \nSelain itu, peserta juga akan diberikan tips praktis untuk menjaga konsistensi dalam membaca dan mempelajari Al-Qur'an di tengah kesibukan sehari-hari. Tujuan dari kajian ini adalah tidak hanya untuk menambah pengetahuan tentang tafsir Al-Qur'an, tetapi juga untuk menginspirasi peserta agar terus memperbaiki kualitas ibadah dan mendekatkan diri kepada Allah.`,
+    slug: "kajian-tafsir-al-quran",
+    href: "/activities/kajian-tafsir-al-quran",
+    description: `Kajian rutin ini membahas tafsir Al-Qur'an secara mendalam setiap minggunya, dipimpin oleh Ustadz Ahmad Fauzi. Dalam kajian ini, peserta akan menggali makna ayat-ayat Al-Qur'an dari segi linguistik dan sejarahnya.`,
+    date: "Sep 5, 2024",
+    datetime: "2024-09-05",
+    category: { title: "Kajian", href: "/categories/kajian" },
+    author: {
+      name: "Ustadz Ahmad Fauzi",
+      role: "Penceramah",
+      href: "/authors/ustadz-ahmad",
+      imageUrl: "/images/ustadz-ahmad.jpg",
+    },
     imageUrl: "/images/3.jpg"
+  },
+  {
+    id: 4,
+    title: "Pelatihan Pemuda Islam",
+    slug: "pelatihan-pemuda-islam",
+    href: "/activities/pelatihan-pemuda-islam",
+    description: `Pelatihan ini bertujuan untuk meningkatkan keterampilan dan kepemimpinan para pemuda Muslim dalam berbagai bidang, termasuk ekonomi, sosial, dan dakwah. Kegiatan ini melibatkan sejumlah tokoh muda inspiratif.`,
+    date: "Nov 25, 2024",
+    datetime: "2024-11-25",
+    category: { title: "Pelatihan", href: "/categories/pelatihan" },
+    author: {
+      name: "Aisyah Rahman",
+      role: "Penyelenggara",
+      href: "/authors/aisyah-rahman",
+      imageUrl: "/images/aisyah.jpg",
+    },
+    imageUrl: "/images/4.jpg"
+  },
+  {
+    id: 5,
+    title: "Pengajian Akbar",
+    slug: "pengajian-akbar",
+    href: "/activities/pengajian-akbar",
+    description: `Pengajian Akbar ini diadakan setiap tahun dengan menghadirkan ulama-ulama besar dari berbagai daerah. Pada tahun ini, tema yang diangkat adalah "Meneguhkan Keimanan di Era Digital".`,
+    date: "Des 12, 2024",
+    datetime: "2024-12-12",
+    category: { title: "Pengajian", href: "/categories/pengajian" },
+    author: {
+      name: "Ustadz Maulana",
+      role: "Penceramah",
+      href: "/authors/ustadz-maulana",
+      imageUrl: "/images/ustadz-maulana.jpg",
+    },
+    imageUrl: "/images/5.jpg"
+  },
+  {
+    id: 6,
+    title: "Workshop Menulis Islami",
+    slug: "workshop-menulis-islami",
+    href: "/activities/workshop-menulis-islami",
+    description: `Workshop ini bertujuan untuk melatih para penulis muda Muslim dalam menulis konten-konten Islami yang inspiratif dan informatif. Diharapkan peserta bisa menghasilkan karya yang bermanfaat bagi umat.`,
+    date: "Jan 18, 2024",
+    datetime: "2024-01-18",
+    category: { title: "Workshop", href: "/categories/workshop" },
+    author: {
+      name: "Nabila Zahra",
+      role: "Penulis",
+      href: "/authors/nabila-zahra",
+      imageUrl: "/images/nabila.jpg",
+    },
+    imageUrl: "/images/6.jpg"
+  },
+  {
+    id: 7,
+    title: "Diskusi Pemikiran Islam",
+    slug: "diskusi-pemikiran-islam",
+    href: "/activities/diskusi-pemikiran-islam",
+    description: `Diskusi ini membahas perkembangan pemikiran Islam di era modern dan tantangan-tantangan yang dihadapi. Para pakar dan akademisi Muslim akan hadir untuk berbagi wawasan.`,
+    date: "Feb 14, 2024",
+    datetime: "2024-02-14",
+    category: { title: "Diskusi", href: "/categories/diskusi" },
+    author: {
+      name: "Dr. Hafidz Ali",
+      role: "Akademisi",
+      href: "/authors/dr-hafidz",
+      imageUrl: "/images/dr-hafidz.jpg",
+    },
+    imageUrl: "/images/7.jpg"
+  },
+  {
+    id: 8,
+    title: "Kursus Bahasa Arab",
+    slug: "kursus-bahasa-arab",
+    href: "/activities/kursus-bahasa-arab",
+    description: `Kursus ini dirancang untuk membantu umat Muslim mempelajari bahasa Arab dasar hingga menengah agar dapat memahami Al-Qur'an dan hadits dengan lebih baik.`,
+    date: "Mar 2, 2024",
+    datetime: "2024-03-02",
+    category: { title: "Kursus", href: "/categories/kursus" },
+    author: {
+      name: "Siti Aisyah",
+      role: "Pengajar",
+      href: "/authors/siti-aisyah",
+      imageUrl: "/images/siti-aisyah.jpg",
+    },
+    imageUrl: "/images/8.jpg"
   }
 ];
