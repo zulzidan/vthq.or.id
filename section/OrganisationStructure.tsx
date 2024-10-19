@@ -1,6 +1,7 @@
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import { dummyImages } from "@/data/dummyImages";
 import {
   Carousel,
   CarouselContent,
@@ -8,50 +9,50 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const OrganisationStructure: React.FC = () => {
-     return (
-          <section className="bg-gray-100 px-6 md:px-14 py-6">
-     <div className="mx-auto max-w-screen-2xl">
+  return (
+    <section className="bg-gray-100 px-6 md:px-14 py-6">
+      <div className="mx-auto max-w-screen-2xl">
         <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
           <h2 className="text-base font-bold mb-4 py-1 px-6 rounded-sm">
-            Teacher Profile :
+            Struktur Organisasi:
           </h2>
         </div>
         <Carousel
-      plugins={[
-        Autoplay({
-          delay: 5000,
-        }),
-        
-      ]}
-      className="w-full"
-    >
-      <CarouselContent className="w-full min-h-[40vh] m-0">
-          {Array.from({ length: 8 }).map((_, index) => (
-        <CarouselItem className="relative w-full basis-1/2 md:basis-1/4" key={index}>
-          <Image
-            src={"https://placehold.co/1960x1080/jpg"}
-            alt={"Struktur Organisasi"}
-            fill
-            quality={100}
-            priority
-            className="object-cover brightness-50"
-          />
-          <div className="absolute z-30 inset-0 flex items-center justify-center text-center">
-          <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl">
-            {index}
-          </h1>
-        </div>
-        </CarouselItem>
-          ))}
-      </CarouselContent>
-      <CarouselPrevious className="absolute left-5 md:left-20 text-white disabled:opacity-0" />
-      <CarouselNext className="absolute right-5 md:right-20 text-white disabled:opacity-0" />
-    </Carousel>
-     </div>
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="w-full">
+            {dummyImages.map((image) => {
+              return (
+                <CarouselItem
+                  className="basis-1/2 md:basis-1/4 ml-4"
+                  key={image.id}
+                >
+                  <AspectRatio ratio={1 / 1}>
+                    <Image
+                      src={image.imageUrl}
+                      alt={image.title}
+                      fill
+                      className="h-full w-full object-cover"
+                    />
+                  </AspectRatio>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-5 md:left-20 text-white disabled:opacity-0" />
+          <CarouselNext className="absolute right-5 md:right-20 text-white disabled:opacity-0" />
+        </Carousel>
+      </div>
     </section>
-     );
-}
+  );
+};
 
-export default OrganisationStructure
+export default OrganisationStructure;
