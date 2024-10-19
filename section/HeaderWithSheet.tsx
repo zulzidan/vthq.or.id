@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Navbar,
   NavbarBrand,
@@ -11,7 +9,8 @@ import { Button } from "../components/ui/button";
 import Image from "next/image";
 import Logo from "@/public/images/logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from "@/components/ui/sheet";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 interface HeaderProps {
   title: string;
@@ -103,73 +102,76 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
 
         {/* mobile menu item  navigasion*/}
         <Sheet>
-          <SheetTrigger>
+          <SheetTrigger asChild>
             <div className="lg:hidden flex items-center text-stone-50">
               <AiOutlineMenu size={24} />
             </div>
           </SheetTrigger>
 
-          <SheetContent className="bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center text-transparent  justify-center  gap-8 text-sm">
-            <SheetTrigger asChild>
+          <SheetContent aria-describedby={undefined} className="bg-gradient-to-b from-green-500 to-green-800 z-50 font-sans flex flex-col items-center text-transparent  justify-center  gap-8 text-sm">
+          <VisuallyHidden.Root>
+            <SheetTitle></SheetTitle>
+          </VisuallyHidden.Root>
+            <SheetClose asChild>
               <div className="absolute top-10 right-6 md:top-10 md:right-10 text-stone-50">
                 <AiOutlineClose size={24} />
               </div>
-            </SheetTrigger>
-            <SheetTrigger>
+            </SheetClose>
+            <SheetClose asChild>
               <Link
                 href="/"
                 className="hover:underline hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
               >
                 Home
               </Link>
-            </SheetTrigger>
-            <SheetTrigger>
+            </SheetClose>
+            <SheetClose asChild>
               <Link
                 href="/profil"
                 className="hover:underline hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
               >
                 Profil
               </Link>
-            </SheetTrigger>
-            <SheetTrigger>
+            </SheetClose>
+            <SheetClose asChild>
               <Link
                 href="/akademik"
                 className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Akademik
               </Link>
-            </SheetTrigger>
-            <SheetTrigger>
+            </SheetClose>
+            <SheetClose asChild>
               <Link
                 href="/program"
                 className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Program
               </Link>
-            </SheetTrigger>
-            <SheetTrigger>
+            </SheetClose>
+            <SheetClose asChild>
               <Link
                 href="/artikel"
                 className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Artikel
               </Link>
-            </SheetTrigger>
-            <SheetTrigger>
+            </SheetClose>
+            <SheetClose asChild>
               <Link
                 href="/kegiatan"
                 className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Kegiatan
               </Link>
-            </SheetTrigger>
-            <SheetTrigger>
+            </SheetClose>
+            <SheetClose asChild>
               <Link href="/ppdb">
                 <Button className="bg-white hover:bg-yellow-500 text-black uppercase font-sans text-xs transition-colors duration-300 ease-in-out">
                   Pendaftaran
                 </Button>
               </Link>
-            </SheetTrigger>
+            </SheetClose>
           </SheetContent>
         </Sheet>
       </Navbar>
