@@ -12,7 +12,12 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
+import { Montserrat } from 'next/font/google'
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
 
 interface HeaderProps {
   title: string;
@@ -23,7 +28,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
     <>
       <Navbar
         position="sticky"
-        className="z-50 bg-gradient-to-r from-green-600 flex to-green-800 border border-black py-6 md:px-4"
+        className={` z-50 bg-gradient-to-r from-green-600 flex to-green-800 border border-black py-6 md:px-4`}
       >
         <NavbarBrand>
           <Link href="/" className="flex gap-4 items-center">
@@ -110,7 +115,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             </div>
           </SheetTrigger>
 
-          <SheetContent aria-describedby={undefined} className="!font-sans bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center text-transparent  justify-center  gap-8 text-sm">
+          <SheetContent className={` ${montserrat.variable} font-sans bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center text-transparent  justify-center  gap-8 text-sm`}>
           <VisuallyHidden.Root>
             <SheetTitle></SheetTitle>
           </VisuallyHidden.Root>
@@ -122,9 +127,10 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetClose asChild>
               <Link
                 href="/"
-                className="hover:underline hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline font-bold  hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
               >
                 Home
+                
               </Link>
             </SheetClose>
             <SheetClose asChild>

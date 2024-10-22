@@ -20,7 +20,7 @@ body {
   background: var(--background);
 }
 html {
-  @apply font-sans ;
+  @apply font-sans;
 }
 
 @layer utilities {
