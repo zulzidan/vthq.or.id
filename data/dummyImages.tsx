@@ -1,4 +1,8 @@
-import { Galery } from "@/types/galery";
+export type Galery = {
+     id: number 
+     title: string
+     imageUrl: string
+   }
 
 export const dummyImages: Galery[] = [
   {

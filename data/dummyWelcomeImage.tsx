@@ -1,6 +1,10 @@
-import { Galery } from "@/types/galery";
+export type WelcomeImage = {
+  id: number 
+  title: string
+  imageUrl: string
+}
 
-export const welcomeImage: Galery[] = [
+export const welcomeImage: WelcomeImage[] = [
      {
           id: 1,
           title: "background image pesantren",

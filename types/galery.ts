@@ -1,5 +1,9 @@
-export type Galery = {
-     id: number;
+export type Image = {
+     url: string;
      title: string;
-     imageUrl: string;
 }
+export type Gallery = {
+     alt: string;
+     date: string;
+     image: Image;
+};

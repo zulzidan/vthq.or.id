@@ -1,9 +1,17 @@
 import React from "react";
-import { dummyImages } from "@/data/dummyImages";
 import GaleryActivity from "@/components/GaleryActivity";
+import { GaleryActivity as GaleryActivityType} from "@/contentful/galeryActivity";
 
+interface GaleryProps {
+  galleries: GaleryActivityType[];
+}
 
-const Galery: React.FC = () => {
+const Galery: React.FC<GaleryProps> = ({ galleries }) => {
+  if (!galleries) {
+    return (
+      <p>Not Found</p>
+    )
+  }
   return (
     <section>
       <div className="w-full px-6 md:px-16 py-6">
@@ -16,11 +24,9 @@ const Galery: React.FC = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {dummyImages.map((image) => {
-            return (
-              <GaleryActivity image={image} key={image.id}/>
-            );
-          })}
+          {galleries.map((image, index) => (
+            <GaleryActivity galery={image} key={index} />
+          ))}
         </div>
       </div>
     </section>

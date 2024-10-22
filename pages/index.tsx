@@ -1,3 +1,4 @@
+import React from "react";
 import BestPrograms from "@/section/BestPrograms";
 import Galery from "@/section/Galery";
 import Layout from "@/components/layout";
@@ -9,8 +10,14 @@ import CarouselShadcn from "@/section/CarouselShadcn";
 import Article from "@/section/Article";
 import PpdbHeader from "@/section/PpdbHeader";
 import TitleOfPage from "@/components/TitleOfPage";
+import type { GetStaticProps } from "next";
+import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/contentful/galeryActivity";
 
-export default function Home() {
+interface HomeProps {
+  galleries: GaleryActivityType[];
+}
+
+const Home: React.FC<HomeProps> = ({galleries}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
@@ -18,7 +25,7 @@ export default function Home() {
       <PesantrenProfile />
       <Article/>
       <BestPrograms/>
-      <Galery/>
+      <Galery galleries={galleries}/>
       <StudentInfo/>
       <Reviews/>  
       <Video/>
@@ -26,3 +33,18 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+
+  const galleries = await fetchGaleryActivities({preview: false})
+
+  return {
+    props: {
+      galleries,
+    },
+    revalidate: 10,
+  };
+};
+
+
+export default Home;
