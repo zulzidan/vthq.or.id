@@ -136,7 +136,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetClose asChild>
               <Link
                 href="/profil"
-                className="hover:underline hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
+                className="hover:underline font-bold  hover:text-yellow-500 uppercase font-sans transition-colors duration-300 text-stone-50 ease-in-out"
               >
                 Profil
               </Link>
@@ -144,7 +144,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetClose asChild>
               <Link
                 href="/akademik"
-                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
+                className="hover:underline font-bold  hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Akademik
               </Link>
@@ -152,7 +152,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetClose asChild>
               <Link
                 href="/program"
-                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
+                className="hover:underline font-bold  hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Program
               </Link>
@@ -160,7 +160,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetClose asChild>
               <Link
                 href="/artikel"
-                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
+                className="hover:underline font-bold  hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Artikel
               </Link>
@@ -168,14 +168,14 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             <SheetClose asChild>
               <Link
                 href="/kegiatan"
-                className="hover:underline hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
+                className="hover:underline font-bold  hover:text-yellow-500 transition-colors uppercase font-sans duration-300 text-stone-50 ease-in-out"
               >
                 Kegiatan
               </Link>
             </SheetClose>
             <SheetClose asChild>
               <Link href="/ppdb">
-                <Button className="bg-white hover:bg-yellow-500 text-black uppercase font-sans text-xs transition-colors duration-300 ease-in-out">
+                <Button className="bg-white font-bold  hover:bg-yellow-500 text-black uppercase font-sans text-xs transition-colors duration-300 ease-in-out">
                   Pendaftaran
                 </Button>
               </Link>
