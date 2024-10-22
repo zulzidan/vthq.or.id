@@ -23,7 +23,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
     <>
       <Navbar
         position="sticky"
-        className="z-50 bg-gradient-to-r from-green-600 flex font-sans to-green-800 border border-black py-6 md:px-4"
+        className="z-50 bg-gradient-to-r from-green-600 flex to-green-800 border border-black py-6 md:px-4"
       >
         <NavbarBrand>
           <Link href="/" className="flex gap-4 items-center">
@@ -110,7 +110,7 @@ const HeaderWithSheet: React.FC<HeaderProps> = ({ title }) => {
             </div>
           </SheetTrigger>
 
-          <SheetContent aria-describedby={undefined} className="bg-gradient-to-b from-green-500 to-green-800 z-50 font-sans flex flex-col items-center text-transparent  justify-center  gap-8 text-sm">
+          <SheetContent aria-describedby={undefined} className="!font-sans bg-gradient-to-b from-green-500 to-green-800 z-50 flex flex-col items-center text-transparent  justify-center  gap-8 text-sm">
           <VisuallyHidden.Root>
             <SheetTitle></SheetTitle>
           </VisuallyHidden.Root>
