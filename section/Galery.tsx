@@ -1,13 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import { dummyImages } from "@/data/dummyImages";
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import GaleryActivity from "@/components/GaleryActivity";
+
 
 const Galery: React.FC = () => {
   return (
@@ -24,35 +18,7 @@ const Galery: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {dummyImages.map((image) => {
             return (
-              <>
-                <Dialog key={image.id}>
-                  <DialogTrigger>
-                    <div className="w-auto h-auto">
-                      <Image
-                        src={image.imageUrl}
-                        alt={image.title}
-                        width={2363}
-                        height={2363}
-                        className="w-auto h-auto rounded-sm shadow-lg"
-                      />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent aria-describedby={undefined} className="p-0 mx-auto max-w-sm border-none">
-                    <VisuallyHidden.Root>
-                      <DialogTitle></DialogTitle>
-                    </VisuallyHidden.Root>
-                    <div key={image.id} className="w-auto h-auto">
-                      <Image
-                        src={image.imageUrl}
-                        alt={image.title}
-                        width={2363}
-                        height={2363}
-                        className="w-auto h-auto rounded-sm shadow-lg"
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </>
+              <GaleryActivity image={image} key={image.id}/>
             );
           })}
         </div>
