@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Activity as ActivityType } from "@/types/activity";
 import Article from "@/section/Article";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ShareButtons from "./ShareButtons";
@@ -13,10 +12,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { BlogArticle } from "@/contentful/blogArticle";
+import RichText from "./RichText";
 
 interface SingleBlogProps {
-  article: ActivityType;
-  titlePage: string;
+  article: BlogArticle
+  titlePage: string
 }
 const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
   return (
@@ -52,10 +53,10 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 text-sm">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>{article.author.name}</AvatarFallback>
+              <AvatarFallback>{article.author?.name}</AvatarFallback>
             </Avatar>
             <div>
-              <p className="text-gray-600">Author: {article.author.name}</p>
+              <p className="text-gray-600">Author: {article.author?.name}</p>
               <p className="text-gray-600">{article.date}</p>
             </div>
           </div>
@@ -64,17 +65,19 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
           </div>
         </div>
         <div className="max-w-screen-md mx-auto">
-          <Image
-            src={article.imageUrl}
-            alt={article.title}
-            width={2363}
-            height={2363}
-            priority
-            className="w-full"
-          />
+          {article.image && (
+            <Image
+              src={`https:${article.image.src}`}
+              alt={article.title}
+              width={2363}
+              height={2363}
+              priority
+              className="w-full"
+            />
+          )}
         </div>
         <div className="py-4 max-w-screen-md mx-auto">
-          <p className="leading-loose">{article.description}</p>
+          <RichText document={article.body}/>
         </div>
       </section>
       <div className="px-6 md:px-14 py-6">

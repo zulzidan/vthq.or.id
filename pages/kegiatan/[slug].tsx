@@ -1,12 +1,12 @@
 import { GetServerSideProps } from "next";
 import Layout from "@/components/layout";
 import { dummyActivity } from "@/data/dummyActivity";
-import { Activity } from "@/types/activity";
 import SingleBlog from "@/components/SingleBlog";
 import TitleOfPage from "@/components/TitleOfPage";
+import { BlogArticle } from "@/contentful/blogArticle";
 
 interface ContentProps {
-  article: Activity;
+  article: BlogArticle;
 }
 
 const ContentDetail = ({ article }: ContentProps) => {
