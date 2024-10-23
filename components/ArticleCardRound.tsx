@@ -5,8 +5,8 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BlogArticle } from '@/contentful/blogArticle';
+import RichText from './RichText';
 
 
 
@@ -33,9 +33,7 @@ const ArticleCardRound: React.FC<ArticleCardRoundProps> = ({ article, nameOfCont
         <h3 className="font-bold text-xl mb-2">{article.title}</h3>
         <p className="text-gray-600 text-sm font-semibold mb-2">Ditulis oleh {article.author?.name} pada {article.date}</p>
         <div className="text-gray-700 text-sm line-clamp-3">
-          {article.body && (
-            documentToReactComponents(article.body)
-          )}
+          <RichText document={article.body}/>
         </div>
       </div>
         </CardContent>
