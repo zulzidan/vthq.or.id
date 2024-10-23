@@ -9,7 +9,9 @@ interface GaleryProps {
 const Galery: React.FC<GaleryProps> = ({ galleries }) => {
   if (!galleries) {
     return (
-      <p>Not Found</p>
+      <div className="w-full mx-auto px-6 md:px-16 py-6">
+      <p>Galery Not Found</p>
+      </div>
     )
   }
   return (

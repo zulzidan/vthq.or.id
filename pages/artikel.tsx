@@ -1,14 +1,34 @@
+import React from "react";
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
-import BlogHeader from "@/section/BlogHeader";
-import BlogLayout from "@/section/BlogLayout";
+import ArticleLayout from "@/section/ArticleLayout";
+import ArticleHeader from "@/section/ArticleHeader";
+import { GetStaticProps } from "next";
+import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 
-export default function Artikel() {
+interface ArticlesProps {
+     articles: BlogArticle[]
+}
+
+const Artikel: React.FC<ArticlesProps> = ({articles}) => {
      return(
           <Layout>
                 <TitleOfPage title="Artikel"/>
-               <BlogHeader nameOfContext="artikel"/>
-               <BlogLayout/>
+               <ArticleHeader nameOfContext="artikel"/>
+               <ArticleLayout articles={articles}/>
           </Layout>
      )
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+
+     const articles = await fetchArticlePosts({preview: false})
+     return {
+       props: {
+         articles,
+       },
+       revalidate: 10,
+     };
+   };
+
+export default Artikel

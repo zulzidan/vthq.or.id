@@ -8,11 +8,11 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-interface BlogHeaderProps {
+interface ArticleHeaderProps {
      nameOfContext: string;
 }
 
-export const BlogHeader: React.FC<BlogHeaderProps> = ({nameOfContext}) => {
+export const ArticleHeader: React.FC<ArticleHeaderProps> = ({nameOfContext}) => {
   return (
     <Carousel
       plugins={[
@@ -50,4 +50,4 @@ export const BlogHeader: React.FC<BlogHeaderProps> = ({nameOfContext}) => {
   );
 };
 
-export default BlogHeader;
+export default ArticleHeader;
