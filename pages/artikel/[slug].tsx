@@ -6,7 +6,7 @@ import { BlogArticle, fetchArticlePost, fetchArticlePosts } from "@/contentful/b
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  
+
   const articles = await fetchArticlePosts({preview: false})
 
   const paths = articles.map((article) => ({
@@ -47,6 +47,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       article,
     },
+    revalidate: 10,
   };
 };
 
