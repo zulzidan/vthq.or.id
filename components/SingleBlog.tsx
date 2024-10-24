@@ -13,7 +13,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { BlogArticle } from "@/contentful/blogArticle";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import RichText from "./RichText";
 
 interface SingleBlogProps {
   article: BlogArticle
@@ -77,9 +77,7 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
           )}
         </div>
         <div className="py-4 max-w-screen-md mx-auto">
-         {article.body && (
-          documentToReactComponents(article.body)
-         )}
+         <RichText document={article.body}/>
         </div>
       </section>
       <div className="px-6 md:px-14 py-6">
