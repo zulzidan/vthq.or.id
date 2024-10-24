@@ -1,9 +1,26 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "@/components/layout";
-import { dummyActivity } from "@/data/dummyActivity";
 import SingleBlog from "@/components/SingleBlog";
 import TitleOfPage from "@/components/TitleOfPage";
-import { BlogArticle } from "@/contentful/blogArticle";
+import { BlogArticle, fetchArticlePost, fetchArticlePosts } from "@/contentful/blogArticle";
+
+interface ContentProps {
+  article: BlogArticle;
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+
+  const articles = await fetchArticlePosts({preview: false})
+
+  const paths = articles.map((article) => ({
+    params: {slug: article.slug}
+  }))
+
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+};
 
 interface ContentProps {
   article: BlogArticle;
@@ -18,10 +35,10 @@ const ContentDetail = ({ article }: ContentProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as { slug: string };
 
-  const article = dummyActivity.find((activity) => activity.slug === slug);
+  const article = await fetchArticlePost({slug: slug, preview: false})
 
   if (!article) {
     return {
@@ -33,7 +50,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       article,
     },
+    revalidate: 10,
   };
 };
 
 export default ContentDetail;
+
