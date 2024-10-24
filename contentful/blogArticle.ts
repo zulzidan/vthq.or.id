@@ -1,6 +1,6 @@
 import { Entry } from "contentful";
 import { TypeArtikelSkeleton } from "./types";
-import { Document as RichTextDocument } from "@contentful/rich-text-types";
+import { Document } from "@contentful/rich-text-types";
 import { ContentImage, parseContentfulContentImage } from "./contentImage";
 import { ContentAuthor, ContentAuthorEntry, parseContentfulContentAuthor } from "./contentfulAuthor";
 import contentfulClient from "./contentfulClient";
@@ -10,7 +10,7 @@ type BlogArticleEntry = Entry<TypeArtikelSkeleton, undefined, string>
 export interface BlogArticle {
      title: string
      slug: string
-     body: RichTextDocument | null
+     body: Document | null
      image: ContentImage | null
      date: string
      author: ContentAuthor | null
