@@ -26,8 +26,8 @@ interface ContentProps {
 const ContentDetail = ({ article }: ContentProps) => {
   return (
     <Layout>
-      <TitleOfPage title="Kegiatan" />
-      <SingleBlog article={article} titlePage="kegiatan" />
+      <TitleOfPage title="Artikel" />
+      <SingleBlog article={article} titlePage="artikel" />
     </Layout>
   );
 };

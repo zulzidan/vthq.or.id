@@ -52,7 +52,7 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
         <div className="max-w-screen-md flex justify-between sm:items-center mx-auto py-8">
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 text-sm">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarImage src={"/icon.png"} />
               <AvatarFallback>{article.author?.name}</AvatarFallback>
             </Avatar>
             <div>
