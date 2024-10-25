@@ -2,15 +2,15 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "@/components/layout";
 import SingleBlog from "@/components/SingleBlog";
 import TitleOfPage from "@/components/TitleOfPage";
-import { BlogArticle, fetchArticlePost, fetchArticlePosts } from "@/contentful/blogArticle";
+import { BlogActivity, fetchActivityPost, fetchActivityPosts } from "@/contentful/blogActivity";
 
 interface ContentProps {
-  article: BlogArticle;
+  article: BlogActivity;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
 
-  const articles = await fetchArticlePosts({preview: false})
+  const articles = await fetchActivityPosts({preview: false})
 
   const paths = articles.map((article) => ({
     params: {slug: article.slug}
@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 interface ContentProps {
-  article: BlogArticle;
+  article: BlogActivity;
 }
 
 const ContentDetail = ({ article }: ContentProps) => {
@@ -38,7 +38,7 @@ const ContentDetail = ({ article }: ContentProps) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as { slug: string };
 
-  const article = await fetchArticlePost({slug: slug, preview: false})
+  const article = await fetchActivityPost({slug: slug, preview: false})
 
   if (!article) {
     return {

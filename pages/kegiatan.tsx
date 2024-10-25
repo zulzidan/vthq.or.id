@@ -3,10 +3,10 @@ import BlogHeader from "@/section/ArticleHeader";
 import ActivityLayout from "@/section/ActivityLayout";
 import TitleOfPage from "@/components/TitleOfPage";
 import { GetStaticProps } from "next";
-import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
+import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 
 interface ArticlesProps {
-     articles: BlogArticle[]
+     articles: BlogActivity[]
 }
 
 const Kegiatan:React.FC<ArticlesProps> = ({articles}) => {
@@ -21,7 +21,7 @@ const Kegiatan:React.FC<ArticlesProps> = ({articles}) => {
 
 export const getStaticProps: GetStaticProps = async () => {
 
-     const articles = await fetchArticlePosts({preview: false})
+     const articles = await fetchActivityPosts({preview: false})
      return {
        props: {
          articles,
