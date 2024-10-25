@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Activity } from "@/types/activity";
+import { BlogActivity } from "@/contentful/blogActivity";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 interface ArticleCardFlexProps {
-  article: Activity;
+  article: BlogActivity;
   nameOfContext: string;
 }
 const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
@@ -16,18 +17,24 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
       <Link href={`/${nameOfContext}/${article.slug}`} >
         <div className="flex items-start space-x-4">
           <div className="lg:w-36 lg:h-36 h-auto w-20 flex-shrink-0">
-            <Image
-              src={article.imageUrl}
-              alt={article.title}
-              width={2363}
-              height={2363}
-              className="object-cover w-full h-full"
-            />
+            {
+              article.image && (
+                <Image
+                  src={`https:${article.image.src}`}
+                  alt={article.title}
+                  width={2363}
+                  height={2363}
+                  className="object-cover w-full h-full"
+                />
+              )
+            }
           </div>
           <div className="flex-grow">
             <h3 className="text-sm font-semibold mb-1">{article.title}</h3>
             <p className="text-xs text-gray-600 line-clamp-3 ">
-              {article.description}
+              {article.body && (
+                documentToReactComponents(article.body)
+              )}
             </p>
             <p
               className="text-blue-500 text-xs hover:underline"

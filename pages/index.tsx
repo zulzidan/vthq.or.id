@@ -12,18 +12,22 @@ import PpdbHeader from "@/section/PpdbHeader";
 import TitleOfPage from "@/components/TitleOfPage";
 import type { GetStaticProps } from "next";
 import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/contentful/galeryActivity";
+import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
+import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 
 interface HomeProps {
-  galleries: GaleryActivityType[];
+  galleries: GaleryActivityType[]
+  article: BlogArticle[]
+  activity: BlogActivity[]
 }
 
-const Home: React.FC<HomeProps> = ({galleries}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
       <CarouselShadcn/>
       <PesantrenProfile />
-      <Article/>
+      <Article activity={activity} article={article}/>
       <BestPrograms/>
       <Galery galleries={galleries}/>
       <StudentInfo/>
@@ -37,10 +41,14 @@ const Home: React.FC<HomeProps> = ({galleries}) => {
 export const getStaticProps: GetStaticProps = async () => {
 
   const galleries = await fetchGaleryActivities({preview: false})
+  const article = await fetchArticlePosts({preview: false})
+  const activity = await fetchActivityPosts({preview: false})
 
   return {
     props: {
       galleries,
+      article,
+      activity,
     },
     revalidate: 10,
   };

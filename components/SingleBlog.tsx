@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Article from "@/section/Article";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ShareButtons from "./ShareButtons";
 
@@ -85,7 +84,6 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
           <h2 className="text-base font-bold mb-4 py-1 px-6 ">Rekomendasi :</h2>
         </div>
       </div>
-      <Article />
     </>
   );
 };

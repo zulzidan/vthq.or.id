@@ -43,7 +43,7 @@ export async function fetchArticlePosts({preview}: FetchArticlePostsOptions): Pr
      const articlePostResults = await contentful.getEntries<TypeArtikelSkeleton>({
           content_type: 'artikel',
           include: 1,
-          order: ['-fields.date'],
+          order: ['fields.date'],
      })
 
      return articlePostResults.items.map((articleEntry) => parseContentfulBlogArtikel(articleEntry) as BlogArticle)

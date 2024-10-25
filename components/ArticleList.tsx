@@ -1,10 +1,10 @@
 import React from "react";
 import ArticleCardFlex from "./ArticleCardFlex";
-import { Activity } from "@/types/activity";
+import { BlogActivity } from "@/contentful/blogActivity";
 
 
 interface ArticleListProps {
-  data: Activity[];
+  data: BlogActivity[];
   titleSubArticle: string;
   nameOfContext: string;
 }
@@ -23,9 +23,9 @@ const ArticleList: React.FC<ArticleListProps> = ({ data, titleSubArticle, nameOf
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        {displayedArticle.map((article) => {
+        {displayedArticle.map((article, index) => {
           return (
-            <ArticleCardFlex article={article} nameOfContext={nameOfContext} key={article.id}/>
+            <ArticleCardFlex article={article} nameOfContext={nameOfContext} key={index}/>
           )
         })}
       </div>
