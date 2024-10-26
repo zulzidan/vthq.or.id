@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BlogActivity } from "@/contentful/blogActivity";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES, Node, Text } from '@contentful/rich-text-types';
 
 interface ArticleCardFlexProps {
   article: BlogActivity;
@@ -12,6 +13,56 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
   article,
   nameOfContext,
 }) => {
+  const CustomComponent = ({ title, description }: { title: string; description: string }) => (
+    <div>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </div>
+  );
+
+  const isTextNode = (node: Node): node is Text => {
+    return (node as Text).value !== undefined;
+  };
+
+  const options: Options = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        const { title, description } = node.data.target.fields;
+        return <CustomComponent title={title} description={description} />;
+      },
+      [INLINES.HYPERLINK]: (node) => {
+        if (isTextNode(node.content[0])) {
+          return <span>{node.content[0].value}</span>;
+        }
+        return null;
+      },
+      [INLINES.ENTRY_HYPERLINK]: (node) => {
+        if (isTextNode(node.content[0])) {
+          return <span>{node.content[0].value}</span>;
+        }
+        return null;
+      },
+      [INLINES.ASSET_HYPERLINK]: (node) => {
+        if (isTextNode(node.content[0])) {
+          return <span>{node.content[0].value}</span>;
+        }
+        return null;
+      },
+      [INLINES.EMBEDDED_ENTRY]: (node) => {
+        if (isTextNode(node.content[0])) {
+          return <span>{node.content[0].value}</span>;
+        }
+        return null;
+      },
+      [INLINES.EMBEDDED_RESOURCE]: (node) => {
+        if (isTextNode(node.content[0])) {
+          return <span>{node.content[0].value}</span>;
+        }
+        return null;
+      }
+    }
+  };
+
   return (
     <>
       <Link href={`/${nameOfContext}/${article.slug}`} >
@@ -31,11 +82,9 @@ const ArticleCardFlex: React.FC<ArticleCardFlexProps> = ({
           </div>
           <div className="flex-grow">
             <h3 className="text-sm font-semibold mb-1">{article.title}</h3>
-            <p className="text-xs text-gray-600 line-clamp-3 ">
-              {article.body && (
-                documentToReactComponents(article.body)
-              )}
-            </p>
+            <div className="text-xs text-gray-600 line-clamp-3">
+              {article.body && documentToReactComponents(article.body, options)}
+            </div>
             <p
               className="text-blue-500 text-xs hover:underline"
             >
