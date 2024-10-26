@@ -38,28 +38,28 @@ const Footer: React.FC = () => {
           <div className="text-start">
             <h3 className="text-base lg:text-xl font-bold mb-4">ABOUT US:</h3>
             <ul className="space-y-2">
-              <a href="#" className="hover:underline text-xs flex md:text-base space-x-2 md:space-x-4">
+              <Link href="/profil" className="hover:underline text-xs flex md:text-base space-x-2 md:space-x-4">
                 <JournalText className="w-4 h-4"/>
                 <li>Visi dan Misi</li>
-              </a>
-              <a href="#" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
+              </Link>
+              <Link href="#" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
                 <Heart className="w-4 h-4"/>
                 <li>Layanan Keummatan</li>
-              </a>
-              <a href="#" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
+              </Link>
+              <Link href="/ppdb/#kontak" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
                 <Briefcase className="w-4 h-4"/>
                 <li>Job Vacancy</li>
-              </a>
-              <a href="#" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
+              </Link>
+              <Link href="/donasi" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
                 <CashStack className="w-4 h-4"/>
                 <li>Informasi Donasi</li>
-              </a>
+              </Link>
             </ul>
           </div>
           <div className="text-start">
             <h3 className="text-base lg:text-xl font-bold mb-4">CONTACT US:</h3>
             <ul className="space-y-2">
-            <a href="himmatulquranmalino@gmail.com" target="_blank" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
+            <a href="mailto:himmatulquranmalino@gmail.com" target="_blank" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
               <Envelope className="w-4 h-4"/>
               <li>himmtatulquranmalino@gmail.com</li>
             </a>

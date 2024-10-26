@@ -3,7 +3,7 @@ import { TelephoneFill } from "react-bootstrap-icons";
 
 const RegistrationInfo: React.FC = () => {
   return (
-     <section className="lg:max-w-screen-lg md:max-w-screen-md max-w-screen-sm mx-auto py-6 px-6 md:px-16 mb-4">
+     <section id="kontak" className="lg:max-w-screen-lg md:max-w-screen-md max-w-screen-sm mx-auto py-6 px-6 md:px-16 mb-4">
      <div className="text-center">
        <div className="text-center mx-auto mb-6">
         <h2 className="text-lg md:text-2xl text-center font-bold">INFORMASI PENDAFTARAN</h2>
