@@ -29,6 +29,6 @@ export const dummyProfiles: Profile[] = [
     name: "Prof. Dato' Arif Perkasa Dr. Mohd Asri bin Zainul Abidin",
     description:
       "Villa tahfizh Himmatul Qur'an Malino merupakan pondok tahfizh yang sangat indah dan sejuk serta mempunyai manhaj yang baik, bahkan orang Malaysia pun saya sarankan untuk bisa menempuh pendidikan di tempat ini.",
-    who: "Bupati Maros - Orang tua santri VTHQ",
+    who: "Mufti Perlish - Malaysia",
   },
 ];
