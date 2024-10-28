@@ -1,27 +1,27 @@
 export type DonationImage = {
-     typeBank: string
+     title: string
      imageUrl: string
+     typeBank: string
+     nameOfAccount: string
      alt: string
      accountNumber: string
 }
 
 export const dummyDonationImage: DonationImage[] = [
      {
-          typeBank: "BRI",
-          accountNumber: "123456789",
-          alt:"BRI Bank Account",
-          imageUrl: "https://placehold.co/2363x2363/jpg"
+          title: "Donasi Pembangunan Masjid",
+          accountNumber: "(451) 7270720198",
+          typeBank: "BSI",
+          nameOfAccount: "a.n. Masjid Ilman Nafian",
+          alt:"Donasi Pembangunan Masjid",
+          imageUrl: "/images/DONASI PEMBANGUNAN MASJID (NEW).jpg"
      },
      {
-          typeBank: "SYARIAH",
-          accountNumber: "123456789",
-          alt:"SYARIAH Bank Account",
-          imageUrl: "https://placehold.co/2363x2363/jpg"
-     },
-     {
-          typeBank: "BCA",
-          accountNumber: "123456789",
-          alt:"BCA Bank Account",
-          imageUrl: "https://placehold.co/2363x2363/jpg"
+          title: "Donasi Buka Puasa",
+          accountNumber: "(451) 7181230902",
+          typeBank: "BSI",
+          nameOfAccount: "a.n. IFHTOR YYS VTHQ",
+          alt:"Donasi Buka Puasa",
+          imageUrl: "/images/donasi buka puasa.jpg"
      },
 ]

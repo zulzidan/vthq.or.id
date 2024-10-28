@@ -8,6 +8,7 @@ import {
   DialogTrigger,
   DialogTitle,
   DialogHeader,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -55,10 +56,16 @@ const DonationImageCard: React.FC<DonationImageCardProps> = ({
         </div>
       </DialogTrigger>
       <DialogContent
-        className={`${montserrat.variable} bg-gradient-to-tr from-green-500 to-green-800 mx-auto max-w-sm md:max-w-xl border-none`}
+        className={`${montserrat.variable} bg-gradient-to-tr from-green-500 to-green-800 mx-auto max-w-sm md:max-w-2xl border-none`}
       >
         <DialogHeader className="font-bold font-sans">
-          <DialogTitle>{donationInfo.typeBank}</DialogTitle>
+          <DialogTitle className="uppercase">{donationInfo.title}</DialogTitle>
+          <DialogDescription>
+            <div className="text-black font-semibold">
+              <p>{donationInfo.typeBank}</p>
+              <p>{donationInfo.nameOfAccount}</p>
+            </div>
+          </DialogDescription>
         </DialogHeader>
         <div className="flex items-center space-x-2">
           <div className="grid flex-1 gap-2">
@@ -73,7 +80,7 @@ const DonationImageCard: React.FC<DonationImageCardProps> = ({
           </div>
           <Button type="submit" size="sm" className="px-3" onClick={handleCopy}>
             <span className="sr-only">Copy</span>
-            {copied ? "Copied!" : <CopyIcon className="h-4 w-4" />}
+            {copied ? "Tersalin!" : <CopyIcon className="h-4 w-4" />}
           </Button>
         </div>
         <div className="w-auto h-auto">
