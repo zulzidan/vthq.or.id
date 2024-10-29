@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
             </a>
             <a href="https://wa.me/+6281244679866" target="_blank" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
             <TelephoneFill className="w-4 h-4"/>
-              <li>+82812-4467-9866</li>
+              <li>+62812-4467-9866</li>
             </a>
             </ul>
           </div>
