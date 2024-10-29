@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
           <div className="text-start">
             <h3 className="text-base lg:text-xl font-bold mb-4">CONTACT US:</h3>
             <ul className="space-y-2">
-            <a href="mailto:himmatulquranmalino@gmail.com" target="_blank" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
+            <a href="mailto:himmaulquranmalino@gmail.com" target="_blank" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
               <Envelope className="w-4 h-4"/>
               <li>himmtatulquranmalino@gmail.com</li>
             </a>
