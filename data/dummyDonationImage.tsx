@@ -10,7 +10,7 @@ export type DonationImage = {
 export const dummyDonationImage: DonationImage[] = [
      {
           title: "Donasi Pembangunan Masjid",
-          accountNumber: "(451) 7270720198",
+          accountNumber: "7270720198",
           typeBank: "BSI",
           nameOfAccount: "a.n. Masjid Ilman Nafian",
           alt:"Donasi Pembangunan Masjid",
@@ -18,7 +18,7 @@ export const dummyDonationImage: DonationImage[] = [
      },
      {
           title: "Donasi Buka Puasa",
-          accountNumber: "(451) 7181230902",
+          accountNumber: "7181230902",
           typeBank: "BSI",
           nameOfAccount: "a.n. IFHTOR YYS VTHQ",
           alt:"Donasi Buka Puasa",
