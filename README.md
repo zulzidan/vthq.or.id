@@ -1,3 +1,1 @@
 # Himmatulquran.or.id
-
-sd
