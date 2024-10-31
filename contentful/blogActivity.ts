@@ -43,7 +43,7 @@ export async function fetchActivityPosts({preview}: FetchActivityPostsOptions): 
      const activityPostResults = await contentful.getEntries<TypeKegiatanSkeleton>({
           content_type: 'kegiatan',
           include: 1,
-          order: ['fields.date'],
+          order: ['-fields.date'],
      })
 
      return activityPostResults.items.map((activityEntry) => parseContentfulBlogActivity(activityEntry) as BlogActivity)
