@@ -3,6 +3,7 @@ import TitleOfPage from "@/components/TitleOfPage";
 import BlogHeader from "@/section/BlogHeader";
 import Curiculum from "@/section/Curiculum";
 import Programs from "@/section/Programs";
+import TittleAndButtonLink from "@/section/TittleAndButtonLink";
 
 export default function Ppdb() {
   return (
@@ -11,6 +12,7 @@ export default function Ppdb() {
        <BlogHeader nameOfContext="AKADEMIK"/>
        <Curiculum/>
        <Programs/>
+       <TittleAndButtonLink/>
     </Layout>
   );
 }
