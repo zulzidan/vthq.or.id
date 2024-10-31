@@ -2,3 +2,4 @@ export type { TypeArtikel, TypeArtikelFields, TypeArtikelSkeleton } from "./Type
 export type { TypeAuthor, TypeAuthorFields, TypeAuthorSkeleton } from "./TypeAuthor";
 export type { TypeGaleryKegiatan, TypeGaleryKegiatanFields, TypeGaleryKegiatanSkeleton } from "./TypeGaleryKegiatan";
 export type { TypeKegiatan, TypeKegiatanFields, TypeKegiatanSkeleton } from "./TypeKegiatan";
+export type { TypeWelcomeImageSliders, TypeWelcomeImageSlidersFields, TypeWelcomeImageSlidersSkeleton } from "./TypeWelcomeImageSliders";
