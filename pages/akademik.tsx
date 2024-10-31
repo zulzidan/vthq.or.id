@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
 import BlogHeader from "@/section/BlogHeader";
+import Curiculum from "@/section/Curiculum";
 import Programs from "@/section/Programs";
 
 export default function Ppdb() {
@@ -8,6 +9,7 @@ export default function Ppdb() {
     <Layout>
        <TitleOfPage title="Akademik"/>
        <BlogHeader nameOfContext="AKADEMIK"/>
+       <Curiculum/>
        <Programs/>
     </Layout>
   );
