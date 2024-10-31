@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-import BlogHeader from "@/section/ArticleHeader";
+import BlogHeader from "@/section/BlogHeader";
 import ActivityLayout from "@/section/ActivityLayout";
 import TitleOfPage from "@/components/TitleOfPage";
 import { GetStaticProps } from "next";

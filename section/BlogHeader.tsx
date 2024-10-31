@@ -12,7 +12,7 @@ interface ArticleHeaderProps {
      nameOfContext: string;
 }
 
-export const ArticleHeader: React.FC<ArticleHeaderProps> = ({nameOfContext}) => {
+export const BlogHeader: React.FC<ArticleHeaderProps> = ({nameOfContext}) => {
   return (
     <Carousel
       plugins={[
@@ -23,7 +23,7 @@ export const ArticleHeader: React.FC<ArticleHeaderProps> = ({nameOfContext}) => 
       ]}
       className="w-full"
     >
-      <CarouselContent className="w-full min-h-[40vh] m-0">
+      <CarouselContent className="w-full min-h-[28vh] m-0">
           {welcomeImage.map((welcome) => {
                return (
         <CarouselItem className="relative w-full" key={welcome.id}>
@@ -50,4 +50,4 @@ export const ArticleHeader: React.FC<ArticleHeaderProps> = ({nameOfContext}) => 
   );
 };
 
-export default ArticleHeader;
+export default BlogHeader;
