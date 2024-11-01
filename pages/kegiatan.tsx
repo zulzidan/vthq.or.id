@@ -4,16 +4,18 @@ import ActivityLayout from "@/section/ActivityLayout";
 import TitleOfPage from "@/components/TitleOfPage";
 import { GetStaticProps } from "next";
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
+import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
 
 interface ArticlesProps {
      articles: BlogActivity[]
+     welcomeImages: WelcomeImageSliders[]
 }
 
-const Kegiatan:React.FC<ArticlesProps> = ({articles}) => {
+const Kegiatan:React.FC<ArticlesProps> = ({articles, welcomeImages}) => {
      return(
           <Layout>
                 <TitleOfPage title="Kegiatan"/>
-               <BlogHeader nameOfContext="kegiatan"/>
+               <BlogHeader nameOfContext="kegiatan" welcomeImages={welcomeImages}/>
                <ActivityLayout articles={articles}/>
           </Layout>
      )
@@ -22,9 +24,12 @@ const Kegiatan:React.FC<ArticlesProps> = ({articles}) => {
 export const getStaticProps: GetStaticProps = async () => {
 
      const articles = await fetchActivityPosts({preview: false})
+     const welcomeImages = await fetchWelcomeImageSliders({preview: false})
+
      return {
        props: {
          articles,
+         welcomeImages,
        },
        revalidate: 10,
      };
