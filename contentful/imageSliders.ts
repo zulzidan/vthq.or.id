@@ -23,7 +23,7 @@ interface FetchWelcomeImageSlider {
      preview: boolean
 }
 
-export async function FetchWelcomeImageSliders({preview}: FetchWelcomeImageSlider): Promise<WelcomeImageSliders[]> {
+export async function fetchWelcomeImageSliders({preview}: FetchWelcomeImageSlider): Promise<WelcomeImageSliders[]> {
      const contentful = contentfulClient({preview})
 
      const welcomeImageSliders = await contentful.getEntries<TypeWelcomeImageSlidersSkeleton>({

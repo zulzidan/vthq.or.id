@@ -1,7 +1,6 @@
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import { welcomeImage } from "@/data/dummyWelcomeImage";
 import {
   Carousel,
   CarouselContent,
@@ -9,8 +8,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { WelcomeImageSliders } from "@/contentful/imageSliders";
 
-export const CarouselShadcn: React.FC = () => {
+interface CarouselShadcnProps {
+  welcomeImages: WelcomeImageSliders[]
+}
+
+export const CarouselShadcn: React.FC<CarouselShadcnProps> = ({welcomeImages}) => {
   return (
     <Carousel
       plugins={[
@@ -22,17 +26,19 @@ export const CarouselShadcn: React.FC = () => {
       className="w-full"
     >
       <CarouselContent className="w-full min-h-[40vh] m-0">
-          {welcomeImage.map((welcome) => {
+          {welcomeImages.map((welcome, index) => {
                return (
-        <CarouselItem className="relative w-full" key={welcome.id}>
+        <CarouselItem className="relative w-full" key={index}>
+          {welcome.image && (
           <Image
-            src={welcome.imageUrl}
-            alt={welcome.title}
+            src={`https:${welcome.image.src}`}
+            alt={welcome.image.alt}
             fill
             quality={100}
             priority
             className="object-cover object-right brightness-50"
           />
+          )}
           <div className="absolute z-30 inset-0 flex items-center justify-center text-center">
           <h1 className="text-white font-bold text-sm md:text-2xl lg:text-2xl">
             SELAMAT DATANG DI <br />

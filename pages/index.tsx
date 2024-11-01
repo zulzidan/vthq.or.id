@@ -14,18 +14,20 @@ import type { GetStaticProps } from "next";
 import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/contentful/galeryActivity";
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
+import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
 
 interface HomeProps {
   galleries: GaleryActivityType[]
   article: BlogArticle[]
   activity: BlogActivity[]
+  welcomeImages: WelcomeImageSliders[]
 }
 
-const Home: React.FC<HomeProps> = ({galleries, article, activity}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
-      <CarouselShadcn/>
+      <CarouselShadcn welcomeImages={welcomeImages}/>
       <PesantrenProfile />
       <Article activity={activity} article={article}/>
       <BestPrograms/>
@@ -43,12 +45,14 @@ export const getStaticProps: GetStaticProps = async () => {
   const galleries = await fetchGaleryActivities({preview: false})
   const article = await fetchArticlePosts({preview: false})
   const activity = await fetchActivityPosts({preview: false})
+  const welcomeImages = await fetchWelcomeImageSliders({preview: false})
 
   return {
     props: {
       galleries,
       article,
       activity,
+      welcomeImages
     },
     revalidate: 10,
   };
