@@ -1,6 +1,8 @@
 import React from "react";
 
 const Timeline: React.FC = () => {
+
+  const timeline = 
   return (
      <section className="lg:max-w-screen-lg md:max-w-screen-md max-w-screen-sm mx-auto py-6 px-6 md:px-16">
       <ul className="space-y-2">

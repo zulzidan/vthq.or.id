@@ -15,8 +15,8 @@ interface PpdbProps {
 const Ppdb: React.FC<PpdbProps> = ({welcomeImages}) => {
   return (
     <Layout>
-       <TitleOfPage title="Akademik"/>
-       <BlogHeader nameOfContext="AKADEMIK" welcomeImages={welcomeImages}/>
+       <TitleOfPage title="Program"/>
+       <BlogHeader nameOfContext="PROGRAM" welcomeImages={welcomeImages}/>
        <Curiculum/>
        <Programs/>
        <TittleAndButtonLink/>
