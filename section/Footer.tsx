@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                 <JournalText className="w-4 h-4"/>
                 <li>Visi dan Misi</li>
               </Link>
-              <Link href="#" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
+              <Link href="/ppdb/#kontak" className="hover:underline text-xs md:text-base flex space-x-2 md:space-x-4">
                 <Heart className="w-4 h-4"/>
                 <li>Layanan Keummatan</li>
               </Link>
