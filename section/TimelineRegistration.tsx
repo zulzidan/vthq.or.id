@@ -1,7 +1,11 @@
 import React from "react";
-import Timeline from "../components/Timeline";
+import Timeline, { TimeLineFields } from "../components/Timeline";
 
-const TimelineRegistration: React.FC = () => {
+interface TimelinRegistrationProps {
+  timelineFields: TimeLineFields
+}
+
+const TimelineRegistration: React.FC<TimelinRegistrationProps> = ({timelineFields}) => {
   return (
     <section className="bg-gradient-to-tr from-green-500 to-green-800 text-white py-16">
       <div className="text-center mx-auto mb-12">
@@ -12,7 +16,7 @@ const TimelineRegistration: React.FC = () => {
           </div>
         </div>
       </div>
-      <Timeline/>
+      <Timeline timelineFields={timelineFields}/>
     </section>
   );
 };
