@@ -1,2 +1,1 @@
 # Himmatulquran.or.id
-r
