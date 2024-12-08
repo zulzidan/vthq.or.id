@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { 
       timelineFields
   },
+  revalidate: 10,
 };
 };
 export default Ppdb;
