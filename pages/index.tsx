@@ -15,7 +15,7 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getPesantrenProfileContent } from "@/contentful/allFetch";
+import { getPesantrenImageGallery, getPesantrenProfileContent } from "@/contentful/allFetch";
 
 interface HomeProps {
   galleries: GaleryActivityType[]
@@ -24,14 +24,16 @@ interface HomeProps {
   welcomeImages: WelcomeImageSliders[]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pesantrenProfile: any
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  pesantrenImageProfile: any
 }
 
-const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
       <CarouselShadcn welcomeImages={welcomeImages}/>
-      <PesantrenProfile pesantrenProfile={pesantrenProfile}/>
+      <PesantrenProfile pesantrenProfile={pesantrenProfile} pesantrenImageProfile={pesantrenImageProfile}/>
       <Article activity={activity} article={article}/>
       <BestPrograms/>
       <Galery galleries={galleries}/>
@@ -50,6 +52,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const activity = await fetchActivityPosts({preview: false})
   const welcomeImages = await fetchWelcomeImageSliders({preview: false})
   const pesantrenProfile = await getPesantrenProfileContent()
+  const pesantrenImageProfile = await getPesantrenImageGallery()
 
   return {
     props: {
@@ -58,6 +61,7 @@ export const getStaticProps: GetStaticProps = async () => {
       activity,
       welcomeImages,
       pesantrenProfile,
+      pesantrenImageProfile
     },
     revalidate: 10,
   };
