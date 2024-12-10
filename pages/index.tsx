@@ -15,20 +15,23 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
+import { getPesantrenProfileContent } from "@/contentful/allFetch";
 
 interface HomeProps {
   galleries: GaleryActivityType[]
   article: BlogArticle[]
   activity: BlogActivity[]
   welcomeImages: WelcomeImageSliders[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  pesantrenProfile: any
 }
 
-const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
       <CarouselShadcn welcomeImages={welcomeImages}/>
-      <PesantrenProfile />
+      <PesantrenProfile pesantrenProfile={pesantrenProfile}/>
       <Article activity={activity} article={article}/>
       <BestPrograms/>
       <Galery galleries={galleries}/>
@@ -46,13 +49,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const article = await fetchArticlePosts({preview: false})
   const activity = await fetchActivityPosts({preview: false})
   const welcomeImages = await fetchWelcomeImageSliders({preview: false})
+  const pesantrenProfile = await getPesantrenProfileContent()
 
   return {
     props: {
       galleries,
       article,
       activity,
-      welcomeImages
+      welcomeImages,
+      pesantrenProfile,
     },
     revalidate: 10,
   };
