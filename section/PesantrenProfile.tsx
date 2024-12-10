@@ -39,12 +39,12 @@ const PesantrenProfile: React.FC<PesantrenProfileProps> = ({
      
         {pesantrenImageProfile.map(
            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (item: { sys: { id: any; }; fields: { image: { fields: { file: { url: any; }; title: string; }; }; file: { details: { image: { width: number; height: number; }; }; }; }; }) => {
+          (item: { sys: { id: any; }; fields: { image: { fields: { file: { url: any; details: { image: { width: number; height: number; }; }; }; title: string; }; }; }; }) => {
           const { id } = item.sys;
           const imageUrl = item.fields.image.fields.file.url;
           const altText = item.fields.image.fields.title || "Pesantren Image";
-          const width = item.fields.file?.details.image?.width || 1000;
-          const height = item.fields.file?.details.image?.height || 1000;
+          const width = item.fields.image.fields.file.details.image.width || 1000;
+          const height = item.fields.image.fields.file.details.image.height || 1000;
           return (
             <Image
               key={id}

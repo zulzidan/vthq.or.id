@@ -15,7 +15,7 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getInformasiPesertaDidik, getPesantrenImageGallery, getPesantrenProfileContent } from "@/contentful/allFetch";
+import { getApaKataMereka, getInformasiPesertaDidik, getPesantrenImageGallery, getPesantrenProfileContent } from "@/contentful/allFetch";
 
 interface HomeProps {
   galleries: GaleryActivityType[]
@@ -28,9 +28,11 @@ interface HomeProps {
   pesantrenImageProfile: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   informasiPesertaDidik: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  apaKataMereka: any
 }
 
-const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik, apaKataMereka}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
@@ -40,7 +42,7 @@ const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages,
       <BestPrograms/>
       <Galery galleries={galleries}/>
       <StudentInfo informasiPesertaDidik={informasiPesertaDidik}/>
-      <Reviews/>  
+      <Reviews apaKataMereka={apaKataMereka}/>
       <Video/>
       <PpdbHeader/>
     </Layout>
@@ -56,6 +58,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const pesantrenProfile = await getPesantrenProfileContent()
   const pesantrenImageProfile = await getPesantrenImageGallery()
   const informasiPesertaDidik = await getInformasiPesertaDidik()
+  const apaKataMereka = await getApaKataMereka()
 
   return {
     props: {
@@ -65,7 +68,8 @@ export const getStaticProps: GetStaticProps = async () => {
       welcomeImages,
       pesantrenProfile,
       pesantrenImageProfile,
-      informasiPesertaDidik
+      informasiPesertaDidik,
+      apaKataMereka
     },
     revalidate: 10,
   };

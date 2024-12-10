@@ -9,17 +9,19 @@ interface ProfileProps {
      name: string;
      who: string;
      description: string;
+     height: number;
+     width: number;
 }
 
-const Profile: React.FC<ProfileProps> = ({imageAlt, imageUrl, description, name, who, title}) => {
+const Profile: React.FC<ProfileProps> = ({imageAlt, imageUrl, description, name, who, title, height, width}) => {
   return (
     <div className="flex flex-col md:justify-evenly md:flex-row bg-gray-50">
       <div className="mb-4 md:mb-0">
         <Image
-          src={imageUrl}
+          src={`https:${imageUrl}`}
           alt={imageAlt}
-          width={113}
-          height={111}
+          width={width}
+          height={height}
         />
       </div>
       <div className="md:w-3/4 md:px-6">
