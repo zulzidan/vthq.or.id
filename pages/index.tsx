@@ -15,7 +15,7 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getPesantrenImageGallery, getPesantrenProfileContent } from "@/contentful/allFetch";
+import { getInformasiPesertaDidik, getPesantrenImageGallery, getPesantrenProfileContent } from "@/contentful/allFetch";
 
 interface HomeProps {
   galleries: GaleryActivityType[]
@@ -26,9 +26,11 @@ interface HomeProps {
   pesantrenProfile: any
    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pesantrenImageProfile: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  informasiPesertaDidik: any
 }
 
-const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
@@ -37,7 +39,7 @@ const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages,
       <Article activity={activity} article={article}/>
       <BestPrograms/>
       <Galery galleries={galleries}/>
-      <StudentInfo/>
+      <StudentInfo informasiPesertaDidik={informasiPesertaDidik}/>
       <Reviews/>  
       <Video/>
       <PpdbHeader/>
@@ -53,6 +55,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const welcomeImages = await fetchWelcomeImageSliders({preview: false})
   const pesantrenProfile = await getPesantrenProfileContent()
   const pesantrenImageProfile = await getPesantrenImageGallery()
+  const informasiPesertaDidik = await getInformasiPesertaDidik()
 
   return {
     props: {
@@ -61,7 +64,8 @@ export const getStaticProps: GetStaticProps = async () => {
       activity,
       welcomeImages,
       pesantrenProfile,
-      pesantrenImageProfile
+      pesantrenImageProfile,
+      informasiPesertaDidik
     },
     revalidate: 10,
   };

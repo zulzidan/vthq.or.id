@@ -1,7 +1,12 @@
 import StudentsCard from "@/components/StudentsCard";
 import React from "react";
 
-const StudentInfo: React.FC = () => {
+interface StudentInfoProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  informasiPesertaDidik: any
+}
+
+const StudentInfo: React.FC<StudentInfoProps> = ({informasiPesertaDidik}) => {
   return (
     <section className="py-6 px-6 md:px-14">
       <div className="flex sm:space-x-10 space-x-5 items-center align-middle pb-8">
@@ -13,9 +18,9 @@ const StudentInfo: React.FC = () => {
         </div>
       </div>
       <div className="grid gap-4 md:flex md:justify-evenly">
-        <StudentsCard title="SMP: 118 Orang" />
-        <StudentsCard title="SMA: 85 Orang" />
-        <StudentsCard title="ALUMNI: 143 Orang" />
+        <StudentsCard title={`SMP: ${informasiPesertaDidik.smp} Orang`}/>
+        <StudentsCard title={`SMA: ${informasiPesertaDidik.sma} Orang`} />
+        <StudentsCard title={`ALUMNI: ${informasiPesertaDidik.alumni} Orang`} />
       </div>
     </section>
   );
