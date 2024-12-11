@@ -8,7 +8,7 @@ const Video:React.FC<VideoProps> = ({youtubeLink}) => {
       <div className="w-full md:w-3/4">
         <iframe
           className="w-full h-64 md:h-96 rounded-lg"
-          src={youtubeLink}
+          src={youtubeLink.link}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

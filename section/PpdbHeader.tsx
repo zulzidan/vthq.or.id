@@ -30,11 +30,11 @@ const PpdbHeader: React.FC<PpdbHeaderProps> = ({informasiPpdbBanner}) => {
             {/* MARI BERGABUNG BERSAMA KAMI DEMI MEWUJUDKAN GENERASI QUR&apos;ANI PENERUS AGAMA DAN BANGSA */}
             {informasiPpdbBanner.subTag}
           </h1>
-          <p className="text-xs md:text-base lg:text-lg mb-4">
+          <div className="text-xs md:text-base lg:text-lg mb-4">
             {/* Assalamu&apos;alaikum sahabat Qur&apos;san... <br />
             Villa Tahfizh Himmatul Quran Malino kembali membuka <span className="font-bold">Penerimaan Peserta Didik Baru Tahun Ajaran 2025/2026</span> untuk jenjang Wustha (SMP) dan SMA. */}
             {documentToReactComponents(informasiPpdbBanner.description)}
-          </p>
+          </div>
           <Link href="/ppdb" className="inline-block mt-4 px-4 py-1 md:px-6 md:py-3 border text-xs md:text-base border-white rounded-full text-white hover:bg-white hover:text-green-800 transition-colors duration-300">
             Info Selengkapnya
           </Link>
