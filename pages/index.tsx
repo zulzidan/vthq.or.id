@@ -15,7 +15,7 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getApaKataMereka, getInformasiPesertaDidik, getInformasiPpdbBanner, getPesantrenImageGallery, getPesantrenProfileContent} from "@/contentful/allFetch";
+import { getApaKataMereka, getInformasiPesertaDidik, getInformasiPpdbBanner, getPesantrenImageGallery, getPesantrenProfileContent, getYoutubeLink} from "@/contentful/allFetch";
 
 interface HomeProps {
   galleries: GaleryActivityType[]
@@ -32,9 +32,11 @@ interface HomeProps {
   apaKataMereka: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   informasiPpdbBanner: any
+ // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  youtubeLink: any
 }
 
-const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner, youtubeLink}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
@@ -45,7 +47,7 @@ const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages,
       <Galery galleries={galleries}/>
       <StudentInfo informasiPesertaDidik={informasiPesertaDidik}/>
       <Reviews apaKataMereka={apaKataMereka}/>
-      <Video/>
+      <Video youtubeLink={youtubeLink}/>
       <PpdbHeader informasiPpdbBanner={informasiPpdbBanner}/>
     </Layout>
   );
@@ -62,6 +64,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const informasiPesertaDidik = await getInformasiPesertaDidik()
   const apaKataMereka = await getApaKataMereka()
   const informasiPpdbBanner = await getInformasiPpdbBanner()
+  const youtubeLink = await getYoutubeLink()
 
   return {
     props: {
@@ -73,7 +76,8 @@ export const getStaticProps: GetStaticProps = async () => {
       pesantrenImageProfile,
       informasiPesertaDidik,
       apaKataMereka,
-      informasiPpdbBanner
+      informasiPpdbBanner,
+      youtubeLink
     },
     revalidate: 10,
   };
