@@ -15,7 +15,7 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getApaKataMereka, getInformasiPesertaDidik, getPesantrenImageGallery, getPesantrenProfileContent } from "@/contentful/allFetch";
+import { getApaKataMereka, getInformasiPesertaDidik, getInformasiPpdbBanner, getPesantrenImageGallery, getPesantrenProfileContent} from "@/contentful/allFetch";
 
 interface HomeProps {
   galleries: GaleryActivityType[]
@@ -30,9 +30,11 @@ interface HomeProps {
   informasiPesertaDidik: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   apaKataMereka: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  informasiPpdbBanner: any
 }
 
-const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik, apaKataMereka}) => {
+const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
@@ -44,7 +46,7 @@ const Home: React.FC<HomeProps> = ({galleries, article, activity, welcomeImages,
       <StudentInfo informasiPesertaDidik={informasiPesertaDidik}/>
       <Reviews apaKataMereka={apaKataMereka}/>
       <Video/>
-      <PpdbHeader/>
+      <PpdbHeader informasiPpdbBanner={informasiPpdbBanner}/>
     </Layout>
   );
 }
@@ -59,6 +61,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const pesantrenImageProfile = await getPesantrenImageGallery()
   const informasiPesertaDidik = await getInformasiPesertaDidik()
   const apaKataMereka = await getApaKataMereka()
+  const informasiPpdbBanner = await getInformasiPpdbBanner()
 
   return {
     props: {
@@ -69,7 +72,8 @@ export const getStaticProps: GetStaticProps = async () => {
       pesantrenProfile,
       pesantrenImageProfile,
       informasiPesertaDidik,
-      apaKataMereka
+      apaKataMereka,
+      informasiPpdbBanner
     },
     revalidate: 10,
   };
