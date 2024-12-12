@@ -28,7 +28,7 @@ const GaleryActivity: React.FC<GaleryActivityProps> = ({galery}) => {
               )}
             </div>
           </DialogTrigger>
-          <DialogContent aria-describedby={undefined} className="p-0 mx-auto max-w-sm border-none">
+          <DialogContent aria-describedby={undefined} className="p-0 mx-auto max-w-sm md:max-w-xl border-none">
             <VisuallyHidden.Root>
               <DialogTitle></DialogTitle>
             </VisuallyHidden.Root>
