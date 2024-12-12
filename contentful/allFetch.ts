@@ -125,3 +125,17 @@ export async function getStrukturOrganisasiImage() {
 
      return [];
 }
+
+export async function getKurikulumDescription() {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'kurikulumDescription',
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items[0].fields;
+     }
+
+     return [];
+}

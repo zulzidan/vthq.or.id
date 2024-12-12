@@ -2,7 +2,12 @@ import React from "react";
 import Image from "next/image";
 import PimpinanImage from "@/public/images/PIMPINAN PONDOK.jpg";
 
-const Curiculum: React.FC = () => {
+interface CuriculumProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  kurikulumDescription: any
+}
+
+const Curiculum: React.FC<CuriculumProps> = ({kurikulumDescription}) => {
     return (
       <section className="py-6 px-6 md:px-14">
       <div className="flex flex-col md:justify-evenly md:items-center md:flex-row bg-gray-50 mx-auto max-w-screen-2xl">
@@ -18,7 +23,8 @@ const Curiculum: React.FC = () => {
           <h2 className="text-base font-bold mb-2 py-1 px-6 rounded-sm">Kurikulum :</h2>
         </div>
           <p className="mb-4 text-sm md:text-base text-green-900">
-          Dalam menjalankan proses pembelajaran, Villa Tahfizh Himmatul Quran Malino mengkombinasikan kurikulum pondok yang terdiri dari tahfizh, bahasa arab dan diniyah dengan kurikulum nasional (pembelajaran umum). Program tahfizh dan bahasa arab diberikan porsi dan alokasi waktu yang lebih besar sebagai ciri khas pondok dan sesuai dengan yang tercantum dalam visi dan misi VTHQ.
+            {kurikulumDescription.description}
+          {/* Dalam menjalankan proses pembelajaran, Villa Tahfizh Himmatul Quran Malino mengkombinasikan kurikulum pondok yang terdiri dari tahfizh, bahasa arab dan diniyah dengan kurikulum nasional (pembelajaran umum). Program tahfizh dan bahasa arab diberikan porsi dan alokasi waktu yang lebih besar sebagai ciri khas pondok dan sesuai dengan yang tercantum dalam visi dan misi VTHQ. */}
           </p>
           <p className="font-bold text-base text-green-700 ">Ir. H Muhammad Taufan Djafry, Lc., M.H.I</p>
         </div>
