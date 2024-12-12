@@ -83,3 +83,31 @@ export async function getYoutubeLink() {
 
      return [];
 }
+
+export async function getVisi() {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'visi',
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items;
+     }
+
+     return [];
+}
+
+export async function getMisi() {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'misi',
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items;
+     }
+
+     return [];
+}

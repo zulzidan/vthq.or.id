@@ -1,6 +1,12 @@
 import React from "react";
 
-const VisionMission: React.FC = () => {
+interface VissionMissionProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  visi: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  misi: any
+}
+const VisionMission: React.FC<VissionMissionProps> = ({visi, misi}) => {
   return (
     <section className="px-6 md:px-14 py-6 ">
       <div className="flex mx-auto max-w-screen-2xl space-y-10 lg:space-y-0 flex-col lg:flex-row md:justify-between lg:gap-6">
@@ -13,9 +19,19 @@ const VisionMission: React.FC = () => {
           </div>
           <div className="md:space-y-0 lg:space-y-6 gap-4 flex flex-col text-sm md:text-base lg:block md:ml-32 lg:ml-28">
             <ul className="list-disc list-inside space-y-4">
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam. adncjjvnfnncjc ncjnnnn</li>
+              
+              {visi.map(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (item: { sys: { id: any; }; fields: { visi: any; }; }) => {
+                const id = item.sys.id
+                const visi = item.fields.visi
+                return(
+                  <li key={id}>{visi}</li>
+                )
+              })}
+              {/* <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam. adncjjvnfnncjc ncjnnnn</li>
               <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquaskfnaknfasnfianifanm.</li>
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qsksnfksfnisfiasfiauisquam.</li>
+              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qsksnfksfnisfiasfiauisquam.</li> */}
             </ul>
           </div>
         </div>
@@ -29,9 +45,19 @@ const VisionMission: React.FC = () => {
           </div>
           <div className="md:space-y-0 lg:space-y-6 gap-4 flex items-end text-sm md:text-base flex-col lg:block md:ml-32">
           <ul className="list-disc list-inside space-y-4">
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam. adncjjvnfnncjc ncjnnnn</li>
+
+          {misi.map(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (item: { sys: { id: any; }; fields: { misi: any; }; }) => {
+                const id = item.sys.id
+                const misi = item.fields.misi
+                return(
+                  <li key={id}>{misi}</li>
+                )
+              })}
+              {/* <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam. adncjjvnfnncjc ncjnnnn</li>
               <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquaskfnaknfasnfianifanm.</li>
-              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qsksnfksfnisfiasfiauisquam.</li>
+              <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qsksnfksfnisfiasfiauisquam.</li> */}
             </ul>
           </div>
         </div>
