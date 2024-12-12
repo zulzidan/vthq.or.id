@@ -1,7 +1,6 @@
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import { dummyImages } from "@/data/dummyImages";
 import {
   Carousel,
   CarouselContent,
@@ -9,9 +8,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+// import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-const OrganisationStructure: React.FC = () => {
+interface OrganisationStructureProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  strukturOrganisasiImage: any
+}
+
+const OrganisationStructure: React.FC<OrganisationStructureProps> = ({strukturOrganisasiImage}) => {
   return (
     <section className="bg-gray-100 px-6 md:px-14 py-6">
       <div className="mx-auto max-w-screen-2xl">
@@ -28,22 +32,46 @@ const OrganisationStructure: React.FC = () => {
           ]}
           className="w-full"
         >
-          <CarouselContent className="max-w-sm">
-            {dummyImages.map((image) => {
+          <CarouselContent className="max-w-sm md:max-w-xl">
+            {strukturOrganisasiImage.map(
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              (image: { sys: { id: any; }; fields: { image: { fields: { file: { url: any; details: { image: { width: any; height: any; }; }; }; title: any; }; }; }; }) => {
+
+              const { id } = image.sys;
+              const imageUrl = image.fields.image.fields.file.url;
+              const altText = image.fields.image.fields.title;
+              const width = image.fields.image.fields.file.details.image.width;
+              const height = image.fields.image.fields.file.details.image.height;
               return (
                 <CarouselItem
-                  className="relative basis-11/12 ml-4"
-                  key={image.id}
+                  key={id}
                 >
-                  <AspectRatio ratio={1 / 1}>
                     <Image
-                      src={image.imageUrl}
-                      alt={image.title}
-                      fill
-                      className="h-full w-full object-cover"
+                      src={`https:${imageUrl}`}
+                      alt={altText}
+                      width={width}
+                      height={height}
+                      sizes="100vw"
+                      className="h-auto w-auto object-contain"
                     />
-                  </AspectRatio>
                 </CarouselItem>
+
+
+              //    <CarouselItem
+              //    className="relative basis-11/12 ml-4"
+              //    key={id}
+              //  >
+              //    <AspectRatio ratio={1 / 1}>
+              //      <Image
+              //        src={`https:${imageUrl}`}
+              //        alt={altText}
+              //        fill
+              //        className="h-full w-full object-cover"
+              //      />
+              //    </AspectRatio>
+              //  </CarouselItem>
+
+               
               );
             })}
           </CarouselContent>

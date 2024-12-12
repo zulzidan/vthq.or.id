@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
-import { getMisi, getVisi } from "@/contentful/allFetch";
+import { getMisi, getStrukturOrganisasiImage, getVisi } from "@/contentful/allFetch";
 import { fetchHistoryDescrition, HistoryDescription } from "@/contentful/historyDescription";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
 import BlogHeader from "@/section/BlogHeader";
@@ -17,16 +17,18 @@ interface ProfileProps {
   visi: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   misi: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  strukturOrganisasiImage: any
 }
 
-const Profile: React.FC<ProfileProps> = ({historyDescription, welcomeImages, visi, misi}) => {
+const Profile: React.FC<ProfileProps> = ({historyDescription, welcomeImages, visi, misi, strukturOrganisasiImage}) => {
   return (
     <Layout>
       <TitleOfPage title="Profil"/>
      <BlogHeader nameOfContext="PROFIL" welcomeImages={welcomeImages}/>
       <History historyDescription={historyDescription}/>
       <VisionMission visi={visi} misi={misi}/>
-      <OrganisationStructure/>
+      <OrganisationStructure strukturOrganisasiImage={strukturOrganisasiImage}/>
     </Layout>
   );
 }
@@ -37,6 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const welcomeImages = await fetchWelcomeImageSliders({preview: false})
   const visi = await getVisi()
   const misi = await getMisi()
+  const strukturOrganisasiImage = await getStrukturOrganisasiImage()
 
 
   return {
@@ -44,7 +47,8 @@ export const getStaticProps: GetStaticProps = async () => {
       historyDescription,
       welcomeImages,
       visi,
-      misi
+      misi,
+      strukturOrganisasiImage
     },
     revalidate: 10,
   }
