@@ -139,3 +139,17 @@ export async function getKurikulumDescription() {
 
      return [];
 }
+
+export async function getTentangKamiContent() {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'tentangKami',
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items[0].fields;
+     }
+
+     return [];
+}
