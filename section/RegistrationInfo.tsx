@@ -1,7 +1,10 @@
 import React from "react";
 import { TelephoneFill } from "react-bootstrap-icons";
-
-const RegistrationInfo: React.FC = () => {
+interface RegistrationInfoProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  kontakPendaftaran: any
+}
+const RegistrationInfo: React.FC<RegistrationInfoProps> = ({kontakPendaftaran}) => {
   return (
      <section id="kontak" className="lg:max-w-screen-lg md:max-w-screen-md max-w-screen-sm mx-auto py-6 px-6 md:px-16 mb-4">
      <div className="text-center">
@@ -14,21 +17,23 @@ const RegistrationInfo: React.FC = () => {
         </div>
       </div>
        <div className="flex flex-col md:flex-row justify-center items-center md:justify-evenly space-y-4 md:space-y-0 mt-4">
-          <a href="https://wa.me/+6285756052150">
+       {/* https://wa.me/+6285756052150 */}
+          <a href={`https://wa.me/${kontakPendaftaran[0].fields.kontakFormatInternational}`}>
           <div className="flex space-x-4 items-center">
           <TelephoneFill/>
           <div>
-          <p className="font-bold text-green-600 text-xl md:text-2xl hover:text-yellow-600">0857 5605 2150</p>
-          <p className="text-xs text-left">(Ketua Panitia)</p>
+          <p className="font-bold text-green-600 text-xl md:text-2xl hover:text-yellow-600">{kontakPendaftaran[0].fields.kontakFormatLokal}</p>
+          <p className="text-xs text-left">({kontakPendaftaran[0].fields.pemilikKontak})</p>
           </div>
           </div>
           </a>
-          <a href="https://wa.me/+6281244679866">
+          {/* https://wa.me/+6281244679866 */}
+          <a href={`https://wa.me/${kontakPendaftaran[1].fields.kontakFormatInternational}`}>
           <div className="flex space-x-4 items-center">
           <TelephoneFill/>
           <div>
-          <p className="font-bold text-green-600 text-left text-xl md:text-2xl hover:text-yellow-600">0812 4467 9866</p>
-          <p className="text-xs text-left">(Humas Himmatul Quran)</p>
+          <p className="font-bold text-green-600 text-left text-xl md:text-2xl hover:text-yellow-600">{kontakPendaftaran[1].fields.kontakFormatLokal}</p>
+          <p className="text-xs text-left">({kontakPendaftaran[1].fields.pemilikKontak})</p>
           </div>
           </div>
           </a>

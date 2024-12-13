@@ -167,3 +167,17 @@ export async function getPendaftaran() {
 
      return [];
 }
+
+export async function getKontakPendaftaran() {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'informasiPendaftaran',
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items;
+     }
+
+     return [];
+}

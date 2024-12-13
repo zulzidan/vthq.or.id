@@ -9,7 +9,7 @@ import TimelineRegistration from "@/section/TimelineRegistration";
 import { TimeLineFields } from "../components/Timeline";
 import { GetStaticProps } from "next";
 import { getTimeLinePendaftaran } from "@/contentful/timelinePendaftaran";
-import { getInformasiPpdbBanner, getPendaftaran, getTentangKamiContent } from "@/contentful/allFetch";
+import { getInformasiPpdbBanner, getKontakPendaftaran, getPendaftaran, getTentangKamiContent } from "@/contentful/allFetch";
 
 interface PpdbProps {
   timelineFields: TimeLineFields
@@ -19,9 +19,11 @@ interface PpdbProps {
   tentangKamiContent: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pendaftaran: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  kontakPendaftaran: any
 }
 
-const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, tentangKamiContent, pendaftaran}) => {
+const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, tentangKamiContent, pendaftaran, kontakPendaftaran}) => {
   return (
     <Layout>
        <TitleOfPage title="Pendaftaran"/>
@@ -30,7 +32,7 @@ const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, tentang
      <RegistrationProcess/>
      <TimelineRegistration timelineFields={timelineFields}/>
      <RegistrationMethod pendaftaran={pendaftaran}/>
-     <RegistrationInfo/>
+     <RegistrationInfo kontakPendaftaran={kontakPendaftaran}/>
     </Layout>
   );
 }
@@ -41,6 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const informasiPpdbBanner = await getInformasiPpdbBanner()
   const tentangKamiContent = await getTentangKamiContent()
   const pendaftaran = await getPendaftaran()
+  const kontakPendaftaran = await getKontakPendaftaran()
 
   if (!timelineFieldsFrom) {
     return {
@@ -60,7 +63,8 @@ export const getStaticProps: GetStaticProps = async () => {
       timelineFields,
       informasiPpdbBanner,
       tentangKamiContent,
-      pendaftaran
+      pendaftaran,
+      kontakPendaftaran
   },
   revalidate: 10,
 };
