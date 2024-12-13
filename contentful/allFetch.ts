@@ -153,3 +153,17 @@ export async function getTentangKamiContent() {
 
      return [];
 }
+
+export async function getPendaftaran() {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'pendaftaran',
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items[0].fields;
+     }
+
+     return [];
+}

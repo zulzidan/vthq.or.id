@@ -9,7 +9,7 @@ import TimelineRegistration from "@/section/TimelineRegistration";
 import { TimeLineFields } from "../components/Timeline";
 import { GetStaticProps } from "next";
 import { getTimeLinePendaftaran } from "@/contentful/timelinePendaftaran";
-import { getInformasiPpdbBanner, getTentangKamiContent } from "@/contentful/allFetch";
+import { getInformasiPpdbBanner, getPendaftaran, getTentangKamiContent } from "@/contentful/allFetch";
 
 interface PpdbProps {
   timelineFields: TimeLineFields
@@ -17,9 +17,11 @@ interface PpdbProps {
   informasiPpdbBanner: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tentangKamiContent: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  pendaftaran: any
 }
 
-const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, tentangKamiContent}) => {
+const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, tentangKamiContent, pendaftaran}) => {
   return (
     <Layout>
        <TitleOfPage title="Pendaftaran"/>
@@ -27,7 +29,7 @@ const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, tentang
      <About tentangKamiContent={tentangKamiContent}/>
      <RegistrationProcess/>
      <TimelineRegistration timelineFields={timelineFields}/>
-     <RegistrationMethod/>
+     <RegistrationMethod pendaftaran={pendaftaran}/>
      <RegistrationInfo/>
     </Layout>
   );
@@ -38,6 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const timelineFieldsFrom: any = await getTimeLinePendaftaran()
   const informasiPpdbBanner = await getInformasiPpdbBanner()
   const tentangKamiContent = await getTentangKamiContent()
+  const pendaftaran = await getPendaftaran()
 
   if (!timelineFieldsFrom) {
     return {
@@ -56,7 +59,8 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { 
       timelineFields,
       informasiPpdbBanner,
-      tentangKamiContent
+      tentangKamiContent,
+      pendaftaran
   },
   revalidate: 10,
 };

@@ -1,7 +1,12 @@
 import React from "react";
 import { Button } from "../components/ui/button";
 
-const RegistrationMethod: React.FC = () => {
+interface RegistrationMethodProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  pendaftaran: any
+}
+
+const RegistrationMethod: React.FC<RegistrationMethodProps> = ({pendaftaran}) => {
   return (
      <section className="lg:max-w-screen-lg md:max-w-screen-md max-w-screen-sm mx-auto py-6 px-6 md:px-16">
      <div className="text-center">
@@ -21,18 +26,21 @@ const RegistrationMethod: React.FC = () => {
          Datang langsung ke kantor kami yang beralamat di
        </p>
        <p className="text-green-700 text-lg md:text-xl font-bold">
-         Jl. Batulapisi Luar, Kel. Malino Kec. Tinggimoncong <br />
-         Kab. Gowa, Sulawesi Selatan
+        {pendaftaran.alamatKantor}
+         {/* Jl. Batulapisi Luar, Kel. Malino Kec. Tinggimoncong <br />
+         Kab. Gowa, Sulawesi Selatan */}
        </p>
        <p className="text-md font-bold md:text-lg lg:text-xl mt-4">Atau melalui link berikut:</p>
 
        <div className="flex flex-col md:flex-row justify-evenly space-y-4 md:space-y-0 mt-4">
-          <a href="https://forms.gle/FXKFhrT3k8i5MrK46">
+          <a href={pendaftaran.linkPendaftaranUntukWustha}>
+          {/* https://forms.gle/FXKFhrT3k8i5MrK46 */}
          <Button className="bg-gradient-to-tr  from-green-500 w-60 md:w-72 md:text-base lg:text-lg to-green-800 text-white font-bold px-4 py-2 rounded-md hover:text-yellow-500 transition">
            Daftar untuk Wustha
          </Button>
           </a>
-          <a href="https://forms.gle/ayChmGfDUzxi5iEe6">
+          <a href={pendaftaran.linkPendaftaranUntukSma}>
+          {/* https://forms.gle/ayChmGfDUzxi5iEe6 */}
          <Button className="bg-gradient-to-tr from-green-500 w-60 md:w-72 md:text-base lg:text-lg  to-green-800 text-white font-bold px-4 py-2 rounded-md hover:text-yellow-500 transition">
            Daftar untuk SMA
          </Button>
