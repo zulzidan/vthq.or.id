@@ -7,17 +7,20 @@ import Programs from "@/section/Programs";
 import TittleAndButtonLink from "@/section/TittleAndButtonLink";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
 import { GetStaticProps } from "next";
+import { getKurikulumDescription } from "@/contentful/allFetch";
 
 interface PpdbProps {
   welcomeImages: WelcomeImageSliders[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  kurikulumDescription: any
 }
 
-const Ppdb: React.FC<PpdbProps> = ({welcomeImages}) => {
+const Ppdb: React.FC<PpdbProps> = ({welcomeImages, kurikulumDescription}) => {
   return (
     <Layout>
        <TitleOfPage title="Program"/>
        <BlogHeader nameOfContext="PROGRAM" welcomeImages={welcomeImages}/>
-       <Curiculum/>
+       <Curiculum kurikulumDescription={kurikulumDescription}/>
        <Programs/>
        <TittleAndButtonLink/>
     </Layout>
@@ -28,10 +31,12 @@ const Ppdb: React.FC<PpdbProps> = ({welcomeImages}) => {
 export const getStaticProps: GetStaticProps = async () => {
 
   const welcomeImages = await fetchWelcomeImageSliders({preview: false})
+  const kurikulumDescription = await getKurikulumDescription()
 
   return {
     props: {
       welcomeImages,
+      kurikulumDescription
     },
     revalidate: 10,
   }
