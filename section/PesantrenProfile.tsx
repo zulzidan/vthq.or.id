@@ -2,49 +2,49 @@ import Image from "next/image";
 
 interface PesantrenProfileProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  pesantrenProfile: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  pesantrenImageProfile: any;
+  headingProfile: any
 }
 
 const PesantrenProfile: React.FC<PesantrenProfileProps> = ({
-  pesantrenProfile,
-  pesantrenImageProfile,
+  headingProfile
 }) => {
   return (
     <div className="flex flex-col md:justify-between md:items-center md:flex-row bg-gray-50 py-6 px-6 md:px-14">
+      {headingProfile.image && (
       <div className="mb-4 md:mb-0">
         <Image
-          src={`https:${pesantrenProfile.pimpinanImage.fields.file.url}`}
-          alt={pesantrenProfile.pimpinanImage.fields.title}
-          width={pesantrenProfile.pimpinanImage.fields.file.details.image.width || 1000}
-          height={pesantrenProfile.pimpinanImage.fields.file.details.image.height || 1000}
+          src={`https:${headingProfile.image.fields.file.url}`}
+          alt={headingProfile.image.fields.title}
+          width={headingProfile.image.fields.file.details.image.width || 1000}
+          height={headingProfile.image.fields.file.details.image.height || 1000}
           className="w-44 h-auto"
         />
       </div>
+      )}
       <div className="md:w-3/4 md:px-6">
         <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
           <h2 className="text-base font-bold mb-2 py-1 px-1 rounded-sm">
-            Sambutan Pimpinan :
+           {headingProfile.title} :
           </h2>
         </div>
         <p className="mb-4 text-sm md:text-base text-green-900">
-          {pesantrenProfile.pimpinanSpeech}
+          {headingProfile.description}
         </p>
         <p className="font-bold text-base text-green-700 ">
-          {pesantrenProfile.pimpinanName}
+          {headingProfile.name}
         </p>
       </div>
+      {headingProfile.eventImages && (
       <div className="grid grid-cols-2 md:flex md:flex-col md:space-y-8 pt-5 space-x-2 md:space-x-0">
      
-        {pesantrenImageProfile.map(
+        {headingProfile.eventImages.map(
            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (item: { sys: { id: any; }; fields: { image: { fields: { file: { url: any; details: { image: { width: number; height: number; }; }; }; title: string; }; }; }; }) => {
-          const { id } = item.sys;
-          const imageUrl = item.fields.image.fields.file.url;
-          const altText = item.fields.image.fields.title || "Pesantren Image";
-          const width = item.fields.image.fields.file.details.image.width || 1000;
-          const height = item.fields.image.fields.file.details.image.height || 1000;
+          (item: { sys: { id: { id: any; }; }; fields: { file: { url: any; details: { image: { width: number; height: number; }; }; }; title: string; }; }) => {
+          const { id } = item.sys.id;
+          const imageUrl = item.fields.file.url;
+          const altText = item.fields.title || "Pesantren Image";
+          const width = item.fields.file.details.image.width || 1000;
+          const height = item.fields.file.details.image.height || 1000;
           return (
             <Image
               key={id}
@@ -57,6 +57,7 @@ const PesantrenProfile: React.FC<PesantrenProfileProps> = ({
           );
         })}
       </div>
+      )}
     </div>
   );
 };

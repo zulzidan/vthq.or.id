@@ -1,7 +1,6 @@
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
-import { getMisi, getStrukturOrganisasiImage, getVisi, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
-import { fetchHistoryDescrition, HistoryDescription } from "@/contentful/historyDescription";
+import { getHeadingProfileBySlug, getMisi, getStrukturOrganisasiImage, getVisi, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
 import CarouselShadcn from "@/section/CarouselShadcn";
 import History from "@/section/History";
 import OrganisationStructure from "@/section/OrganisationStructure";
@@ -12,8 +11,8 @@ import React from "react";
 interface ProfileProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   welcomeImagesProfil: any
-
-  historyDescription: HistoryDescription
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  headingProfileProfil: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   visi: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,12 +21,12 @@ interface ProfileProps {
   strukturOrganisasiImage: any
 }
 
-const Profile: React.FC<ProfileProps> = ({welcomeImagesProfil ,historyDescription, visi, misi, strukturOrganisasiImage}) => {
+const Profile: React.FC<ProfileProps> = ({welcomeImagesProfil , headingProfileProfil, visi, misi, strukturOrganisasiImage}) => {
   return (
     <Layout>
       <TitleOfPage title="Profil"/>
       <CarouselShadcn welcomeImages={welcomeImagesProfil}/>
-      <History historyDescription={historyDescription}/>
+      <History historyData={headingProfileProfil}/>
       <VisionMission visi={visi} misi={misi}/>
       <OrganisationStructure strukturOrganisasiImage={strukturOrganisasiImage}/>
     </Layout>
@@ -37,7 +36,7 @@ const Profile: React.FC<ProfileProps> = ({welcomeImagesProfil ,historyDescriptio
 export const getStaticProps: GetStaticProps = async () => {
 
   const welcomeImagesProfil = await getWelcomeImageSlidersBySlug("profil")
-  const historyDescription = await fetchHistoryDescrition({preview: false})
+  const headingProfileProfil = await getHeadingProfileBySlug("profil")
   const visi = await getVisi()
   const misi = await getMisi()
   const strukturOrganisasiImage = await getStrukturOrganisasiImage()
@@ -46,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       welcomeImagesProfil,
-      historyDescription,
+      headingProfileProfil,
       visi,
       misi,
       strukturOrganisasiImage

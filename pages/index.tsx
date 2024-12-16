@@ -15,20 +15,18 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getApaKataMereka, getInformasiPesertaDidik, getInformasiPpdbBanner, getPesantrenImageGallery, getPesantrenProfileContent, getWelcomeImageSlidersBySlug, getYoutubeLink} from "@/contentful/allFetch";
+import { getApaKataMereka, getHeadingProfileBySlug, getInformasiPesertaDidik, getInformasiPpdbBanner, getWelcomeImageSlidersBySlug, getYoutubeLink} from "@/contentful/allFetch";
 
 interface HomeProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   welcomeImagesHome: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  headingProfileHome: any
 
   galleries: GaleryActivityType[]
   article: BlogArticle[]
   activity: BlogActivity[]
   welcomeImages: WelcomeImageSliders[]
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  pesantrenProfile: any
-   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  pesantrenImageProfile: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   informasiPesertaDidik: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,12 +37,12 @@ interface HomeProps {
   youtubeLink: any
 }
 
-const Home: React.FC<HomeProps> = ({ welcomeImagesHome, galleries, article, activity, pesantrenProfile, pesantrenImageProfile, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner, youtubeLink}) => {
+const Home: React.FC<HomeProps> = ({ welcomeImagesHome, headingProfileHome, galleries, article, activity, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner, youtubeLink}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
       <CarouselShadcn welcomeImages={welcomeImagesHome}/>
-      <PesantrenProfile pesantrenProfile={pesantrenProfile} pesantrenImageProfile={pesantrenImageProfile}/>
+      <PesantrenProfile headingProfile={headingProfileHome}/>
       <Article activity={activity} article={article}/>
       <BestPrograms/>
       <Galery galleries={galleries}/>
@@ -59,13 +57,12 @@ const Home: React.FC<HomeProps> = ({ welcomeImagesHome, galleries, article, acti
 export const getStaticProps: GetStaticProps = async () => {
 
   const welcomeImagesHome = await getWelcomeImageSlidersBySlug("home")
+  const headingProfileHome = await getHeadingProfileBySlug("home")
 
   const galleries = await fetchGaleryActivities({preview: false})
   const article = await fetchArticlePosts({preview: false})
   const activity = await fetchActivityPosts({preview: false})
   const welcomeImages = await fetchWelcomeImageSliders({preview: false})
-  const pesantrenProfile = await getPesantrenProfileContent()
-  const pesantrenImageProfile = await getPesantrenImageGallery()
   const informasiPesertaDidik = await getInformasiPesertaDidik()
   const apaKataMereka = await getApaKataMereka()
   const informasiPpdbBanner = await getInformasiPpdbBanner()
@@ -74,12 +71,11 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       welcomeImagesHome,
+      headingProfileHome,
       galleries,
       article,
       activity,
       welcomeImages,
-      pesantrenProfile,
-      pesantrenImageProfile,
       informasiPesertaDidik,
       apaKataMereka,
       informasiPpdbBanner,

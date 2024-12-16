@@ -15,11 +15,12 @@ export async function getWelcomeImageSlidersBySlug(slug: string) {
      return [];
 }
 
-export async function getPesantrenProfileContent() {
+export async function getHeadingProfileBySlug(slug: string) {
      const contentful = contentfulClient({preview: false})
 
      const entries = await contentful.getEntries({
-          content_type: 'pesantrenProfile',
+          content_type: 'headingProfile',
+          'fields.slug': slug,
      });
 
      if (entries.items && entries.items.length > 0) {
