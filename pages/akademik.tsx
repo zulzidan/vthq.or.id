@@ -5,22 +5,22 @@ import Curiculum from "@/section/Curiculum";
 import Programs from "@/section/Programs";
 import TittleAndButtonLink from "@/section/TittleAndButtonLink";
 import { GetStaticProps } from "next";
-import { getKurikulumDescription, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
+import { getHeadingProfileBySlug, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
 import CarouselShadcn from "@/section/CarouselShadcn";
 
 interface PpdbProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   welcomeImagesAkademik: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  kurikulumDescription: any
+  headingProfileAkademik: any
 }
 
-const Ppdb: React.FC<PpdbProps> = ({welcomeImagesAkademik, kurikulumDescription}) => {
+const Ppdb: React.FC<PpdbProps> = ({welcomeImagesAkademik, headingProfileAkademik}) => {
   return (
     <Layout>
        <TitleOfPage title="Akademik"/>
        <CarouselShadcn welcomeImages={welcomeImagesAkademik}/>
-       <Curiculum kurikulumDescription={kurikulumDescription}/>
+       <Curiculum kurikulumProfileData={headingProfileAkademik}/>
        <Programs/>
        <TittleAndButtonLink/>
     </Layout>
@@ -31,12 +31,12 @@ const Ppdb: React.FC<PpdbProps> = ({welcomeImagesAkademik, kurikulumDescription}
 export const getStaticProps: GetStaticProps = async () => {
 
   const welcomeImagesAkademik = await getWelcomeImageSlidersBySlug("akademik")
-  const kurikulumDescription = await getKurikulumDescription()
+  const headingProfileAkademik = await getHeadingProfileBySlug("akademik")
 
   return {
     props: {
       welcomeImagesAkademik,
-      kurikulumDescription
+      headingProfileAkademik
     },
     revalidate: 10,
   }
