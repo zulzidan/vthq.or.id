@@ -1,21 +1,22 @@
 import Layout from "@/components/layout";
-import BlogHeader from "@/section/BlogHeader";
 import ActivityLayout from "@/section/ActivityLayout";
 import TitleOfPage from "@/components/TitleOfPage";
 import { GetStaticProps } from "next";
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
-import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
+import CarouselShadcn from "@/section/CarouselShadcn";
+import { getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
 
-interface ArticlesProps {
+interface KegiatanProps {
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     welcomeImagesKegiatan: any
      articles: BlogActivity[]
-     welcomeImages: WelcomeImageSliders[]
 }
 
-const Kegiatan:React.FC<ArticlesProps> = ({articles, welcomeImages}) => {
+const Kegiatan:React.FC<KegiatanProps> = ({welcomeImagesKegiatan, articles}) => {
      return(
           <Layout>
-                <TitleOfPage title="Kegiatan"/>
-               <BlogHeader nameOfContext="kegiatan" welcomeImages={welcomeImages}/>
+               <TitleOfPage title="Kegiatan"/>
+               <CarouselShadcn welcomeImages={welcomeImagesKegiatan}/>
                <ActivityLayout articles={articles}/>
           </Layout>
      )
@@ -23,13 +24,13 @@ const Kegiatan:React.FC<ArticlesProps> = ({articles, welcomeImages}) => {
 
 export const getStaticProps: GetStaticProps = async () => {
 
+     const welcomeImagesKegiatan = await getWelcomeImageSlidersBySlug("kegiatan")
      const articles = await fetchActivityPosts({preview: false})
-     const welcomeImages = await fetchWelcomeImageSliders({preview: false})
 
      return {
        props: {
+          welcomeImagesKegiatan,
          articles,
-         welcomeImages,
        },
        revalidate: 10,
      };

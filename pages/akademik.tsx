@@ -1,25 +1,25 @@
 import React from "react";
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
-import BlogHeader from "@/section/BlogHeader";
 import Curiculum from "@/section/Curiculum";
 import Programs from "@/section/Programs";
 import TittleAndButtonLink from "@/section/TittleAndButtonLink";
-import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
 import { GetStaticProps } from "next";
-import { getKurikulumDescription } from "@/contentful/allFetch";
+import { getKurikulumDescription, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
+import CarouselShadcn from "@/section/CarouselShadcn";
 
 interface PpdbProps {
-  welcomeImages: WelcomeImageSliders[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  welcomeImagesAkademik: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   kurikulumDescription: any
 }
 
-const Ppdb: React.FC<PpdbProps> = ({welcomeImages, kurikulumDescription}) => {
+const Ppdb: React.FC<PpdbProps> = ({welcomeImagesAkademik, kurikulumDescription}) => {
   return (
     <Layout>
        <TitleOfPage title="Akademik"/>
-       <BlogHeader nameOfContext="AKADEMIK" welcomeImages={welcomeImages}/>
+       <CarouselShadcn welcomeImages={welcomeImagesAkademik}/>
        <Curiculum kurikulumDescription={kurikulumDescription}/>
        <Programs/>
        <TittleAndButtonLink/>
@@ -30,12 +30,12 @@ const Ppdb: React.FC<PpdbProps> = ({welcomeImages, kurikulumDescription}) => {
 
 export const getStaticProps: GetStaticProps = async () => {
 
-  const welcomeImages = await fetchWelcomeImageSliders({preview: false})
+  const welcomeImagesAkademik = await getWelcomeImageSlidersBySlug("akademik")
   const kurikulumDescription = await getKurikulumDescription()
 
   return {
     props: {
-      welcomeImages,
+      welcomeImagesAkademik,
       kurikulumDescription
     },
     revalidate: 10,

@@ -2,21 +2,22 @@ import React from "react";
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
 import ArticleLayout from "@/section/ArticleLayout";
-import BlogHeader from "@/section/BlogHeader";
 import { GetStaticProps } from "next";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
-import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
+import CarouselShadcn from "@/section/CarouselShadcn";
+import { getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
 
 interface ArticlesProps {
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     welcomeImagesArtikel: any
      articles: BlogArticle[]
-     welcomeImages: WelcomeImageSliders[]
 }
 
-const Artikel: React.FC<ArticlesProps> = ({articles, welcomeImages}) => {
+const Artikel: React.FC<ArticlesProps> = ({welcomeImagesArtikel, articles}) => {
      return(
           <Layout>
-                <TitleOfPage title="Artikel"/>
-               <BlogHeader nameOfContext="ARTIKEL" welcomeImages={welcomeImages}/>
+               <TitleOfPage title="Artikel"/>
+               <CarouselShadcn welcomeImages={welcomeImagesArtikel}/>
                <ArticleLayout articles={articles}/>
           </Layout>
      )
@@ -24,13 +25,13 @@ const Artikel: React.FC<ArticlesProps> = ({articles, welcomeImages}) => {
 
 export const getStaticProps: GetStaticProps = async () => {
 
+     const welcomeImagesArtikel = await getWelcomeImageSlidersBySlug("artikel")
      const articles = await fetchArticlePosts({preview: false})
-     const welcomeImages = await fetchWelcomeImageSliders({preview: false})
 
      return {
        props: {
-         articles,
-         welcomeImages,
+          welcomeImagesArtikel,
+          articles,
        },
        revalidate: 10,
      };

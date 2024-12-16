@@ -1,25 +1,25 @@
 import React from "react";
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
-import BlogHeader from "@/section/BlogHeader";
 import Curiculum from "@/section/Curiculum";
 import Programs from "@/section/Programs";
 import TittleAndButtonLink from "@/section/TittleAndButtonLink";
-import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
 import { GetStaticProps } from "next";
-import { getKurikulumDescription } from "@/contentful/allFetch";
+import { getKurikulumDescription, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
+import CarouselShadcn from "@/section/CarouselShadcn";
 
-interface PpdbProps {
-  welcomeImages: WelcomeImageSliders[]
+interface ProgramProps {
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  welcomeImagesProgram: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   kurikulumDescription: any
 }
 
-const Ppdb: React.FC<PpdbProps> = ({welcomeImages, kurikulumDescription}) => {
+const Program: React.FC<ProgramProps> = ({welcomeImagesProgram, kurikulumDescription}) => {
   return (
     <Layout>
        <TitleOfPage title="Program"/>
-       <BlogHeader nameOfContext="PROGRAM" welcomeImages={welcomeImages}/>
+       <CarouselShadcn welcomeImages={welcomeImagesProgram}/>
        <Curiculum kurikulumDescription={kurikulumDescription}/>
        <Programs/>
        <TittleAndButtonLink/>
@@ -30,16 +30,16 @@ const Ppdb: React.FC<PpdbProps> = ({welcomeImages, kurikulumDescription}) => {
 
 export const getStaticProps: GetStaticProps = async () => {
 
-  const welcomeImages = await fetchWelcomeImageSliders({preview: false})
+  const welcomeImagesProgram = await getWelcomeImageSlidersBySlug("program")
   const kurikulumDescription = await getKurikulumDescription()
 
   return {
     props: {
-      welcomeImages,
+      welcomeImagesProgram,
       kurikulumDescription
     },
     revalidate: 10,
   }
 }
 
-export default Ppdb;
+export default Program;
