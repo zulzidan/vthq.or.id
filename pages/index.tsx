@@ -11,11 +11,9 @@ import Article from "@/section/Article";
 import PpdbHeader from "@/section/PpdbHeader";
 import TitleOfPage from "@/components/TitleOfPage";
 import type { GetStaticProps } from "next";
-import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/contentful/galeryActivity";
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
-import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getAllProgramsBySlug, getApaKataMereka, getHeadingProfileBySlug, getInformasiPesertaDidik, getInformasiPpdbBanner, getWelcomeImageSlidersBySlug, getYoutubeLink} from "@/contentful/allFetch";
+import { getAllProgramsBySlug, getApaKataMereka, getHeadingProfileBySlug, getInformasiPesertaDidik, getInformasiPpdbBanner, getMediaWithTag, getWelcomeImageSlidersBySlug, getYoutubeLink} from "@/contentful/allFetch";
 
 interface HomeProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,11 +22,11 @@ interface HomeProps {
   headingProfileHome: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   bestProgramsData: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  galleriesKegiatan: any
 
-  galleries: GaleryActivityType[]
   article: BlogArticle[]
   activity: BlogActivity[]
-  welcomeImages: WelcomeImageSliders[]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   informasiPesertaDidik: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,7 +37,7 @@ interface HomeProps {
   youtubeLink: any
 }
 
-const Home: React.FC<HomeProps> = ({ welcomeImagesHome, headingProfileHome, bestProgramsData, galleries, article, activity, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner, youtubeLink}) => {
+const Home: React.FC<HomeProps> = ({ welcomeImagesHome, headingProfileHome, bestProgramsData, galleriesKegiatan, article, activity, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner, youtubeLink}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
@@ -47,7 +45,7 @@ const Home: React.FC<HomeProps> = ({ welcomeImagesHome, headingProfileHome, best
       <PesantrenProfile headingProfile={headingProfileHome}/>
       <Article activity={activity} article={article}/>
       <BestPrograms bestProgramsData={bestProgramsData}/>
-      <Galery galleries={galleries}/>
+      <Galery galleries={galleriesKegiatan}/>
       <StudentInfo informasiPesertaDidik={informasiPesertaDidik}/>
       <Reviews apaKataMereka={apaKataMereka}/>
       <Video youtubeLink={youtubeLink}/>
@@ -61,11 +59,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const welcomeImagesHome = await getWelcomeImageSlidersBySlug("home")
   const headingProfileHome = await getHeadingProfileBySlug("home")
   const bestProgramsData = await getAllProgramsBySlug("program-unggulan")
+  const galleriesKegiatan = await getMediaWithTag("galleryKegiatan")
 
-  const galleries = await fetchGaleryActivities({preview: false})
   const article = await fetchArticlePosts({preview: false})
   const activity = await fetchActivityPosts({preview: false})
-  const welcomeImages = await fetchWelcomeImageSliders({preview: false})
   const informasiPesertaDidik = await getInformasiPesertaDidik()
   const apaKataMereka = await getApaKataMereka()
   const informasiPpdbBanner = await getInformasiPpdbBanner()
@@ -73,17 +70,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      welcomeImagesHome,
-      headingProfileHome,
-      bestProgramsData,
-      galleries,
-      article,
-      activity,
-      welcomeImages,
-      informasiPesertaDidik,
-      apaKataMereka,
-      informasiPpdbBanner,
-      youtubeLink
+      welcomeImagesHome: welcomeImagesHome,
+      headingProfileHome: headingProfileHome,
+      bestProgramsData: bestProgramsData,
+      galleriesKegiatan: galleriesKegiatan,
+      article: article,
+      activity: activity,
+      informasiPesertaDidik: informasiPesertaDidik,
+      apaKataMereka: apaKataMereka,
+      informasiPpdbBanner: informasiPpdbBanner,
+      youtubeLink: youtubeLink
     },
     revalidate: 10,
   };

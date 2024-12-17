@@ -1,9 +1,8 @@
-import React from "react";
 import GaleryActivity from "@/components/GaleryActivity";
-import { GaleryActivity as GaleryActivityType} from "@/contentful/galeryActivity";
-
+import React from "react";
 interface GaleryProps {
-  galleries: GaleryActivityType[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  galleries: any;
 }
 
 const Galery: React.FC<GaleryProps> = ({ galleries }) => {
@@ -26,9 +25,13 @@ const Galery: React.FC<GaleryProps> = ({ galleries }) => {
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {galleries.map((image, index) => (
-            <GaleryActivity galery={image} key={index} />
-          ))}
+          {galleries.map(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (image: any, index: any) => {
+              return (
+                <GaleryActivity galery={image} key={index} />
+              )
+            })}
         </div>
       </div>
     </section>

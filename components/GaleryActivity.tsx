@@ -1,5 +1,4 @@
 import React from "react"
-import { GaleryActivity as GaleryActivityType } from "@/contentful/galeryActivity";
 import Image from "next/image";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import {
@@ -10,19 +9,20 @@ import {
 } from "@/components/ui/dialog";
 
 interface GaleryActivityProps {
-     galery: GaleryActivityType;
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     galery: any;
 }
 const GaleryActivity: React.FC<GaleryActivityProps> = ({galery}) => {
      return (
           <Dialog>
           <DialogTrigger>
             <div className="w-auto h-auto">
-              {galery.image && (
+              {galery && (
                 <Image
-                src={`https:${galery.image.src}`}
-                alt={galery.image.alt}
-                width={2363}
-                height={2363}
+                src={`https:${galery.file.url}`}
+                alt={galery.title}
+                width={galery.file.details.image.width}
+                height={galery.file.details.image.height}
                 className="w-auto h-auto rounded-sm shadow-lg"
               />
               )}
@@ -33,12 +33,12 @@ const GaleryActivity: React.FC<GaleryActivityProps> = ({galery}) => {
               <DialogTitle></DialogTitle>
             </VisuallyHidden.Root>
             <div className="w-auto h-auto">
-            {galery.image && (
+            {galery && (
                 <Image
-                src={`https:${galery.image.src}`}
-                alt={galery.image.alt}
-                width={2363}
-                height={2363}
+                src={`https:${galery.file.url}`}
+                alt={galery.title}
+                width={galery.file.details.image.width}
+                height={galery.file.details.image.height}
                 className="w-auto h-auto rounded-sm shadow-lg"
               />
               )}

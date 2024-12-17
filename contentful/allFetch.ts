@@ -1,5 +1,22 @@
 import contentfulClient from "./contentfulClient";
 
+export async function getMediaWithTag(tag: string) {
+     const contentful = contentfulClient({preview: false})
+     
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     const query: any = {
+         'metadata.tags.sys.id[in]': tag,
+         limit: 5,
+     };
+ 
+     const assets = await contentful.getAssets(query);
+ 
+ 
+     if (assets.items) return assets.items.map((item) => item.fields);
+ 
+     return [];
+ }
+
 export async function getWelcomeImageSlidersBySlug(slug: string) {
      const contentful = contentfulClient({preview: false})
 
