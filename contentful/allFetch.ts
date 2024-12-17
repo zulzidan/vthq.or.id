@@ -30,6 +30,21 @@ export async function getHeadingProfileBySlug(slug: string) {
      return [];
 }
 
+export async function getAllProgramsBySlug(slug: string) {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'programs',
+          'fields.slug': slug,
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items[0].fields;
+     }
+
+     return [];
+}
+
 export async function getPesantrenImageGallery() {
      const contentful = contentfulClient({preview: false})
 

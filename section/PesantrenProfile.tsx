@@ -39,8 +39,8 @@ const PesantrenProfile: React.FC<PesantrenProfileProps> = ({
      
         {headingProfile.eventImages.map(
            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (item: { sys: { id: { id: any; }; }; fields: { file: { url: any; details: { image: { width: number; height: number; }; }; }; title: string; }; }) => {
-          const { id } = item.sys.id;
+          (item: { sys: { id: any; }; fields: { file: { url: any; details: { image: { width: number; height: number; }; }; }; title: string; }; }) => {
+          const id = item.sys.id;
           const imageUrl = item.fields.file.url;
           const altText = item.fields.title || "Pesantren Image";
           const width = item.fields.file.details.image.width || 1000;

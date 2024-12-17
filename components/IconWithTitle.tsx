@@ -29,26 +29,22 @@ const iconMap: { [key: string]: JSX.Element } = {
   "Konsultasi Syariah": <ChatSquareText className="w-6 h-6"/>,
 };
 
-interface Arg {
-  id: number;
-  title: string;
-}
-
 interface IconWithTitleProps {
-  args: Arg[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  programsName:any
 }
 
-const IconWithTitle: React.FC<IconWithTitleProps> = ({ args }) => {
+const IconWithTitle: React.FC<IconWithTitleProps> = ({ programsName }) => {
   return (
     <div className="mx-auto grid grid-cols-2 md:grid-cols-2 items-center lg:grid-cols-3 gap-6">
-      {args.map((arg) => {
+      {programsName.map((arg: string, index:number) => {
         return (
-          <div key={arg.id} className="flex items-center space-x-1 lg:space-x-10">
+          <div key={index} className="flex items-center space-x-1 lg:space-x-10">
             <div className="w-10">
-            {iconMap[arg.title] || null}
+            {iconMap[arg] || null}
             </div>  
             <div className="max-w-sm">
-              <h1 className="text-xs break-words md:text-base font-bold whitespace-normal">{arg.title}</h1>
+              <h1 className="text-xs break-words md:text-base font-bold whitespace-normal">{arg}</h1>
             </div>
           </div>
         );

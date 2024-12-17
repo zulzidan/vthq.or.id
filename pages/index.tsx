@@ -15,13 +15,15 @@ import { fetchGaleryActivities, GaleryActivity as GaleryActivityType} from "@/co
 import { BlogActivity, fetchActivityPosts } from "@/contentful/blogActivity";
 import { BlogArticle, fetchArticlePosts } from "@/contentful/blogArticle";
 import { fetchWelcomeImageSliders, WelcomeImageSliders } from "@/contentful/imageSliders";
-import { getApaKataMereka, getHeadingProfileBySlug, getInformasiPesertaDidik, getInformasiPpdbBanner, getWelcomeImageSlidersBySlug, getYoutubeLink} from "@/contentful/allFetch";
+import { getAllProgramsBySlug, getApaKataMereka, getHeadingProfileBySlug, getInformasiPesertaDidik, getInformasiPpdbBanner, getWelcomeImageSlidersBySlug, getYoutubeLink} from "@/contentful/allFetch";
 
 interface HomeProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   welcomeImagesHome: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   headingProfileHome: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  bestProgramsData: any
 
   galleries: GaleryActivityType[]
   article: BlogArticle[]
@@ -37,14 +39,14 @@ interface HomeProps {
   youtubeLink: any
 }
 
-const Home: React.FC<HomeProps> = ({ welcomeImagesHome, headingProfileHome, galleries, article, activity, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner, youtubeLink}) => {
+const Home: React.FC<HomeProps> = ({ welcomeImagesHome, headingProfileHome, bestProgramsData, galleries, article, activity, informasiPesertaDidik, apaKataMereka, informasiPpdbBanner, youtubeLink}) => {
   return (
     <Layout>
       <TitleOfPage title="Home"/>
       <CarouselShadcn welcomeImages={welcomeImagesHome}/>
       <PesantrenProfile headingProfile={headingProfileHome}/>
       <Article activity={activity} article={article}/>
-      <BestPrograms/>
+      <BestPrograms bestProgramsData={bestProgramsData}/>
       <Galery galleries={galleries}/>
       <StudentInfo informasiPesertaDidik={informasiPesertaDidik}/>
       <Reviews apaKataMereka={apaKataMereka}/>
@@ -58,6 +60,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const welcomeImagesHome = await getWelcomeImageSlidersBySlug("home")
   const headingProfileHome = await getHeadingProfileBySlug("home")
+  const bestProgramsData = await getAllProgramsBySlug("program-unggulan")
 
   const galleries = await fetchGaleryActivities({preview: false})
   const article = await fetchArticlePosts({preview: false})
@@ -72,6 +75,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       welcomeImagesHome,
       headingProfileHome,
+      bestProgramsData,
       galleries,
       article,
       activity,
