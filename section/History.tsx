@@ -13,7 +13,7 @@ const History: React.FC<HistoryProps> = ({historyData}) => {
         <div className="mb-4 md:mb-0">
           <Image
             src={`https:${historyData.image.fields.file.url}`}
-            alt={historyData.image.title}
+            alt={historyData.image.fields.title}
             height={historyData.image.fields.file.details.image.height}
             width={historyData.image.fields.file.details.image.width}
             className="w-44 h-auto"

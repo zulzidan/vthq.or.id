@@ -62,6 +62,21 @@ export async function getAllProgramsBySlug(slug: string) {
      return [];
 }
 
+export async function getTitleAndListsBySlug(slug: string) {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'titleAndLists',
+          'fields.slug': slug,
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items[0].fields;
+     }
+
+     return [];
+}
+
 export async function getPesantrenImageGallery() {
      const contentful = contentfulClient({preview: false})
 

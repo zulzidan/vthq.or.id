@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
-import { getHeadingProfileBySlug, getMisi, getStrukturOrganisasiImage, getVisi, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
+import { getHeadingProfileBySlug, getStrukturOrganisasiImage, getTitleAndListsBySlug, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
 import CarouselShadcn from "@/section/CarouselShadcn";
 import History from "@/section/History";
 import OrganisationStructure from "@/section/OrganisationStructure";
@@ -14,20 +14,20 @@ interface ProfileProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   headingProfileProfil: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  visi: any
+  visiData: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  misi: any
+  misiData: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   strukturOrganisasiImage: any
 }
 
-const Profile: React.FC<ProfileProps> = ({welcomeImagesProfil , headingProfileProfil, visi, misi, strukturOrganisasiImage}) => {
+const Profile: React.FC<ProfileProps> = ({welcomeImagesProfil , headingProfileProfil, visiData, misiData, strukturOrganisasiImage}) => {
   return (
     <Layout>
       <TitleOfPage title="Profil"/>
       <CarouselShadcn welcomeImages={welcomeImagesProfil}/>
       <History historyData={headingProfileProfil}/>
-      <VisionMission visi={visi} misi={misi}/>
+      <VisionMission visi={visiData} misi={misiData}/>
       <OrganisationStructure strukturOrganisasiImage={strukturOrganisasiImage}/>
     </Layout>
   );
@@ -37,8 +37,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const welcomeImagesProfil = await getWelcomeImageSlidersBySlug("profil")
   const headingProfileProfil = await getHeadingProfileBySlug("profil")
-  const visi = await getVisi()
-  const misi = await getMisi()
+  const visi = await getTitleAndListsBySlug("visi")
+  const misi = await getTitleAndListsBySlug("misi")
   const strukturOrganisasiImage = await getStrukturOrganisasiImage()
 
 
@@ -46,8 +46,8 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       welcomeImagesProfil,
       headingProfileProfil,
-      visi,
-      misi,
+      visiData: visi,
+      misiData: misi,
       strukturOrganisasiImage
     },
     revalidate: 10,
