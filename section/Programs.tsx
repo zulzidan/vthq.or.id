@@ -1,8 +1,12 @@
 import ProgramWithList from "@/components/ProgramWithList";
-import { allPrograms } from "@/data/dummyPrograms";
+import { Program } from "@/types/program";
 import React from "react";
 
-const Programs:React.FC = () => {
+interface ProgramsProps {
+     allPrograms: Program[]
+}
+
+const Programs:React.FC<ProgramsProps> = ({allPrograms}) => {
      return (
           <section className="md:grid md:grid-cols-2">
                {allPrograms.map((programs, index) => {
