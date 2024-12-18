@@ -1,6 +1,6 @@
 import Layout from "@/components/layout";
 import TitleOfPage from "@/components/TitleOfPage";
-import { getHeadingProfileBySlug, getStrukturOrganisasiImage, getTitleAndListsBySlug, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
+import { getHeadingProfileBySlug, getMediaWithTag, getTitleAndListsBySlug, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
 import CarouselShadcn from "@/section/CarouselShadcn";
 import History from "@/section/History";
 import OrganisationStructure from "@/section/OrganisationStructure";
@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const headingProfileProfil = await getHeadingProfileBySlug("profil")
   const visi = await getTitleAndListsBySlug("visi")
   const misi = await getTitleAndListsBySlug("misi")
-  const strukturOrganisasiImage = await getStrukturOrganisasiImage()
+  const strukturOrganisasiImage = await getMediaWithTag("strukturOrganisasi")
 
 
   return {

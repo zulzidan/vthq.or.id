@@ -35,22 +35,16 @@ const OrganisationStructure: React.FC<OrganisationStructureProps> = ({strukturOr
           <CarouselContent className="max-w-sm md:max-w-xl">
             {strukturOrganisasiImage.map(
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              (image: { sys: { id: any; }; fields: { image: { fields: { file: { url: any; details: { image: { width: any; height: any; }; }; }; title: any; }; }; }; }) => {
-
-              const { id } = image.sys;
-              const imageUrl = image.fields.image.fields.file.url;
-              const altText = image.fields.image.fields.title;
-              const width = image.fields.image.fields.file.details.image.width;
-              const height = image.fields.image.fields.file.details.image.height;
+              (image: any, index: number) => {
               return (
                 <CarouselItem
-                  key={id}
+                  key={index}
                 >
                     <Image
-                      src={`https:${imageUrl}`}
-                      alt={altText}
-                      width={width}
-                      height={height}
+                      src={`https:${image.file.url}`}
+                      alt={image.title}
+                      width={image.file.details.image.width}
+                      height={image.file.details.image.height}
                       sizes="100vw"
                       className="h-auto w-auto object-contain"
                     />
