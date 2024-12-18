@@ -92,6 +92,21 @@ export async function getExternalLinkSectionSlug(slug: string) {
      return [];
 }
 
+export async function getInstructionSectionBySlug(slug: string) {
+     const contentful = contentfulClient({preview: false})
+
+     const entries = await contentful.getEntries({
+          content_type: 'instructionSection',
+          'fields.slug': slug,
+     });
+
+     if (entries.items && entries.items.length > 0) {
+          return entries.items[0].fields;
+     }
+
+     return [];
+}
+
 export async function getRegistrationFlow() {
      const contentful = contentfulClient({preview: false})
 

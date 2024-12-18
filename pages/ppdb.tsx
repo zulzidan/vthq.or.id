@@ -9,7 +9,7 @@ import TimelineRegistration from "@/section/TimelineRegistration";
 import { TimeLineFields } from "../components/Timeline";
 import { GetStaticProps } from "next";
 import { getTimeLinePendaftaran } from "@/contentful/timelinePendaftaran";
-import { getInformasiPpdbBanner, getKontakPendaftaran, getPendaftaran, getRegistrationFlow, getTentangKamiContent } from "@/contentful/allFetch";
+import { getInformasiPpdbBanner, getInstructionSectionBySlug, getRegistrationFlow, getTentangKamiContent } from "@/contentful/allFetch";
 
 interface PpdbProps {
   timelineFields: TimeLineFields
@@ -20,12 +20,12 @@ interface PpdbProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tentangKamiContent: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  pendaftaran: any
+  alurPendaftaran: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  kontakPendaftaran: any
+  informasiPendaftaran: any
 }
 
-const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, registrationFlow, tentangKamiContent, pendaftaran, kontakPendaftaran}) => {
+const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, registrationFlow, tentangKamiContent, alurPendaftaran, informasiPendaftaran}) => {
   return (
     <Layout>
        <TitleOfPage title="Pendaftaran"/>
@@ -33,8 +33,8 @@ const Ppdb: React.FC<PpdbProps> = ({timelineFields, informasiPpdbBanner, registr
      <About tentangKamiContent={tentangKamiContent}/>
      <RegistrationProcess registrationFlow={registrationFlow}/>
      <TimelineRegistration timelineFields={timelineFields}/>
-     <RegistrationMethod pendaftaran={pendaftaran}/>
-     <RegistrationInfo kontakPendaftaran={kontakPendaftaran}/>
+     <RegistrationMethod pendaftaran={alurPendaftaran}/>
+     <RegistrationInfo kontakPendaftaran={informasiPendaftaran}/>
     </Layout>
   );
 }
@@ -45,8 +45,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const informasiPpdbBanner = await getInformasiPpdbBanner()
   const registrationFlow = await getRegistrationFlow()
   const tentangKamiContent = await getTentangKamiContent()
-  const pendaftaran = await getPendaftaran()
-  const kontakPendaftaran = await getKontakPendaftaran()
+  const alurPendaftaran = await getInstructionSectionBySlug("alur-pendaftaran")
+  const informasiPendaftaran = await getInstructionSectionBySlug("informasi-pendaftaran")
 
   if (!timelineFieldsFrom) {
     return {
@@ -63,12 +63,12 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { 
-      timelineFields,
-      informasiPpdbBanner,
+      timelineFields: timelineFields,
+      informasiPpdbBanner: informasiPpdbBanner,
       registrationFlow: registrationFlow,
-      tentangKamiContent,
-      pendaftaran,
-      kontakPendaftaran
+      tentangKamiContent: tentangKamiContent,
+      alurPendaftaran: alurPendaftaran,
+      informasiPendaftaran: informasiPendaftaran
   },
   revalidate: 10,
 };
