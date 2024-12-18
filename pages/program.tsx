@@ -5,7 +5,7 @@ import Curiculum from "@/section/Curiculum";
 import Programs from "@/section/Programs";
 import TittleAndButtonLink from "@/section/TittleAndButtonLink";
 import { GetStaticProps } from "next";
-import { getAllProgramsBySlug, getHeadingProfileBySlug, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
+import { getAllProgramsBySlug, getExternalLinkSectionSlug, getHeadingProfileBySlug, getWelcomeImageSlidersBySlug } from "@/contentful/allFetch";
 import CarouselShadcn from "@/section/CarouselShadcn";
 import { Program as ProgramTypes } from "@/types/program";
 interface ProgramProps {
@@ -25,9 +25,11 @@ interface ProgramProps {
   pembelajaranUmum: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pengelolaanPerpustakaan: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  externalLinkSectionData: any
 }
 
-const Program: React.FC<ProgramProps> = ({welcomeImagesProgram, headingProfileProgram, programTahfizh, pembelajaranDiniyah, brtm, programBahasaArab, pembelajaranUmum, pengelolaanPerpustakaan}) => {
+const Program: React.FC<ProgramProps> = ({welcomeImagesProgram, headingProfileProgram, programTahfizh, pembelajaranDiniyah, brtm, programBahasaArab, pembelajaranUmum, pengelolaanPerpustakaan, externalLinkSectionData}) => {
   
   const ProgramsTahfizh: ProgramTypes = {
     titleProgram: programTahfizh.titleOfProgram,
@@ -75,7 +77,7 @@ const Program: React.FC<ProgramProps> = ({welcomeImagesProgram, headingProfilePr
        <CarouselShadcn welcomeImages={welcomeImagesProgram}/>
        <Curiculum kurikulumProfileData={headingProfileProgram}/>
        <Programs allPrograms={allPrograms}/>
-       <TittleAndButtonLink/>
+       <TittleAndButtonLink externalLinkSectionData={externalLinkSectionData}/>
     </Layout>
   );
 }
@@ -91,6 +93,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const programBahasaArab = await getAllProgramsBySlug("program-bahasa-arab")
   const pembelajaranUmum = await getAllProgramsBySlug("pembelajaran-umum")
   const pengelolaanPerpustakaan = await getAllProgramsBySlug("pengelolaan-perpustakaan")
+  const externalLinkSectionData = await getExternalLinkSectionSlug("sihimma")
 
   return {
     props: {
@@ -101,7 +104,8 @@ export const getStaticProps: GetStaticProps = async () => {
       brtm: brtm,
       programBahasaArab: programBahasaArab,
       pembelajaranUmum: pembelajaranUmum,
-      pengelolaanPerpustakaan: pengelolaanPerpustakaan
+      pengelolaanPerpustakaan: pengelolaanPerpustakaan,
+      externalLinkSectionData: externalLinkSectionData
     },
     revalidate: 10,
   }
