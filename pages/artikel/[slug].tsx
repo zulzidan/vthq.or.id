@@ -2,7 +2,8 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "@/components/layout";
 import SingleBlog from "@/components/SingleBlog";
 import TitleOfPage from "@/components/TitleOfPage";
-import { BlogArticle, fetchArticlePost, fetchArticlePosts } from "@/contentful/blogArticle";
+import { BlogArticle, fetchArticlePost, fetchArticlePosts, fetchArticlePostsWithExcludedArticle } from "@/contentful/blogArticle";
+import ArticleLayout from "@/section/ArticleLayout";
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -21,13 +22,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 interface ContentProps {
   article: BlogArticle;
+  articles: BlogArticle[];
 }
 
-const ContentDetail = ({ article }: ContentProps) => {
+const ContentDetail = ({ article, articles }: ContentProps) => {
   return (
     <Layout>
       <TitleOfPage title="Artikel" />
       <SingleBlog article={article} titlePage="artikel" />
+      <ArticleLayout articles={articles}/>
     </Layout>
   );
 };
@@ -36,6 +39,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as { slug: string };
 
   const article = await fetchArticlePost({slug: slug, preview: false})
+  const articles = await fetchArticlePostsWithExcludedArticle({excludedSlug: slug, preview: false})
 
   if (!article) {
     return {
@@ -46,6 +50,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       article,
+      articles
     },
     revalidate: 10,
   };

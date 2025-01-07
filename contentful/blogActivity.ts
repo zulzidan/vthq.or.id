@@ -34,6 +34,7 @@ export function parseContentfulBlogActivity(blogActivityEntry?: BlogActivityEntr
 }
 
 interface FetchActivityPostsOptions {
+     exlcudedActivity?: string
      preview: boolean
 }
 
@@ -47,6 +48,18 @@ export async function fetchActivityPosts({preview}: FetchActivityPostsOptions): 
      })
 
      return activityPostResults.items.map((activityEntry) => parseContentfulBlogActivity(activityEntry) as BlogActivity)
+}
+
+export async function fetchActivityPostsWithExcludedActivity({exlcudedActivity, preview}: FetchActivityPostsOptions): Promise<BlogActivity[]> {
+     const contentful = contentfulClient({preview})
+
+     const activityPostResults = await contentful.getEntries<TypeKegiatanSkeleton>({
+          content_type: 'kegiatan',
+          include: 1,
+          order: ['-fields.date'],
+     })
+
+     return activityPostResults.items.filter((activityEntry)=>(activityEntry.fields.slug !== exlcudedActivity)).map((activityEntry) => parseContentfulBlogActivity(activityEntry) as BlogActivity)
 }
 
 interface FetchActivityPostOptions {

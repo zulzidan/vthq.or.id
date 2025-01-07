@@ -34,6 +34,7 @@ export function parseContentfulBlogArtikel(blogArticleEntry?: BlogArticleEntry):
 }
 
 interface FetchArticlePostsOptions {
+     excludedSlug?: string
      preview: boolean
 }
 
@@ -47,6 +48,18 @@ export async function fetchArticlePosts({preview}: FetchArticlePostsOptions): Pr
      })
 
      return articlePostResults.items.map((articleEntry) => parseContentfulBlogArtikel(articleEntry) as BlogArticle)
+}
+
+export async function fetchArticlePostsWithExcludedArticle({excludedSlug, preview}: FetchArticlePostsOptions): Promise<BlogArticle[]> {
+     const contentful = contentfulClient({preview})
+
+     const articlePostResults = await contentful.getEntries<TypeArtikelSkeleton>({
+          content_type: 'artikel',
+          include: 1,
+          order: ['-fields.date'],
+     })
+
+     return articlePostResults.items.filter((articleEntry) => articleEntry.fields.slug !== excludedSlug).map((articleEntry) => parseContentfulBlogArtikel(articleEntry) as BlogArticle)
 }
 
 interface FetchArticlePostOptions {
