@@ -3,7 +3,7 @@ import Layout from "@/components/layout";
 import SingleBlog from "@/components/SingleBlog";
 import TitleOfPage from "@/components/TitleOfPage";
 import { BlogArticle, fetchArticlePost, fetchArticlePosts, fetchArticlePostsWithExcludedArticle } from "@/contentful/blogArticle";
-import ArticleLayout from "@/section/ArticleLayout";
+import RecomendationBlog from "@/section/RecomendationBlog";
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -30,7 +30,7 @@ const ContentDetail = ({ article, articles }: ContentProps) => {
     <Layout>
       <TitleOfPage title="Artikel" />
       <SingleBlog article={article} titlePage="artikel" />
-      <ArticleLayout articles={articles}/>
+      <RecomendationBlog articles={articles}/>
     </Layout>
   );
 };

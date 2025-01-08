@@ -3,7 +3,7 @@ import Layout from "@/components/layout";
 import SingleBlog from "@/components/SingleBlog";
 import TitleOfPage from "@/components/TitleOfPage";
 import { BlogActivity, fetchActivityPost, fetchActivityPosts, fetchActivityPostsWithExcludedActivity } from "@/contentful/blogActivity";
-import ActivityLayout from "@/section/ActivityLayout";
+import RecomendationBlog from "@/section/RecomendationBlog";
 
 interface ContentProps {
   article: BlogActivity;
@@ -33,7 +33,7 @@ const ContentDetail = ({ article, articles }: ContentProps) => {
     <Layout>
       <TitleOfPage title="Kegiatan" />
       <SingleBlog article={article} titlePage="kegiatan" />
-      <ActivityLayout articles={articles}/>
+      <RecomendationBlog articles={articles}/>
     </Layout>
   );
 };

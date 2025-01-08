@@ -79,11 +79,11 @@ const SingleBlog: React.FC<SingleBlogProps> = ({ article, titlePage }) => {
          <RichText document={article.body}/>
         </div>
       </section>
-      <div className="px-6 md:px-14 py-6">
+      {/* <div className="px-6 md:px-14 py-6">
         <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
           <h2 className="text-base font-bold mb-4 py-1 px-6 ">Rekomendasi :</h2>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
