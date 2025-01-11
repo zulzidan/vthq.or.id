@@ -33,7 +33,7 @@ const ContentDetail = ({ article, articles }: ContentProps) => {
     <Layout>
       <TitleOfPage title="Kegiatan" />
       <SingleBlog article={article} titlePage="kegiatan" />
-      <RecomendationBlog articles={articles}/>
+      <RecomendationBlog articles={articles} nameOfContext="kegiatan"/>
     </Layout>
   );
 };

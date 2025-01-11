@@ -3,10 +3,11 @@ import ArticleCardRound from "@/components/ArticleCardRound";
 import { BlogArticle } from "@/contentful/blogArticle";
 
 interface RecomendationBlogProps {
+  nameOfContext: string;
   articles: BlogArticle[];
 }
 
-const RecomendationBlog: React.FC<RecomendationBlogProps> = ({ articles }) => {
+const RecomendationBlog: React.FC<RecomendationBlogProps> = ({ articles, nameOfContext }) => {
   return (
     <section className="py-6 mt-8 px-6 md:px-14 max-w-screen-2xl mx-auto">
         <div className="bg-gradient-to-r from-green-500 to-green-800 text-white w-fit mb-2">
@@ -17,7 +18,7 @@ const RecomendationBlog: React.FC<RecomendationBlogProps> = ({ articles }) => {
           return (
             <ArticleCardRound
               article={activity}
-              nameOfContext="kegiatan"
+              nameOfContext={nameOfContext}
               key={index}
             />
           );
