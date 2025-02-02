@@ -22,6 +22,16 @@ interface RichTextProps {
 const options = {
      renderNode: {
        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      [BLOCKS.UL_LIST]: (node: any, children: any) => (
+        <ul className="list-disc pl-5">{children}</ul>
+      ),
+       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      [BLOCKS.OL_LIST]: (node: any, children: any) => (
+        <ol className="list-decimal pl-5">{children}</ol>
+      ),
+       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      [BLOCKS.LIST_ITEM]: (node: any, children: any) => <li>{children}</li>,
+       // eslint-disable-next-line @typescript-eslint/no-explicit-any
        [BLOCKS.HEADING_1]: (node: any, children: any) => (
          <h1 className="text-2xl font-bold">{children}</h1>
        ),
