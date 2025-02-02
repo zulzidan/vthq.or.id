@@ -1,4 +1,2 @@
 # Himmatulquran.or.id
 
-
-asd
