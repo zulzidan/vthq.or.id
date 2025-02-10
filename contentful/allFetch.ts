@@ -6,7 +6,7 @@ export async function getMediaWithTag(tag: string) {
      // eslint-disable-next-line @typescript-eslint/no-explicit-any
      const query: any = {
          'metadata.tags.sys.id[in]': tag,
-         limit: 5,
+         limit: 10,
      };
  
      const assets = await contentful.getAssets(query);
