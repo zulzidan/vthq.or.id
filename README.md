@@ -4,7 +4,7 @@ Website VTHQ dengan Next.js Pages Router dan Contentful.
 
 ## Pengembangan lokal
 
-Jalankan `npm ci`, lalu `npm run dev`. Konfigurasi Contentful mengikuti variabel lingkungan yang digunakan oleh `contentful/contentfulClient.ts`. Jalankan `npm run lint` dan `npm run build` sebelum deployment.
+Gunakan Node.js 24.x, jalankan `npm ci`, lalu `npm run dev`. Konfigurasi Contentful mengikuti variabel lingkungan yang digunakan oleh `contentful/contentfulClient.ts`. Jalankan `npm run lint` dan `npm run build` sebelum deployment. Field `engines.node` pada `package.json` menetapkan versi Node.js untuk deployment Vercel.
 
 ## Mengelola flyer dakwah
 
